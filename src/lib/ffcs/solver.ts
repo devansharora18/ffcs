@@ -1,6 +1,6 @@
 import type { Catalog, CatalogCourse } from './catalog';
 import { findConflicts, gapMinutes, isAllowed } from './conflicts';
-import { DAYS } from './grid';
+import { DAYS, slotCells } from './grid';
 import type {
   PlacedOffering,
   Requirement,
@@ -34,6 +34,11 @@ export type SolverGroup = {
   candidates: PlacedOffering[];
 };
 
+export type SolveOptions = {
+  limit?: number;
+  maxNodes?: number;
+};
+
 export function toPlaced(course: CatalogCourse, offeringId: string): PlacedOffering | undefined {
   const offering = course.offerings.find((candidate) => candidate.id === offeringId);
   if (!offering) return undefined;
@@ -46,16 +51,9 @@ export function toPlaced(course: CatalogCourse, offeringId: string): PlacedOffer
     faculty: offering.faculty,
     venue: offering.venue,
     slots: offering.slots,
-    cells: offering.slots.flatMap((slot) => slotCellsFor(slot)),
+    cells: offering.slots.flatMap(slotCells),
   };
 }
-
-function slotCellsFor(slot: string) {
-  // Imported lazily to keep the grid as the single source of slot geometry.
-  return SLOT_LOOKUP(slot);
-}
-
-import { slotCells as SLOT_LOOKUP } from './grid';
 
 function signature(entry: PlacedOffering): string {
   return entry.cells
@@ -65,9 +63,9 @@ function signature(entry: PlacedOffering): string {
 }
 
 /**
- * Builds the search groups: candidates that clash identically are collapsed to
- * the best-scoring one, so the search branches on slot patterns, not on the
- * hundreds of faculty variants that share a pattern.
+ * Builds the search groups: offerings that occupy identical time are collapsed
+ * to the best-scoring one, so the search branches on slot patterns instead of
+ * on the hundreds of faculty variants that share a pattern.
  */
 export function buildGroups(
   catalog: Catalog,
@@ -75,6 +73,9 @@ export function buildGroups(
   constraints: TimetableConstraints,
 ): { groups: SolverGroup[]; unsolved: string[] } {
   const byCode = new Map(catalog.courses.map((course) => [course.code, course]));
+  const preferred = new Set(
+    constraints.preferredFaculty.map((name) => name.trim().toLowerCase()),
+  );
   const seen = new Set<string>();
   const groups: SolverGroup[] = [];
   const unsolved: string[] = [];
@@ -89,26 +90,23 @@ export function buildGroups(
       continue;
     }
 
-    const offerings = requirement.offeringId
+    const ids = requirement.offeringId
       ? [requirement.offeringId]
       : course.offerings.map((offering) => offering.id);
 
-    const allowed = offerings
+    const allowed = ids
       .map((id) => toPlaced(course, id))
       .filter((entry): entry is PlacedOffering => entry !== undefined)
       .filter((entry) => isAllowed(entry, constraints));
-
-    const preferred = new Set(
-      constraints.preferredFaculty.map((name) => name.trim().toLowerCase()),
-    );
 
     const bestPerSignature = new Map<string, PlacedOffering>();
     for (const entry of allowed) {
       const key = signature(entry);
       const current = bestPerSignature.get(key);
-      if (!current || preferenceRank(entry, preferred) > preferenceRank(current, preferred)) {
-        bestPerSignature.set(key, entry);
-      }
+      const rank = preferred.has(entry.faculty.trim().toLowerCase()) ? 1 : 0;
+      const currentRank =
+        current && preferred.has(current.faculty.trim().toLowerCase()) ? 1 : 0;
+      if (!current || rank > currentRank) bestPerSignature.set(key, entry);
     }
 
     const candidates = [...bestPerSignature.entries()]
@@ -119,13 +117,11 @@ export function buildGroups(
     else groups.push({ courseCode: requirement.courseCode, candidates });
   }
 
-  groups.sort((a, b) => a.candidates.length - b.candidates.length || a.courseCode.localeCompare(b.courseCode));
+  groups.sort(
+    (a, b) => a.candidates.length - b.candidates.length || a.courseCode.localeCompare(b.courseCode),
+  );
 
   return { groups, unsolved };
-}
-
-function preferenceRank(entry: PlacedOffering, preferred: Set<string>): number {
-  return preferred.has(entry.faculty.trim().toLowerCase()) ? 1 : 0;
 }
 
 function score(entries: PlacedOffering[], constraints: TimetableConstraints): Solution {
@@ -153,13 +149,9 @@ function score(entries: PlacedOffering[], constraints: TimetableConstraints): So
   };
 
   const total = Object.values(parts).reduce((sum, value) => sum + value, 0);
-  return { entries, score: Number(total.toFixed(3)), parts };
+  // Copy: the DFS mutates its working array, and the solution must survive it.
+  return { entries: [...entries], score: Number(total.toFixed(3)), parts };
 }
-
-export type SolveOptions = {
-  limit?: number;
-  maxNodes?: number;
-};
 
 export function solveGroups(
   groups: SolverGroup[],
@@ -172,18 +164,23 @@ export function solveGroups(
   const seen = new Set<string>();
   let nodes = 0;
 
-  const keep = (solution: Solution) => {
-    const key = solution.entries
+  const keyOf = (solution: Solution) =>
+    solution.entries
       .map((entry) => entry.id)
       .sort()
       .join('|');
+
+  const keep = (solution: Solution) => {
+    const key = keyOf(solution);
     if (seen.has(key)) return;
     seen.add(key);
+
     solutions.push(solution);
-    solutions.sort((a, b) => b.score - a.score);
+    solutions.sort((a, b) => b.score - a.score || keyOf(a).localeCompare(keyOf(b)));
+
     if (solutions.length > limit) {
       const dropped = solutions.pop();
-      if (dropped) seen.delete(dropped.entries.map((entry) => entry.id).sort().join('|'));
+      if (dropped) seen.delete(keyOf(dropped));
     }
   };
 
@@ -206,11 +203,15 @@ export function solveGroups(
 
   visit(0, []);
 
+  // A timetable with no courses is only a valid answer when nothing was asked for.
+  const empty = groups.length === 0;
+  const solutionsOut = empty ? [] : solutions;
+
   return {
-    solutions,
-    unsolved: groups.length === 0 ? [] : [],
+    solutions: solutionsOut,
+    unsolved: [],
     conflicts:
-      solutions.length === 0
+      solutionsOut.length === 0 && !empty
         ? findConflicts(groups.map((group) => group.candidates[0]).filter(Boolean))
         : [],
     nodes,
