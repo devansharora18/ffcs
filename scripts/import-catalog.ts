@@ -105,6 +105,7 @@ for (const [school, categories] of Object.entries(data as RawCatalog)) {
 
         acc.kinds.add(kind);
         acc.offerings.set(`${faculty}|${venue}|${slots.join('+')}`, {
+          id: `${code}~${slots.join('+')}~${faculty}~${venue}`,
           faculty,
           venue: isNil(venue) || venue.length === 0 ? null : venue,
           slots,
