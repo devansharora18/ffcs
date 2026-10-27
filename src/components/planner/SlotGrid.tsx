@@ -145,7 +145,7 @@ export default function SlotGrid({
           ))}
         </colgroup>
 
-        <thead>
+        <tbody>
           <tr>
             <th className="rounded-lg bg-[#191c33] px-1 py-1 align-middle font-display text-[10px] font-bold uppercase leading-tight tracking-[0.06em] text-ink">
               Theory
@@ -157,9 +157,20 @@ export default function SlotGrid({
             ))}
             <th
               rowSpan={7}
-              className="rounded-lg bg-[#101226] align-middle font-display text-[9px] font-bold uppercase tracking-[0.22em] text-muted"
+              className="rounded-lg bg-[#101226] px-0 align-middle"
+              aria-label="Lunch"
             >
-              <span className="[writing-mode:vertical-rl]">lunch</span>
+              <div className="flex h-full flex-col items-center justify-center gap-[3px]">
+                {'LUNCH'.split('').map((letter) => (
+                  <span
+                    key={letter}
+                    aria-hidden
+                    className="font-display text-[9px] font-bold leading-none tracking-tight text-muted"
+                  >
+                    {letter}
+                  </span>
+                ))}
+              </div>
             </th>
             {COLUMNS.afternoon.map((column, index) => (
               <TimeCell key={`at-${index}`} row={column.theory} />
@@ -179,9 +190,7 @@ export default function SlotGrid({
               <TimeCell key={`al-${index}`} row={column.lab} />
             ))}
           </tr>
-        </thead>
 
-        <tbody>
           {DAYS.map((day) => (
             <tr key={day}>
               <th className="rounded-lg bg-[#191c33] px-2 py-2 text-left align-middle font-display text-[12px] font-bold uppercase tracking-[0.06em] text-ink">
