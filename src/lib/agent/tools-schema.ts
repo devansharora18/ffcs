@@ -53,14 +53,14 @@ export const toolDefinitions: ChatCompletionTool[] = [
     function: {
       name: 'add_course',
       description:
-        'Add a course to the timetable. Pass faculty to pin a specific offering; omit it to let the solver choose. Returns the resulting arrangement and any course it could not place.',
+        'Add a course to the timetable. Omit faculty to let the solver choose an offering — that is the normal path for "add <course>". Pass faculty only when the user named a specific teacher.',
       parameters: {
         type: 'object',
         properties: {
           code: { type: 'string', description: 'Course code, e.g. BCSE202L.' },
           faculty: {
             type: 'string',
-            description: 'Optional faculty name or unique fragment. Required when several offerings would otherwise be ambiguous.',
+            description: 'Only when the user named a teacher. Exact name or a unique fragment.',
           },
         },
         required: ['code'],

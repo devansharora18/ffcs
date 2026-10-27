@@ -101,7 +101,11 @@ export function usePlanner() {
   );
 
   const applyAgent = useCallback((next: TimetableState, solved: SolveResult) => {
-    setHistory((current) => [...current.slice(-19), stateRef.current]);
+    // A read-only turn (e.g. "who teaches A1?") must not create an undo step.
+    const changed = JSON.stringify(next) !== JSON.stringify(stateRef.current);
+    if (changed) {
+      setHistory((current) => [...current.slice(-19), stateRef.current]);
+    }
     stateRef.current = next;
     requestId.current += 1;
     setSolving(false);

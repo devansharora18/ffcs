@@ -152,7 +152,13 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
       }));
 
       return {
-        text: JSON.stringify({ code: course.code, title: course.title, offerings }),
+        text: JSON.stringify({
+          code: course.code,
+          title: course.title,
+          totalOfferings: course.offerings.length,
+          shown: offerings.length,
+          offerings,
+        }),
         ops: [],
         state,
       };
