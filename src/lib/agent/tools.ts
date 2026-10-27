@@ -2,6 +2,7 @@ import type { Catalog, CatalogCourse } from '../ffcs/catalog';
 import { DAY_LABEL, clock, formatSlots } from '../ffcs/format';
 import { DAYS, isKnownSlot } from '../ffcs/grid';
 import { applyOps, type StateOp } from '../ffcs/ops';
+import { searchCourses } from '../ffcs/search';
 import { WEIGHTS, solveTimetable } from '../ffcs/solver';
 import {
   emptyConstraints,
@@ -66,19 +67,6 @@ function parseWindows(value: unknown): { start: number; end: number }[] {
   return windows;
 }
 
-function courseSummary(course: CatalogCourse) {
-  const slots = [...new Set(course.offerings.flatMap((offering) => offering.slots))].sort();
-  const teachers = [...new Set(course.offerings.map((offering) => offering.faculty))].sort();
-  return {
-    code: course.code,
-    title: course.title,
-    kind: course.kind,
-    offeringCount: course.offerings.length,
-    teachers: teachers.slice(0, 3),
-    slots,
-  };
-}
-
 function findCourse(catalog: Catalog, code: string): CatalogCourse | undefined {
   const needle = code.trim().toLowerCase();
   return catalog.courses.find((course) => course.code.toLowerCase() === needle);
@@ -138,30 +126,11 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
 
   switch (name) {
     case 'search_courses': {
-      const query = asString(args.query).toLowerCase();
+      const query = asString(args.query);
       const limit = Math.min(Math.max(Number(args.limit) || 8, 1), 20);
       if (query.length === 0) return { text: 'Give me something to search for.', ops: [], state };
 
-      const tokens = query.split(/\s+/).filter(Boolean);
-      const matches = catalog.courses
-        .map((course) => {
-          const haystack = `${course.code} ${course.title}`.toLowerCase();
-          const titleHit = tokens.every((token) => haystack.includes(token));
-          const facultyHit = tokens.every((token) =>
-            course.offerings.some((offering) => offering.faculty.toLowerCase().includes(token)),
-          );
-          if (!titleHit && !facultyHit) return null;
-          const score =
-            (titleHit ? 10 : 0) +
-            (facultyHit ? 3 : 0) +
-            (course.code.toLowerCase() === query ? 50 : 0) +
-            (course.code.toLowerCase().startsWith(tokens[0]) ? 2 : 0);
-          return { score, course };
-        })
-        .filter((match): match is { score: number; course: CatalogCourse } => match !== null)
-        .sort((a, b) => b.score - a.score || a.course.code.localeCompare(b.course.code))
-        .slice(0, limit)
-        .map((match) => courseSummary(match.course));
+      const matches = searchCourses(catalog, query, limit);
 
       return {
         text: matches.length

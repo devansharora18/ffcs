@@ -11,6 +11,6 @@ export function agentConfig(): AgentConfig | null {
   return {
     apiKey,
     baseURL: process.env.OPENCODE_BASE_URL ?? 'https://opencode.ai/inference/openai/v1',
-    model: process.env.OPENCODE_MODEL ?? 'muse-spark-1.3-contributor',
+    model: process.env.OPENCODE_MODEL ?? 'deepseek-v4.1-flash',
   };
 }
