@@ -1,15 +1,27 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-ink: oklch(0.22 0.02 260);
-  --color-muted: oklch(0.55 0.02 260);
-  --color-surface: oklch(0.99 0.002 260);
-  --color-line: oklch(0.9 0.005 260);
-  --color-accent: oklch(0.55 0.15 255);
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --color-paper: oklch(0.985 0.004 90);
+  --color-ink: oklch(0.21 0.012 260);
+  --color-muted: oklch(0.52 0.012 260);
+  --color-line: oklch(0.89 0.006 90);
+  --color-signal: oklch(0.55 0.19 27);
 }
 
+html,
 body {
-  background: var(--color-surface);
+  background: var(--color-paper);
   color: var(--color-ink);
+}
+
+::selection {
+  background: oklch(0.55 0.19 27 / 0.18);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 2px;
 }

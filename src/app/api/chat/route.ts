@@ -7,6 +7,7 @@ import { chatRequestSchema, type ChatRequest } from '@/lib/agent/schema';
 import { executeTool } from '@/lib/agent/tools';
 import { toolDefinitions } from '@/lib/agent/tools-schema';
 import { catalog } from '@/lib/ffcs/catalog-data';
+import { solveTimetable } from '@/lib/ffcs/solver';
 import type { StateOp } from '@/lib/ffcs/ops';
 import type { TimetableState } from '@/lib/ffcs/types';
 
@@ -35,6 +36,25 @@ function rateLimited(key: string): boolean {
 }
 
 type Send = (event: string, data: unknown) => void;
+
+function describeAgentError(error: unknown): string {
+  const raw = error instanceof Error ? error.message : 'agent failed';
+
+  if (/insufficient account funds/i.test(raw)) {
+    return 'The inference account is out of credit. Top up OpenCode, then try again.';
+  }
+  if (/model is unavailable/i.test(raw)) {
+    return 'That model is not available on this account. Set OPENCODE_MODEL in .env.';
+  }
+  if (/401|invalid api key/i.test(raw)) {
+    return 'The API key was rejected. Check OPENCODE_API_KEY in .env.';
+  }
+  if (/429|rate limit/i.test(raw)) {
+    return 'The model is rate limited right now. Wait a minute and retry.';
+  }
+
+  return raw.slice(0, 300);
+}
 
 async function runAgent(
   config: AgentConfig,
@@ -113,7 +133,11 @@ async function runAgent(
     }
   }
 
-  send('done', { state, ops });
+  send('done', {
+    state,
+    ops,
+    result: solveTimetable(catalog, state, { limit: 5 }),
+  });
 }
 
 export async function POST(request: Request): Promise<Response> {
@@ -149,8 +173,7 @@ export async function POST(request: Request): Promise<Response> {
       try {
         await runAgent(config, parsed.data, send);
       } catch (error) {
-        const message = error instanceof Error ? error.message : 'agent failed';
-        send('error', { message: message.slice(0, 300) });
+        send('error', { message: describeAgentError(error) });
       } finally {
         controller.close();
       }
