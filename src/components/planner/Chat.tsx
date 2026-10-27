@@ -32,6 +32,7 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
   const [status, setStatus] = useState<'checking' | 'ready' | 'offline'>('checking');
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState<string[]>([]);
+  const [lastRequest, setLastRequest] = useState<ChatMessage[] | null>(null);
   const [ready, setReady] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -78,21 +79,10 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
     }
   }
 
-  async function send(text: string) {
-    const trimmed = text.trim();
-    const images = pending;
-    if ((trimmed.length === 0 && images.length === 0) || busy || status === 'offline') return;
-
+  async function run(history: ChatMessage[]) {
     setError(null);
     setBusy(true);
-    setInput('');
-    setPending([]);
-
-    const history: ChatMessage[] = [
-      ...messages,
-      { role: 'user', content: trimmed, images: images.length > 0 ? images : undefined },
-    ];
-    setMessages([...history, { role: 'assistant', content: '' }]);
+    setLastRequest(history);
 
     let received = false;
     let completed = false;
@@ -140,6 +130,28 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
       });
       setBusy(false);
     }
+  }
+
+  async function send(text: string) {
+    const trimmed = text.trim();
+    const images = pending;
+    if ((trimmed.length === 0 && images.length === 0) || busy || status === 'offline') return;
+
+    setInput('');
+    setPending([]);
+
+    const history: ChatMessage[] = [
+      ...messages,
+      { role: 'user', content: trimmed, images: images.length > 0 ? images : undefined },
+    ];
+    setMessages([...history, { role: 'assistant', content: '' }]);
+    await run(history);
+  }
+
+  function retry() {
+    if (!lastRequest || busy) return;
+    setMessages([...lastRequest, { role: 'assistant', content: '' }]);
+    void run(lastRequest);
   }
 
   return (
@@ -239,9 +251,18 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
         )}
 
         {error && (
-          <p className="rounded-xl border border-red/40 bg-red/10 px-3 py-2 font-mono text-[11px] text-red">
-            {error}
-          </p>
+          <div className="flex items-center gap-2 rounded-xl border border-red/40 bg-red/10 px-3 py-2">
+            <p className="min-w-0 flex-1 font-mono text-[11px] text-red">{error}</p>
+            {lastRequest && !busy && (
+              <button
+                type="button"
+                onClick={retry}
+                className="shrink-0 rounded-full border border-red/50 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-red hover:bg-red hover:text-on-bright"
+              >
+                retry
+              </button>
+            )}
+          </div>
         )}
         <div ref={endRef} />
       </div>

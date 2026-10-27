@@ -52,6 +52,12 @@ function describeAgentError(error: unknown): string {
   if (/429|rate limit/i.test(raw)) {
     return 'The model is rate limited right now. Wait a minute and retry.';
   }
+  if (/connection error|fetch failed|econnreset|etimedout|socket hang up|other side closed/i.test(raw)) {
+    return 'Lost the connection to the model provider. Retry in a moment.';
+  }
+  if (/timed out|timeout|aborted/i.test(raw)) {
+    return 'The model took too long to answer. Retry, or ask for less at once.';
+  }
 
   return raw.slice(0, 300);
 }
