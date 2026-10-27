@@ -4,19 +4,21 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsx scripts/build-skill-zip.ts && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
-    "catalog:import": "tsx scripts/import-catalog.ts && tsx scripts/build-skill-data.ts",
+    "catalog:import": "tsx scripts/import-catalog.ts && tsx scripts/build-skill-data.ts && tsx scripts/build-skill-zip.ts",
     "agent:check": "node --env-file=.env --import tsx scripts/check-agent.ts",
     "solve": "tsx scripts/solve.ts",
-    "skill:sync": "tsx scripts/build-skill-data.ts"
+    "skill:sync": "tsx scripts/build-skill-data.ts && tsx scripts/build-skill-zip.ts",
+    "skill:zip": "tsx scripts/build-skill-zip.ts"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.3.0",
     "@fontsource-variable/bricolage-grotesque": "^5.3.0",
     "@fontsource/ibm-plex-mono": "^5.3.0",
+    "fflate": "^0.8.3",
     "html-to-image": "^1.11.13",
     "next": "16.4.3",
     "openai": "^7.45.0",

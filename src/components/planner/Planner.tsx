@@ -12,6 +12,7 @@ import Chat from './Chat';
 import CourseBuilder from './CourseBuilder';
 import ExportButton from './ExportButton';
 import SelectedCourses from './SelectedCourses';
+import SkillPanel from './SkillPanel';
 import SlotGrid from './SlotGrid';
 import TimetableTabs from './TimetableTabs';
 
@@ -181,6 +182,8 @@ export default function Planner({
               result={planner.result}
               onRemove={planner.remove}
             />
+
+            <SkillPanel />
 
             <AdSlot />
           </main>

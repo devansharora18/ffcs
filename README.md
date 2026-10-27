@@ -82,10 +82,17 @@ verbatim, so a manual edit and an agent edit are the same mutation.
 `skill/ffcs-planner/` is a standalone agent skill: a **Python** solver, the full catalog, and a
 greppable list of all 902 teachers. No Node, no server, no API key.
 
-```bash
-cp -r skill/ffcs-planner ~/.config/opencode/skill/ffcs-planner
+Take it from the site, or pull it straight into a terminal:
 
-cd skill/ffcs-planner
+```bash
+curl -fsSL https://<your-deployment>/ffcs-planner-skill.zip -o ffcs-skill.zip && unzip -o ffcs-skill.zip
+```
+
+The archive root is `ffcs-planner/`, which is the layout Claude and OpenCode expect. Upload the same
+zip on Claude web/desktop.
+
+```bash
+cd ffcs-planner
 python3 scripts/find.py --slot A1
 python3 scripts/find.py --teacher iyappan
 python3 scripts/solve.py timetable.example.json
