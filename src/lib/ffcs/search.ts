@@ -11,7 +11,7 @@ export type CourseSummary = {
   slots: string[];
 };
 
-export function summarise(course: CatalogCourse): CourseSummary {
+function summarise(course: CatalogCourse): CourseSummary {
   const slots = [...new Set(course.offerings.flatMap((offering) => offering.slots))].sort();
   const teachers = [...new Set(course.offerings.map((offering) => offering.faculty))].sort();
 
