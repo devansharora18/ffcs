@@ -1,11 +1,18 @@
-The files in this directory are vendored unmodified from:
+Vendored from CodeChefVIT/ffcs (MIT), at prod b2bafad with these open pull
+requests merged on top (28 Oct 2026):
 
-  https://github.com/CodeChefVIT/ffcs
-  commit b2bafad (2026-10-25)
+  #293  removed stale data, added SCOPE/AIML courses
+  #296  SCOPE_F: FCON, UCC, PCC, OEC
+  #297  SCE_F: UCC, PCC, OEC, CON  (+ SCE ('25 Batch) registered)
+  #298  SCORE_F: UCC_BYB, PCC_BYB, OEC, CON_BYB
 
-Copyright (c) 2025 CodeChef-VIT
-Licensed under the MIT License. See LICENSE in this directory.
+Where #293 and #296/#298 rewrote the same file, the newer PR's version was
+kept. Only src/data is vendored; no application code is used.
 
-data/catalog.vellore.json is a normalised derivative of this dataset:
-courses are re-keyed by code, offerings de-duplicated, whitespace collapsed,
-and course kinds derived from slot codes rather than the code suffix.
+The catalog in data/catalog.vellore.json is generated from this directory by
+`npm run catalog:import`.
+
+Local fixes for PR #298, which does not type-check as submitted:
+  - PCC_BYB.ts / UCC_BYB.ts exported `PCC` / `UCC`; renamed to match the
+    `PCC_BYB` / `UCC_BYB` imports in the same PR's index.ts.
+  - CON_BYB.ts was added but never registered; wired up as ConcentrationCourses.

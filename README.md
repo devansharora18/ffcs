@@ -80,7 +80,7 @@ verbatim, so a manual edit and an agent edit are the same mutation.
 ## The skill
 
 `skill/ffcs-planner/` is a standalone agent skill: a **Python** solver, the full catalog, and a
-greppable list of all 902 teachers. No Node, no server, no API key.
+greppable list of all 600 teachers. No Node, no server, no API key.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/devansharora18/ffcs/main/install.sh | bash
@@ -104,8 +104,8 @@ python3 scripts/solve.py timetable.example.json
 
 | File | Contents |
 |---|---|
-| `data/teachers.txt` | 3066 lines: `FACULTY \| CODE \| Title \| slots \| venue` |
-| `data/catalog.json` | 450 courses with every offering |
+| `data/teachers.txt` | 1755 lines: `FACULTY \| CODE \| Title \| slots \| venue` |
+| `data/catalog.json` | 151 courses with every offering |
 | `data/slots.json` | slot → day/start/end |
 | `scripts/solve.py` | deterministic solver, prints the grid and writes `*.solved.json` |
 | `scripts/find.py` | course, teacher and slot queries |
@@ -115,14 +115,15 @@ same request. Regenerate the skill's data after re-importing the catalog with `n
 
 ## Data
 
-The catalog is vendored from [CodeChefVIT/ffcs](https://github.com/CodeChefVIT/ffcs) at
-`b2bafad` (MIT, see `vendor/ffcs-data/LICENSE`) and normalised by `npm run catalog:import`:
+The catalog is vendored from [CodeChefVIT/ffcs](https://github.com/CodeChefVIT/ffcs) at `prod`
+plus open PRs 293/296/297/298 (MIT, see `vendor/ffcs-data/NOTICE`) and normalised by
+`npm run catalog:import`:
 
 | | |
 |---|---|
-| Courses | 450 |
-| Faculty offerings | 3,066 |
-| Faculty | 902 |
+| Courses | 151 |
+| Faculty offerings | 1,755 |
+| Faculty | 600 |
 | Unknown slot codes | 0 |
 | Courses with no scheduled hours | 11 |
 | Credits | `null` — the source has none |
