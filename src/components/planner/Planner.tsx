@@ -5,18 +5,14 @@ import { useState } from 'react';
 import { usePlanner } from '@/hooks/usePlanner';
 import { DAY_LABEL, clock } from '@/lib/ffcs/format';
 import { DAYS } from '@/lib/ffcs/grid';
-import type { CourseSummary } from '@/lib/ffcs/search';
-
 import AdSlot from '../ads/AdSlot';
 import Doodles from '../ui/Doodles';
 import { Panel } from '../ui/Panel';
-import AddCoursePanel from './AddCoursePanel';
-import Agenda from './Agenda';
 import Chat from './Chat';
-import CoursePicker from './CoursePicker';
+import CourseBuilder from './CourseBuilder';
 import ExportButton from './ExportButton';
 import SelectedCourses from './SelectedCourses';
-import Timetable from './Timetable';
+import SlotGrid from './SlotGrid';
 
 function Mark() {
   return (
@@ -36,8 +32,6 @@ export default function Planner({
   schools: string[];
 }) {
   const planner = usePlanner();
-  const [school, setSchool] = useState<string | null>(null);
-  const [selected, setSelected] = useState<CourseSummary | null>(null);
   const [agentOpen, setAgentOpen] = useState(false);
 
   const solution = planner.result?.solutions[0] ?? null;
@@ -64,7 +58,7 @@ export default function Planner({
     });
 
   return (
-    <div className="relative min-h-dvh pb-24 lg:pb-6">
+    <div className="relative min-h-dvh pb-6">
       <Doodles />
 
       <div className="relative mx-auto max-w-[1440px] px-3 py-3 sm:px-4 lg:px-6">
@@ -75,7 +69,7 @@ export default function Planner({
               <p className="truncate font-display text-lg font-extrabold leading-none tracking-tight">
                 FFCS planner
               </p>
-              <p className="mt-1 truncate font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+              <p className="mt-1 hidden truncate font-mono text-[10px] uppercase tracking-[0.16em] text-muted sm:block">
                 Vellore · {courseCount} courses
               </p>
             </div>
@@ -100,31 +94,26 @@ export default function Planner({
                 clear
               </button>
             )}
+            <button
+              type="button"
+              onClick={() => setAgentOpen(true)}
+              className="rounded-full bg-pink px-3 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-on-bright lg:hidden"
+            >
+              agent
+            </button>
           </div>
         </header>
 
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_388px] lg:gap-4">
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-4">
           <main className="min-w-0 space-y-3 lg:space-y-4">
-            <div className="grid gap-3 md:grid-cols-2 lg:gap-4">
-              <Panel title="Course preferences" mark="circle" bodyClassName="p-3">
-                <CoursePicker
-                  schools={schools}
-                  school={school}
-                  onSchool={setSchool}
-                  selected={selected}
-                  onSelect={setSelected}
-                />
-              </Panel>
-
-              <Panel title="Add course" mark="square" bodyClassName="p-3">
-                <AddCoursePanel course={selected} onAdd={planner.add} />
-              </Panel>
-            </div>
+            <Panel title="Course preferences" mark="circle" bodyClassName="p-3">
+              <CourseBuilder schools={schools} onAdd={planner.add} />
+            </Panel>
 
             <Panel
               title="Timetable"
               mark="triangle"
-              action={<ExportButton disabled={solution === null} />}
+              action={<ExportButton />}
               bodyClassName="p-0"
             >
               {(chips.length > 0 || unsolved.length > 0 || noArrangement) && (
@@ -161,11 +150,18 @@ export default function Planner({
                 </div>
               )}
 
-              <div className="hidden lg:block">
-                <Timetable result={planner.result} solving={planner.solving} />
-              </div>
-              <div className="lg:hidden">
-                <Agenda result={planner.result} />
+              <SlotGrid result={planner.result} solving={planner.solving} />
+
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-line px-3 py-2 font-mono text-[10px] text-muted">
+                <span className="flex items-center gap-1">
+                  <span className="inline-block h-2 w-2 rounded-[2px] bg-lime" aria-hidden /> theory
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="inline-block h-2 w-2 rounded-[2px] bg-purple" aria-hidden /> lab
+                </span>
+                <span className="ml-auto">
+                  {solution?.entries.length ?? 0} courses highlighted
+                </span>
               </div>
             </Panel>
 
@@ -196,18 +192,7 @@ export default function Planner({
         </div>
       </div>
 
-      {!agentOpen && (
-        <button
-          type="button"
-          onClick={() => setAgentOpen(true)}
-          className="fixed bottom-4 right-4 z-30 flex items-center gap-2 rounded-full bg-pink px-4 py-3 font-display text-sm font-bold text-on-bright transition-transform hover:scale-[1.03] active:scale-95 lg:hidden"
-        >
-          <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden>
-            <path d="M4 5h16v11H9l-5 4V5Z" />
-          </svg>
-          Ask the agent
-        </button>
-      )}
+
     </div>
   );
 }

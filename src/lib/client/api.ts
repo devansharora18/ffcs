@@ -34,6 +34,33 @@ export async function fetchOfferings(
   return payload.offerings;
 }
 
+export async function fetchCategories(
+  school: string | null,
+  signal?: AbortSignal,
+): Promise<string[]> {
+  const params = new URLSearchParams();
+  if (school) params.set('school', school);
+
+  const response = await fetch(`/api/facets?${params.toString()}`, { signal });
+  if (!response.ok) throw new Error('facets failed');
+  const payload = (await response.json()) as { categories: string[] };
+  return payload.categories;
+}
+
+export async function fetchCategoryCourses(
+  category: string,
+  school: string | null,
+  signal?: AbortSignal,
+): Promise<CourseSummary[]> {
+  const params = new URLSearchParams({ category, limit: '120' });
+  if (school) params.set('school', school);
+
+  const response = await fetch(`/api/courses?${params.toString()}`, { signal });
+  if (!response.ok) throw new Error('courses failed');
+  const payload = (await response.json()) as { results: CourseSummary[] };
+  return payload.results;
+}
+
 export async function solveState(state: TimetableState): Promise<SolveResult> {
   const response = await fetch('/api/timetable', {
     method: 'POST',

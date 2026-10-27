@@ -182,6 +182,34 @@ test('an avoided window rejects a lab that overlaps it', () => {
   assert.deepEqual(result.unsolved, ['A']);
 });
 
+test('a slot-only requirement filters offerings but lets the solver pick the teacher', () => {
+  const catalog = catalogOf(
+    course('A', [
+      { slots: ['A1'], faculty: 'X' },
+      { slots: ['C1'], faculty: 'Y' },
+    ]),
+  );
+
+  const result = solveTimetable(catalog, {
+    requirements: [{ courseCode: 'A', slots: ['A1'] }],
+    constraints: emptyConstraints(),
+  });
+
+  assert.equal(result.solutions[0].entries[0].faculty, 'X');
+  assert.deepEqual(result.solutions[0].entries[0].slots, ['A1']);
+});
+
+test('a slot-only requirement with no matching offering is unsolved', () => {
+  const catalog = catalogOf(course('A', [{ slots: ['A1'], faculty: 'X' }]));
+
+  const result = solveTimetable(catalog, {
+    requirements: [{ courseCode: 'A', slots: ['C1'] }],
+    constraints: emptyConstraints(),
+  });
+
+  assert.deepEqual(result.unsolved, ['A']);
+});
+
 test('the search stays bounded on a wide problem', () => {
   const slots = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'];
   const catalog = catalogOf(

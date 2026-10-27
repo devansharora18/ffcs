@@ -3,13 +3,12 @@
 import { toPng } from 'html-to-image';
 import { useState } from 'react';
 
-export default function ExportButton({ disabled }: { disabled: boolean }) {
+export default function ExportButton() {
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
 
   async function handleExport() {
-    const desktop = window.matchMedia('(min-width: 1024px)').matches;
-    const node = document.getElementById(desktop ? 'timetable-export' : 'agenda-export');
+    const node = document.getElementById('timetable-export');
     if (!node) return;
 
     setBusy(true);
@@ -34,7 +33,7 @@ export default function ExportButton({ disabled }: { disabled: boolean }) {
       <button
         type="button"
         onClick={handleExport}
-        disabled={disabled || busy}
+        disabled={busy}
         className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted transition-colors hover:border-lime hover:text-lime disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-line disabled:hover:text-muted"
       >
         {busy ? 'rendering…' : 'export png'}

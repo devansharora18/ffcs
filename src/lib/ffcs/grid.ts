@@ -18,13 +18,15 @@ export type SlotCell = {
   end: number;
 };
 
-type Row = {
+export type GridRow = {
   start: string;
   end: string;
   slots: Partial<Record<Day, string>>;
 };
 
-const THEORY_ROWS: Row[] = [
+type Row = GridRow;
+
+export const THEORY_ROWS: GridRow[] = [
   { start: '08:00', end: '08:50', slots: { MON: 'A1', TUE: 'B1', WED: 'C1', THU: 'D1', FRI: 'E1' } },
   { start: '09:00', end: '09:50', slots: { MON: 'F1', TUE: 'G1', WED: 'A1', THU: 'B1', FRI: 'C1' } },
   { start: '10:00', end: '10:50', slots: { MON: 'D1', TUE: 'E1', WED: 'F1', THU: 'G1', FRI: 'TA1' } },
@@ -35,10 +37,11 @@ const THEORY_ROWS: Row[] = [
   { start: '16:00', end: '16:50', slots: { MON: 'D2', TUE: 'E2', WED: 'F2', THU: 'G2', FRI: 'TA2' } },
   { start: '17:00', end: '17:50', slots: { MON: 'TB2', TUE: 'TC2', WED: 'TD2', THU: 'TE2', FRI: 'TF2' } },
   { start: '18:00', end: '18:50', slots: { MON: 'TG2', TUE: 'TAA2', WED: 'TBB2', THU: 'TCC2', FRI: 'TDD2' } },
+  { start: '18:51', end: '19:00', slots: {} },
   { start: '19:01', end: '19:50', slots: { MON: 'V3', TUE: 'V4', WED: 'V5', THU: 'V6', FRI: 'V7' } },
 ];
 
-const LAB_ROWS: Row[] = [
+export const LAB_ROWS: GridRow[] = [
   { start: '08:00', end: '08:50', slots: { MON: 'L1', TUE: 'L7', WED: 'L13', THU: 'L19', FRI: 'L25' } },
   { start: '08:51', end: '09:40', slots: { MON: 'L2', TUE: 'L8', WED: 'L14', THU: 'L20', FRI: 'L26' } },
   { start: '09:51', end: '10:40', slots: { MON: 'L3', TUE: 'L9', WED: 'L15', THU: 'L21', FRI: 'L27' } },

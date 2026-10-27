@@ -3,6 +3,7 @@ import test from 'node:test';
 
 import { catalog } from '../src/lib/ffcs/catalog-data';
 import type { Catalog, CatalogCourse } from '../src/lib/ffcs/catalog';
+import { categoriesIn, listByCategory } from '../src/lib/ffcs/search';
 import { applyOps } from '../src/lib/ffcs/ops';
 import { emptyState } from '../src/lib/ffcs/types';
 import { executeTool } from '../src/lib/agent/tools';
@@ -99,6 +100,19 @@ test('add_course accepts the course when the school matches', () => {
   );
   assert.equal(result.state.requirements.length, 1);
   assert.match(result.text, /SCORE/);
+});
+
+test('domain facets and the subject list agree', () => {
+  const categories = categoriesIn(catalog, 'SCORE');
+  assert.ok(categories.length > 0);
+
+  const courses = listByCategory(catalog, categories[0], 'SCORE');
+  assert.ok(courses.length > 0);
+  assert.ok(
+    courses.every((course) =>
+      course.schools.some((name) => name === 'SCORE' || name.startsWith('SCORE (')),
+    ),
+  );
 });
 
 test('who_teaches returns real faculty for a real slot', () => {

@@ -1,7 +1,7 @@
 import type { TimetableConstraints, TimetableState } from './types';
 
 export type StateOp =
-  | { op: 'add'; courseCode: string; offeringId?: string }
+  | { op: 'add'; courseCode: string; offeringId?: string; slots?: string[] }
   | { op: 'remove'; courseCode: string }
   | { op: 'constraints'; constraints: Partial<TimetableConstraints> };
 
@@ -32,7 +32,7 @@ export function applyOps(state: TimetableState, ops: StateOp[]): TimetableState 
           ...next,
           requirements: [
             ...next.requirements,
-            { courseCode: op.courseCode, offeringId: op.offeringId },
+            { courseCode: op.courseCode, offeringId: op.offeringId, slots: op.slots },
           ],
         };
         break;

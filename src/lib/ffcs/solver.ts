@@ -92,7 +92,13 @@ export function buildGroups(
 
     const ids = requirement.offeringId
       ? [requirement.offeringId]
-      : course.offerings.map((offering) => offering.id);
+      : course.offerings
+          .filter(
+            (offering) =>
+              !requirement.slots ||
+              offering.slots.join('+').toUpperCase() === requirement.slots.join('+').toUpperCase(),
+          )
+          .map((offering) => offering.id);
 
     const allowed = ids
       .map((id) => toPlaced(course, id))

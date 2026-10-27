@@ -15,6 +15,8 @@ export type Requirement = {
   courseCode: string;
   /** Pin one offering; omit to let the solver choose. */
   offeringId?: string;
+  /** Require this slot pattern, e.g. ['A1','TA1']; the solver still picks the teacher. */
+  slots?: string[];
 };
 
 export type TimetableState = {

@@ -80,8 +80,8 @@ export function usePlanner() {
   );
 
   const add = useCallback(
-    (code: string, offeringId?: string) => {
-      commit(applyOps(stateRef.current, [{ op: 'add', courseCode: code, offeringId }]));
+    (code: string, offeringId?: string, slots?: string[]) => {
+      commit(applyOps(stateRef.current, [{ op: 'add', courseCode: code, offeringId, slots }]));
     },
     [commit],
   );

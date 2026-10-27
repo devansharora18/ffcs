@@ -75,6 +75,35 @@ export type OfferingDetail = {
   cells: ReturnType<typeof slotCells>;
 };
 
+/** Courses in one category, optionally limited to one school. */
+export function listByCategory(
+  catalog: Catalog,
+  category: string,
+  school?: string | null,
+  limit = 80,
+): CourseSummary[] {
+  return catalog.courses
+    .filter((course) => course.categories.includes(category))
+    .filter(
+      (course) =>
+        !school ||
+        course.schools.some((name) => name === school || name.startsWith(`${school} (`)),
+    )
+    .sort((a, b) => a.code.localeCompare(b.code))
+    .slice(0, limit)
+    .map(summarise);
+}
+
+export function categoriesIn(catalog: Catalog, school?: string | null): string[] {
+  const pool = school
+    ? catalog.courses.filter((course) =>
+        course.schools.some((name) => name === school || name.startsWith(`${school} (`)),
+      )
+    : catalog.courses;
+
+  return [...new Set(pool.flatMap((course) => course.categories))].sort();
+}
+
 export function offeringsOf(catalog: Catalog, code: string): OfferingDetail[] | null {
   const needle = code.trim().toLowerCase();
   const course = catalog.courses.find((item) => item.code.toLowerCase() === needle);
