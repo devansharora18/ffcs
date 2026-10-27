@@ -10,8 +10,15 @@ export type ChatEvent =
   | { type: 'error'; message: string }
   | { type: 'unavailable' };
 
-export async function fetchCourses(query: string, signal?: AbortSignal): Promise<CourseSummary[]> {
-  const response = await fetch(`/api/courses?q=${encodeURIComponent(query)}`, { signal });
+export async function fetchCourses(
+  query: string,
+  school?: string | null,
+  signal?: AbortSignal,
+): Promise<CourseSummary[]> {
+  const params = new URLSearchParams({ q: query });
+  if (school) params.set('school', school);
+
+  const response = await fetch(`/api/courses?${params.toString()}`, { signal });
   if (!response.ok) throw new Error('search failed');
   const payload = (await response.json()) as { results: CourseSummary[] };
   return payload.results;

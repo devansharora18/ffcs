@@ -1,27 +1,46 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, sans-serif;
+  --font-sans: 'Archivo Variable', ui-sans-serif, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
-  --color-paper: oklch(0.985 0.004 90);
-  --color-ink: oklch(0.21 0.012 260);
-  --color-muted: oklch(0.52 0.012 260);
-  --color-line: oklch(0.89 0.006 90);
-  --color-signal: oklch(0.55 0.19 27);
+  --color-bg: #131316;
+  --color-panel: #1b1b1f;
+  --color-panel-2: #232329;
+  --color-line: #2e2e36;
+  --color-ink: #f3f2ed;
+  --color-muted: #9a9aa5;
+  --color-on-bright: #12120f;
+
+  --color-lime: #b8f24a;
+  --color-yellow: #ffd43a;
+  --color-blue: #7a96ff;
+  --color-purple: #b39dfb;
+  --color-pink: #ff5fa2;
+  --color-red: #ff6b6b;
+
+  --radius-panel: 1.125rem;
 }
 
 html,
 body {
-  background: var(--color-paper);
+  background: var(--color-bg);
   color: var(--color-ink);
 }
 
 ::selection {
-  background: oklch(0.55 0.19 27 / 0.18);
+  background: #b8f24a;
+  color: #12120f;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-signal);
+  outline: 2px solid var(--color-lime);
   outline-offset: 2px;
+}
+
+/* Dark scrollbars so panels do not show a bright strip. */
+* {
+  scrollbar-color: #3a3a44 transparent;
+  scrollbar-width: thin;
 }

@@ -23,14 +23,17 @@ export default function AdSlot() {
 
   if (!ads.client) {
     return (
-      <aside aria-label="sponsor slot" className="border-t border-line pt-3">
-        <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted">Sponsor slot</p>
-        <p className="mt-1 max-w-prose text-xs leading-relaxed text-muted">
+      <aside
+        aria-label="sponsor slot"
+        className="rounded-[var(--radius-panel)] border border-dashed border-line px-4 py-3"
+      >
+        <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">Sponsor slot</p>
+        <p className="mt-1 max-w-prose text-[11px] leading-relaxed text-muted">
           One placement under the timetable, shown while FFCS planning is open.
           {ads.contact ? (
             <>
               {' '}
-              <a className="underline decoration-line underline-offset-4 hover:decoration-ink" href={`mailto:${ads.contact}`}>
+              <a className="text-lime underline underline-offset-4" href={`mailto:${ads.contact}`}>
                 Ask about it
               </a>
               .
@@ -42,8 +45,11 @@ export default function AdSlot() {
   }
 
   return (
-    <aside aria-label="advertisement" className="border-t border-line pt-3">
-      <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted">Advertisement</p>
+    <aside
+      aria-label="advertisement"
+      className="rounded-[var(--radius-panel)] border border-line bg-panel px-4 py-3"
+    >
+      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">Advertisement</p>
       <ins
         className="adsbygoogle block"
         data-ad-client={ads.client}

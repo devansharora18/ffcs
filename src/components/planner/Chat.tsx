@@ -16,9 +16,10 @@ const SUGGESTIONS = [
 type Props = {
   state: TimetableState;
   onAgentState: (state: TimetableState, result: SolveResult) => void;
+  onClose?: () => void;
 };
 
-export default function Chat({ state, onAgentState }: Props) {
+export default function Chat({ state, onAgentState, onClose }: Props) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [busy, setBusy] = useState(false);
@@ -68,7 +69,10 @@ export default function Chat({ state, onAgentState }: Props) {
     let completed = false;
 
     try {
-      for await (const event of streamChat({ messages: history, state }, new AbortController().signal)) {
+      for await (const event of streamChat(
+        { messages: history, state },
+        new AbortController().signal,
+      )) {
         if (event.type === 'text') {
           received = true;
           setMessages((current) => {
@@ -111,29 +115,48 @@ export default function Chat({ state, onAgentState }: Props) {
 
   return (
     <div className="flex h-full min-h-0 flex-col">
-      <header className="border-b border-ink px-4 py-3">
-        <h2 className="font-mono text-[11px] uppercase tracking-[0.18em]">Agent</h2>
-        <p className="mt-1 text-xs leading-relaxed text-muted">
-          Ask who teaches a slot, or describe the timetable you want and change it in plain English.
-        </p>
+      <header className="flex items-start justify-between gap-3 border-b border-line px-4 py-3">
+        <div>
+          <h2 className="flex items-center gap-2 font-display text-[15px] font-bold tracking-tight">
+            Agent
+            <span
+              className={`inline-block h-1.5 w-1.5 rounded-full ${
+                status === 'ready' ? 'bg-lime' : status === 'offline' ? 'bg-red' : 'bg-muted'
+              }`}
+              aria-hidden
+            />
+          </h2>
+          <p className="mt-1 text-[11px] leading-relaxed text-muted">
+            Ask who teaches a slot, or describe the timetable you want.
+          </p>
+        </div>
+        {onClose && (
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-full border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-muted hover:border-red hover:text-red lg:hidden"
+          >
+            close
+          </button>
+        )}
       </header>
 
       {status === 'offline' && (
-        <p className="border-b border-signal bg-signal/5 px-4 py-2 text-xs">
+        <p className="border-b border-red/40 bg-red/10 px-4 py-2 text-[11px] text-red">
           Agent offline — add <code className="font-mono">OPENCODE_API_KEY</code> to .env and restart.
         </p>
       )}
 
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3">
+      <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-3 py-3">
         {messages.length === 0 && (
-          <div className="space-y-1">
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">Try</p>
+          <div className="space-y-1.5 px-1">
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">Try</p>
             {SUGGESTIONS.map((suggestion) => (
               <button
                 key={suggestion}
                 type="button"
                 onClick={() => void send(suggestion)}
-                className="block text-left text-sm underline decoration-line underline-offset-4 hover:decoration-ink"
+                className="block rounded-full border border-line px-3 py-1.5 text-left text-xs text-ink transition-colors hover:border-lime hover:text-lime"
               >
                 {suggestion}
               </button>
@@ -141,21 +164,27 @@ export default function Chat({ state, onAgentState }: Props) {
           </div>
         )}
 
-        {messages.map((message, index) => (
-          <article
-            key={`${message.role}-${index}`}
-            className={message.role === 'assistant' ? 'mt-3 border-l-2 border-line pl-3' : 'mt-3'}
-          >
-            <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted">
-              {message.role === 'user' ? 'you' : 'agent'}
-            </p>
-            <p className="whitespace-pre-wrap text-sm leading-relaxed">
-              {message.content || (busy ? '…' : '')}
-            </p>
-          </article>
-        ))}
+        {messages.map((message, index) =>
+          message.role === 'user' ? (
+            <article key={`u-${index}`} aria-label="You" className="flex justify-end">
+              <p className="max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-sm bg-lime px-3 py-2 text-[13px] leading-snug text-on-bright">
+                {message.content}
+              </p>
+            </article>
+          ) : (
+            <article key={`a-${index}`} aria-label="Agent">
+              <p className="max-w-[92%] whitespace-pre-wrap rounded-2xl rounded-bl-sm bg-panel-2 px-3 py-2 text-[13px] leading-relaxed">
+                {message.content || (busy ? '…' : '')}
+              </p>
+            </article>
+          ),
+        )}
 
-        {error && <p className="mt-3 font-mono text-[11px] text-signal">{error}</p>}
+        {error && (
+          <p className="rounded-xl border border-red/40 bg-red/10 px-3 py-2 font-mono text-[11px] text-red">
+            {error}
+          </p>
+        )}
         <div ref={endRef} />
       </div>
 
@@ -179,16 +208,16 @@ export default function Chat({ state, onAgentState }: Props) {
           disabled={status === 'offline' || busy}
           placeholder="no 8ams, and keep Tuesday free"
           aria-label="Message the agent"
-          className="w-full resize-none border border-line bg-white p-2 text-sm placeholder:text-muted/70 focus:border-ink focus:outline-none disabled:bg-line/20"
+          className="w-full resize-none rounded-xl border border-line bg-panel-2 p-2.5 text-[13px] placeholder:text-muted/70 focus:border-lime focus:outline-none disabled:opacity-60"
         />
-        <div className="mt-2 flex items-center justify-between">
+        <div className="mt-2 flex items-center justify-between gap-2">
           <span className="font-mono text-[10px] text-muted">
-            {busy ? 'thinking…' : 'enter to send · shift+enter for a line'}
+            {busy ? 'thinking…' : 'enter to send'}
           </span>
           <button
             type="submit"
             disabled={busy || status === 'offline' || input.trim().length === 0}
-            className="border border-ink px-3 py-1 font-mono text-[10px] uppercase tracking-wider hover:bg-ink hover:text-paper disabled:cursor-not-allowed disabled:border-line disabled:text-muted disabled:hover:bg-transparent"
+            className="rounded-full bg-lime px-4 py-1.5 font-display text-xs font-bold text-on-bright transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-line disabled:text-muted disabled:hover:scale-100"
           >
             send
           </button>

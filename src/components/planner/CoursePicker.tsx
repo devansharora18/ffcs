@@ -2,19 +2,21 @@
 
 import { useEffect, useState } from 'react';
 
-import { fetchCourses, fetchOfferings } from '@/lib/client/api';
-import type { CourseSummary, OfferingDetail } from '@/lib/ffcs/search';
+import { fetchCourses } from '@/lib/client/api';
+import type { CourseSummary } from '@/lib/ffcs/search';
 
 type Props = {
-  onAdd: (code: string, offeringId?: string) => void;
+  schools: string[];
+  school: string | null;
+  onSchool: (school: string | null) => void;
+  selected: CourseSummary | null;
+  onSelect: (course: CourseSummary) => void;
 };
 
-export default function CoursePicker({ onAdd }: Props) {
+export default function CoursePicker({ schools, school, onSchool, selected, onSelect }: Props) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<CourseSummary[]>([]);
   const [loading, setLoading] = useState(false);
-  const [open, setOpen] = useState<string | null>(null);
-  const [offerings, setOfferings] = useState<Record<string, OfferingDetail[]>>({});
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function CoursePicker({ onAdd }: Props) {
       setLoading(true);
       setError(null);
       try {
-        setResults(await fetchCourses(query.trim(), controller.signal));
+        setResults(await fetchCourses(query.trim(), school, controller.signal));
       } catch {
         if (!controller.signal.aborted) setError('Search failed. Try again.');
       } finally {
@@ -41,111 +43,88 @@ export default function CoursePicker({ onAdd }: Props) {
       clearTimeout(timer);
       controller.abort();
     };
-  }, [query]);
-
-  async function toggle(code: string) {
-    if (open === code) {
-      setOpen(null);
-      return;
-    }
-
-    setOpen(code);
-    if (offerings[code]) return;
-
-    try {
-      setOfferings((current) => ({ ...current, [code]: [] }));
-      const detail = await fetchOfferings(code);
-      setOfferings((current) => ({ ...current, [code]: detail }));
-    } catch {
-      setError('Could not load teachers.');
-    }
-  }
+  }, [query, school]);
 
   return (
-    <section>
-      <label
-        htmlFor="course-search"
-        className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted"
-      >
-        Find a course
-      </label>
-      <input
-        id="course-search"
-        type="search"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder="code, title or teacher"
-        autoComplete="off"
-        className="mt-1 w-full border-b border-ink bg-transparent py-2 text-lg placeholder:text-muted/70 focus:border-signal focus:outline-none"
-      />
+    <div className="space-y-3">
+      <div className="-mx-1 flex flex-wrap gap-1.5 px-1 pb-1">
+        {[null, ...schools].map((item) => {
+          const active = school === item;
+          return (
+            <button
+              key={item ?? 'all'}
+              type="button"
+              onClick={() => onSchool(item)}
+              aria-pressed={active}
+              className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] transition-colors ${
+                active
+                  ? 'border-lime bg-lime text-on-bright'
+                  : 'border-line text-muted hover:border-purple hover:text-ink'
+              }`}
+            >
+              {item ?? 'All'}
+            </button>
+          );
+        })}
+      </div>
 
-      {loading && <p className="pt-2 font-mono text-[11px] text-muted">searching…</p>}
-      {error && <p className="pt-2 font-mono text-[11px] text-signal">{error}</p>}
+      <div className="relative">
+        <input
+          type="search"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Search code, title or teacher"
+          autoComplete="off"
+          aria-label="Search courses"
+          className="w-full rounded-xl border border-line bg-panel-2 px-3 py-2.5 text-sm placeholder:text-muted/70 focus:border-lime focus:outline-none"
+        />
+        {loading && (
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 font-mono text-[10px] text-muted">
+            …
+          </span>
+        )}
+      </div>
 
-      <ul className="mt-1 divide-y divide-line">
-        {results.map((course) => (
-          <li key={course.code}>
-            <div className="flex items-baseline gap-3 py-2">
-              <div className="min-w-0 flex-1">
-                <p className="font-mono text-[11px]">
-                  {course.code}
-                  <span className="ml-2 text-muted">{course.kind}</span>
-                </p>
-                <p className="truncate text-sm">{course.title}</p>
-                <p className="truncate font-mono text-[10px] text-muted">
-                  {course.teachers.join(' · ')}
-                </p>
-              </div>
+      {error && <p className="font-mono text-[11px] text-red">{error}</p>}
+
+      <ul className="max-h-[300px] space-y-1 overflow-y-auto pr-1">
+        {results.map((course) => {
+          const active = selected?.code === course.code;
+          return (
+            <li key={course.code}>
               <button
                 type="button"
-                onClick={() => toggle(course.code)}
-                className="shrink-0 text-xs underline decoration-line underline-offset-4 hover:decoration-ink"
-                aria-expanded={open === course.code}
+                onClick={() => onSelect(course)}
+                aria-pressed={active}
+                className={`w-full rounded-xl border px-3 py-2 text-left transition-colors ${
+                  active
+                    ? 'border-purple bg-purple/10'
+                    : 'border-transparent hover:border-line hover:bg-panel-2'
+                }`}
               >
-                teachers
+                <span className="flex items-baseline gap-2">
+                  <span className="rounded bg-purple/20 px-1.5 py-0.5 font-mono text-[10px] text-purple">
+                    {course.code}
+                  </span>
+                  <span className="min-w-0 flex-1 truncate text-[13px]">{course.title}</span>
+                </span>
+                <span className="mt-1 block truncate font-mono text-[10px] text-muted">
+                  {course.kind} · {course.teachers.join(', ')}
+                </span>
               </button>
-              <button
-                type="button"
-                onClick={() => onAdd(course.code)}
-                className="shrink-0 border border-ink px-2 py-1 font-mono text-[10px] uppercase tracking-wider hover:bg-ink hover:text-paper"
-              >
-                add
-              </button>
-            </div>
-
-            {open === course.code && (
-              <ul className="mb-2 border-l border-line pl-3">
-                {(offerings[course.code] ?? []).map((offering) => (
-                  <li
-                    key={offering.id}
-                    className="flex items-baseline gap-3 border-b border-line/60 py-1.5 last:border-0"
-                  >
-                    <span className="min-w-0 flex-1 truncate font-mono text-[10px]">
-                      {offering.slots}
-                      <span className="ml-2 text-muted">{offering.venue ?? '—'}</span>
-                    </span>
-                    <span className="max-w-[45%] truncate text-xs">{offering.faculty}</span>
-                    <button
-                      type="button"
-                      onClick={() => onAdd(course.code, offering.id)}
-                      className="shrink-0 font-mono text-[10px] uppercase tracking-wider underline decoration-line underline-offset-4 hover:decoration-ink"
-                    >
-                      pin
-                    </button>
-                  </li>
-                ))}
-                {offerings[course.code]?.length === 0 && (
-                  <li className="py-1 font-mono text-[10px] text-muted">loading teachers…</li>
-                )}
-              </ul>
-            )}
-          </li>
-        ))}
+            </li>
+          );
+        })}
       </ul>
 
       {query.trim().length >= 2 && !loading && results.length === 0 && !error && (
-        <p className="pt-2 text-sm text-muted">No course matches that.</p>
+        <p className="px-1 text-xs text-muted">Nothing matches that.</p>
       )}
-    </section>
+      {query.trim().length < 2 && (
+        <p className="px-1 text-xs text-muted">
+          Type at least two characters. {school ? `Filtered to ${school}.` : 'All schools.'}
+        </p>
+      )}
+    </div>
   );
 }

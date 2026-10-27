@@ -8,7 +8,7 @@ export default function Agenda({ result }: { result: SolveResult | null }) {
   const entries = result?.solutions[0]?.entries ?? [];
 
   return (
-    <div id="agenda-export" className="bg-white">
+    <div id="agenda-export" className="space-y-2 bg-panel p-3">
       {DAYS.map((day) => {
         const blocks = entries
           .flatMap((entry) =>
@@ -19,22 +19,23 @@ export default function Agenda({ result }: { result: SolveResult | null }) {
         if (blocks.length === 0) return null;
 
         return (
-          <section key={day} className="border-t border-line py-3">
+          <section key={day} className="rounded-xl border border-line bg-panel-2 p-2.5">
             <h3 className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
               {DAY_LABEL[day]}
             </h3>
-            <ul className="mt-1">
+            <ul className="mt-1.5 space-y-2">
               {blocks.map(({ entry, cell }) => (
-                <li key={`${entry.id}-${cell.start}`} className="flex gap-3 py-1">
-                  <span className="w-[92px] shrink-0 font-mono text-[11px] tabular-nums">
+                <li key={`${entry.id}-${cell.start}`} className="flex gap-2">
+                  <span className="w-[86px] shrink-0 font-mono text-[10px] tabular-nums text-muted">
                     {clock(cell.start)}–{clock(cell.end)}
                   </span>
                   <div className="min-w-0">
-                    <p className="font-mono text-[11px]">{entry.code}</p>
-                    <p className="truncate text-sm">{entry.title}</p>
-                    <p className="truncate text-xs text-muted">
-                      {entry.faculty}
-                      {entry.venue ? ` · ${entry.venue}` : ''}
+                    <span className="rounded bg-purple px-1 font-mono text-[9px] text-on-bright">
+                      {entry.slots.join('+')}
+                    </span>
+                    <p className="mt-0.5 truncate text-[13px] leading-tight">{entry.title}</p>
+                    <p className="truncate font-mono text-[10px] text-muted">
+                      {entry.code} · {entry.faculty}
                     </p>
                   </div>
                 </li>
@@ -45,7 +46,7 @@ export default function Agenda({ result }: { result: SolveResult | null }) {
       })}
 
       {entries.length === 0 && (
-        <p className="border-t border-line py-6 text-sm text-muted">
+        <p className="px-2 py-10 text-center text-xs text-muted">
           Nothing scheduled. Ask the agent or add a course.
         </p>
       )}

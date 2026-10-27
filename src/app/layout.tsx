@@ -1,4 +1,5 @@
 import '@fontsource-variable/archivo';
+import '@fontsource-variable/bricolage-grotesque';
 import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import type { Metadata, Viewport } from 'next';
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#fbfaf8',
+  themeColor: '#131316',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

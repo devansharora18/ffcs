@@ -16,7 +16,7 @@ export default function ExportButton({ disabled }: { disabled: boolean }) {
     setFailed(false);
 
     try {
-      const dataUrl = await toPng(node, { pixelRatio: 2, backgroundColor: '#ffffff' });
+      const dataUrl = await toPng(node, { pixelRatio: 2, backgroundColor: '#1b1b1f' });
       const link = document.createElement('a');
       link.download = 'ffcs-timetable.png';
       link.href = dataUrl;
@@ -30,12 +30,12 @@ export default function ExportButton({ disabled }: { disabled: boolean }) {
 
   return (
     <span className="flex items-center gap-2">
-      {failed && <span className="font-mono text-[10px] text-signal">export failed</span>}
+      {failed && <span className="font-mono text-[10px] text-red">export failed</span>}
       <button
         type="button"
         onClick={handleExport}
         disabled={disabled || busy}
-        className="border border-ink px-2 py-1 font-mono text-[10px] uppercase tracking-wider hover:bg-ink hover:text-paper disabled:cursor-not-allowed disabled:border-line disabled:text-muted disabled:hover:bg-transparent"
+        className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted transition-colors hover:border-lime hover:text-lime disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-line disabled:hover:text-muted"
       >
         {busy ? 'rendering…' : 'export png'}
       </button>
