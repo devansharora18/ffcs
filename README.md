@@ -53,11 +53,12 @@ not provider-prefixed. Verify any change with `npm run agent:check`.
 |---|---|
 | `npm run dev` | Dev server |
 | `npm run build` | Production build |
-| `npm test` | 38 tests over grid, conflicts, solver, tools and the chat route |
+| `npm test` | 45 tests over grid, conflicts, solver, tools, chat route and python parity |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run agent:check` | Verifies key, model id and tool calling against the inference API |
 | `npm run catalog:import` | Rebuilds `data/catalog.vellore.json` from `vendor/ffcs-data` |
-| `npm run solve -- timetable.json` | Solves a timetable from JSON, no server or key needed |
+| `npm run solve -- timetable.json` | Solves a timetable with the TypeScript engine |
+| `npm run skill:sync` | Regenerates the skill's catalog, slot map and teacher list |
 
 ## How it works
 
@@ -77,14 +78,28 @@ verbatim, so a manual edit and an agent edit are the same mutation.
 
 ## The skill
 
-`skill/ffcs-planner/` is a standalone skill for OpenCode/Claude-style agents. It documents the
-catalog, the request format and the slot gotchas, and points at the CLI:
+`skill/ffcs-planner/` is a standalone agent skill: a **Python** solver, the full catalog, and a
+greppable list of all 902 teachers. No Node, no server, no API key.
 
 ```bash
 cp -r skill/ffcs-planner ~/.config/opencode/skill/ffcs-planner
+
+cd skill/ffcs-planner
+python3 scripts/find.py --slot A1
+python3 scripts/find.py --teacher iyappan
+python3 scripts/solve.py timetable.example.json
 ```
 
-Copy that folder next to a checkout, or run it inside this repo. No server, no API key.
+| File | Contents |
+|---|---|
+| `data/teachers.txt` | 3066 lines: `FACULTY \| CODE \| Title \| slots \| venue` |
+| `data/catalog.json` | 450 courses with every offering |
+| `data/slots.json` | slot → day/start/end |
+| `scripts/solve.py` | deterministic solver, prints the grid and writes `*.solved.json` |
+| `scripts/find.py` | course, teacher and slot queries |
+
+The Python and TypeScript solvers are verified to return identical arrangements and scores for the
+same request. Regenerate the skill's data after re-importing the catalog with `npm run skill:sync`.
 
 ## Data
 

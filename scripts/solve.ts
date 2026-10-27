@@ -32,11 +32,20 @@ if (!Array.isArray(request.requirements)) {
   fail('timetable.json needs a "requirements" array, e.g. [{"courseCode":"BCSE202L"}]');
 }
 
+const toMinutes = (value: string | number): number => {
+  if (typeof value === 'number') return value;
+  const [hours, minutes] = value.split(':').map(Number);
+  return hours * 60 + minutes;
+};
+
 const state: TimetableState = {
   requirements: request.requirements,
   constraints: {
     avoidDays: request.constraints?.avoidDays ?? [],
-    avoidWindows: request.constraints?.avoidWindows ?? [],
+    avoidWindows: (request.constraints?.avoidWindows ?? []).map((window) => ({
+      start: toMinutes(window.start),
+      end: toMinutes(window.end),
+    })),
     preferredFaculty: request.constraints?.preferredFaculty ?? [],
     avoidedFaculty: request.constraints?.avoidedFaculty ?? [],
   },

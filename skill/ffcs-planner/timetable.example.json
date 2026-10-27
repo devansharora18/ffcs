@@ -7,8 +7,8 @@
   ],
   "constraints": {
     "avoidDays": [],
-    "avoidWindows": [{ "start": "08:00", "end": "09:00" }],
-    "preferredFaculty": [],
+    "avoidWindows": [],
+    "preferredFaculty": ["IYAPPAN P"],
     "avoidedFaculty": []
   }
 }

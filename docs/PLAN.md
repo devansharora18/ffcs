@@ -16,7 +16,7 @@ Built in 13 steps. Each one is a commit.
 | 10 | PNG export | done |
 | 11 | Ad slot, metadata, monetization model | done |
 | 12 | Hardening: types, tests, build, docs | done |
-| 13 | Standalone solver CLI + installable skill | done |
+| 13 | Standalone Python solver, teacher list and installable skill | done |
 
 ## Not in scope for v1
 
