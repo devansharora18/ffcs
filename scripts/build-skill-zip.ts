@@ -23,18 +23,22 @@ function walk(directory: string): string[] {
   });
 }
 
-const files: Record<string, Uint8Array> = {};
+// Fixed timestamp: same content must produce a byte-identical archive, or the
+// committed zip churns on every build.
+const MTIME = new Date('2026-01-01T00:00:00Z');
+
+const files: Record<string, [Uint8Array, { mtime: Date }]> = {};
 
 for (const path of walk(SOURCE)) {
   const name = relative(SOURCE, path);
   if (SKIP.test(name)) continue;
-  files[`${PREFIX}/${name}`] = new Uint8Array(readFileSync(path));
+  files[`${PREFIX}/${name}`] = [new Uint8Array(readFileSync(path)), { mtime: MTIME }];
 }
 
 mkdirSync(resolve('public'), { recursive: true });
 writeFileSync(TARGET, zipSync(files, { level: 9 }));
 
-const bytes = Object.values(files).reduce((total, file) => total + file.length, 0);
+const bytes = Object.values(files).reduce((total, [file]) => total + file.length, 0);
 console.log(
   `skill zip   ${Object.keys(files).length} files, ${(bytes / 1024).toFixed(0)} KB raw → ${TARGET}`,
 );
