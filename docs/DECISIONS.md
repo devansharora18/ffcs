@@ -36,3 +36,10 @@ Assumptions made while building, with the reason. Change one and the diff is vis
 14. **Chat history is client-side, last 40 messages.** Only the last 12 are sent per turn.
 15. **No offline mode.** The solver runs server-side so the 604 KB catalog never enters the client
     bundle.
+16. **Community FFCS conventions are soft rules, not hard filters.** Same teacher for theory+lab
+    (+80), theory/lab in opposite halves (+30), one exam side per week (−18 per minority course),
+    one building (−6 per extra). Encoding them as hard constraints would make some real requests
+    unsolvable, and students do accept a mixed week when they must.
+17. **Course school is data, not a code prefix.** `BITE303L` is SCORE-only, `BCSE303L` is shared
+    SCOPE+SCORE. The agent must read `schools` from the tool result; both the tool and the skill
+    enforce this.

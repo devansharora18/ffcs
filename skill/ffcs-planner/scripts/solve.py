@@ -10,6 +10,7 @@ and writes <name>.solved.json next to the input. No network, no dependencies.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -19,7 +20,13 @@ WEIGHTS = {
     "day": 12.0,
     "early": 0.25,
     "late": 0.25,
+    "same_teacher": 80.0,
+    "split_day": 30.0,
+    "same_half": 20.0,
+    "side_conflict": 18.0,
+    "venue_spread": 6.0,
 }
+LAB_SLOT = re.compile(r"^L\d+$")
 EARLY_CUTOFF = 9 * 60
 LATE_CUTOFF = 17 * 60
 DEFAULT_LIMIT = 5
@@ -97,6 +104,36 @@ def gap_minutes(entries: list[dict]) -> int:
     return gaps
 
 
+def base_code(code: str) -> str:
+    return re.sub(r"[LPE]$", "", code)
+
+
+def is_lab_entry(entry: dict) -> bool:
+    return bool(entry["slots"]) and all(LAB_SLOT.match(slot) for slot in entry["slots"])
+
+
+def half_of(entry: dict) -> str:
+    if not entry["cells"]:
+        return "mixed"
+    if all(cell[1] < 13 * 60 for cell in entry["cells"]):
+        return "morning"
+    if all(cell[1] >= 13 * 60 for cell in entry["cells"]):
+        return "afternoon"
+    return "mixed"
+
+
+def side_of(entry: dict) -> str | None:
+    for slot in entry["slots"]:
+        if re.search(r"[12]$", slot):
+            return "1" if slot.endswith("1") else "2"
+    return None
+
+
+def venue_prefix(venue: str | None) -> str | None:
+    match = re.match(r"^[A-Z]+", venue or "")
+    return match.group(0) if match else None
+
+
 def score(entries: list[dict], constraints: dict) -> dict:
     preferred = {name.strip().lower() for name in constraints["preferredFaculty"]}
     days = set()
@@ -114,12 +151,53 @@ def score(entries: list[dict], constraints: dict) -> dict:
             if end > LATE_CUTOFF:
                 late += end - LATE_CUTOFF
 
+    pairs: dict[str, dict] = {}
+    for entry in entries:
+        bucket = pairs.setdefault(base_code(entry["code"]), {})
+        if is_lab_entry(entry):
+            bucket["lab"] = entry
+        else:
+            bucket["theory"] = entry
+
+    same_teacher = 0.0
+    split_day = 0.0
+    for bucket in pairs.values():
+        theory = bucket.get("theory")
+        lab = bucket.get("lab")
+        if not theory or not lab:
+            continue
+
+        if theory["faculty"].strip().lower() == lab["faculty"].strip().lower():
+            same_teacher += WEIGHTS["same_teacher"]
+
+        theory_half = half_of(theory)
+        lab_half = half_of(lab)
+        if theory_half != "mixed" and lab_half != "mixed":
+            split_day += -WEIGHTS["same_half"] if theory_half == lab_half else WEIGHTS["split_day"]
+
+    sides = {"1": 0, "2": 0}
+    for entry in entries:
+        if is_lab_entry(entry):
+            continue
+        side = side_of(entry)
+        if side:
+            sides[side] += 1
+    exam_side = -min(sides["1"], sides["2"]) * WEIGHTS["side_conflict"]
+
+    venues = {venue_prefix(entry["venue"]) for entry in entries}
+    venues.discard(None)
+    venue = -max(0, len(venues) - 1) * WEIGHTS["venue_spread"]
+
     parts = {
         "preferredFaculty": round(hits * WEIGHTS["preferred"], 3),
         "gaps": round(-gap_minutes(entries) * WEIGHTS["gap"], 3),
         "days": round(-len(days) * WEIGHTS["day"], 3),
         "earliness": round(-early * WEIGHTS["early"], 3),
         "lateness": round(-late * WEIGHTS["late"], 3),
+        "sameTeacher": round(same_teacher, 3),
+        "splitDay": round(split_day, 3),
+        "examSide": round(exam_side, 3),
+        "venue": round(venue, 3),
     }
     total = round(sum(parts.values()), 3)
     if total == 0:

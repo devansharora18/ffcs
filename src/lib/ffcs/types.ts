@@ -54,6 +54,14 @@ export type ScoreParts = {
   days: number;
   earliness: number;
   lateness: number;
+  /** Same teacher taught the theory and the lab of a subject. */
+  sameTeacher: number;
+  /** Theory and lab fell in opposite halves of the day. */
+  splitDay: number;
+  /** Penalty for mixing A1/B1 with A2/B2, which stacks FAT exams. */
+  examSide: number;
+  /** Penalty for spreading classes across buildings. */
+  venue: number;
 };
 
 export type Solution = {

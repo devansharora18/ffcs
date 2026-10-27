@@ -25,6 +25,7 @@ def main() -> int:
     parser.add_argument("query", nargs="?", default="", help="course code or title fragment")
     parser.add_argument("--teacher", help="faculty name fragment")
     parser.add_argument("--slot", help="slot code, e.g. A1 or L3")
+    parser.add_argument("--school", help="filter by school, e.g. SCORE")
     args = parser.parse_args()
 
     catalog = load("catalog.json")
@@ -82,7 +83,11 @@ def main() -> int:
     matches = [
         course
         for course in catalog["courses"]
-        if needle in course["code"].lower() or needle in course["title"].lower()
+        if (needle in course["code"].lower() or needle in course["title"].lower())
+        and (
+            not args.school
+            or any(args.school.lower() in name.lower() for name in course["schools"])
+        )
     ]
     if not matches:
         print(f"no course matches {args.query!r}")

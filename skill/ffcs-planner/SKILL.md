@@ -72,6 +72,41 @@ Never invent a course code, slot or faculty name. Every code you use must come f
 | `preferredFaculty` | Soft bonus (+50 per course). |
 | `avoidedFaculty` | Hard filter. |
 
+## VIT conventions the solver applies
+
+These are soft rules: they change the ranking, so a forced mixed timetable still comes back — just
+with a lower score. Priority order is teacher, then halves, then exams, then buildings.
+
+| Rule | Weight |
+|---|---|
+| Theory and lab of the same subject use the **same teacher** | +80 per pair |
+| Theory and lab sit in **opposite halves** of the day | +30 per pair |
+| Theory and lab land in the **same half** | −20 per pair |
+| A week stays on one **exam side** (all A1/B1…, or all A2/B2…) | −18 per course on the minority side |
+| Classes cluster in **one building** | −6 per extra building |
+| Fewer days, smaller gaps, no early starts, no late finishes | see the score breakdown |
+
+Why the exam side matters: FAT exams follow the slot family, so mixing A1 with A2 can put two exams
+on the same day. Keep a week on one side when you can.
+
+Why halves matter: the normal FFCS week is morning theory + afternoon labs, or the reverse. A
+theory in the morning with its lab also in the morning is legal but usually means clashes elsewhere.
+
+When the same teacher is impossible (the catalog has no shared offering), say so explicitly and show
+which pair you used instead. Never silently swap the teacher.
+
+## School codes are not guessable
+
+Every course prints its schools. Check them before adding.
+
+```bash
+python3 scripts/find.py --school SCORE "operating systems"
+```
+
+`BITE303L/P`, `BITE305L/P`, `BITE306L` and `BITE403L/P` are **SCORE**. `BCSE303L/P` is shared
+SCOPE+SCORE. Never infer the school from the code prefix, and never tell a student a SCOPE code is
+theirs without checking.
+
 ## Rules the solver enforces
 
 - **Theory hours are 50 minutes; labs are 2-hour blocks.** `L1+L2` runs 08:00–09:40 and clashes

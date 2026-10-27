@@ -21,6 +21,16 @@ export const WEIGHTS = {
   dayUsed: 12,
   earlyMinute: 0.25,
   lateMinute: 0.25,
+  /** Same teacher for the theory and lab of one subject. */
+  sameTeacher: 80,
+  /** Theory in one half of the day, lab in the other. */
+  splitDay: 30,
+  /** Penalty when theory and lab land in the same half. */
+  sameHalf: 20,
+  /** Courses on the A1/B1 side vs the A2/B2 side (FAT exam days collide). */
+  sideConflict: 18,
+  /** Each extra building the week sends you to. */
+  venueSpread: 6,
 } as const;
 
 const EARLY_CUTOFF = 9 * 60;
@@ -132,6 +142,29 @@ export function buildGroups(
 
 const round = (value: number) => (Object.is(value, -0) ? 0 : Number(value.toFixed(3)));
 
+const baseCode = (code: string) => code.replace(/[LPE]$/, '');
+const isLabEntry = (entry: PlacedOffering) =>
+  entry.slots.length > 0 && entry.slots.every((slot) => /^L\d+$/.test(slot));
+
+type Half = 'morning' | 'afternoon' | 'mixed';
+
+function halfOf(entry: PlacedOffering): Half {
+  if (entry.cells.length === 0) return 'mixed';
+  if (entry.cells.every((cell) => cell.start < 13 * 60)) return 'morning';
+  if (entry.cells.every((cell) => cell.start >= 13 * 60)) return 'afternoon';
+  return 'mixed';
+}
+
+function sideOf(entry: PlacedOffering): '1' | '2' | null {
+  const slot = entry.slots.find((code) => /[12]$/.test(code));
+  if (!slot) return null;
+  return slot.endsWith('1') ? '1' : '2';
+}
+
+function venuePrefix(venue: string | null): string | null {
+  return venue?.match(/^[A-Z]+/)?.[0] ?? null;
+}
+
 function score(entries: PlacedOffering[], constraints: TimetableConstraints): Solution {
   const preferred = new Set(constraints.preferredFaculty.map((name) => name.trim().toLowerCase()));
   const days = new Set<number>();
@@ -148,12 +181,53 @@ function score(entries: PlacedOffering[], constraints: TimetableConstraints): So
     }
   }
 
+  // Theory/lab pairs of the same subject, matched by base code.
+  const pairs = new Map<string, { theory?: PlacedOffering; lab?: PlacedOffering }>();
+  for (const entry of entries) {
+    const bucket = pairs.get(baseCode(entry.code)) ?? {};
+    if (isLabEntry(entry)) bucket.lab = entry;
+    else bucket.theory = entry;
+    pairs.set(baseCode(entry.code), bucket);
+  }
+
+  let sameTeacher = 0;
+  let splitDay = 0;
+  for (const { theory, lab } of pairs.values()) {
+    if (!theory || !lab) continue;
+
+    if (theory.faculty.trim().toLowerCase() === lab.faculty.trim().toLowerCase()) {
+      sameTeacher += WEIGHTS.sameTeacher;
+    }
+
+    const theoryHalf = halfOf(theory);
+    const labHalf = halfOf(lab);
+    if (theoryHalf !== 'mixed' && labHalf !== 'mixed') {
+      splitDay += theoryHalf === labHalf ? -WEIGHTS.sameHalf : WEIGHTS.splitDay;
+    }
+  }
+
+  // FAT exams follow the slot family: mixing A1 with A2 stacks exams on one day.
+  const sides = { '1': 0, '2': 0 };
+  for (const entry of entries) {
+    if (isLabEntry(entry)) continue;
+    const side = sideOf(entry);
+    if (side) sides[side] += 1;
+  }
+  const examSide = -Math.min(sides['1'], sides['2']) * WEIGHTS.sideConflict;
+
+  const venues = new Set(entries.map((entry) => venuePrefix(entry.venue)).filter(Boolean));
+  const venue = -Math.max(0, venues.size - 1) * WEIGHTS.venueSpread;
+
   const parts: ScoreParts = {
     preferredFaculty: round(preferredHits * WEIGHTS.preferredFaculty),
     gaps: round(-gapMinutes(entries) * WEIGHTS.gapMinute),
     days: round(-days.size * WEIGHTS.dayUsed),
     earliness: round(-early * WEIGHTS.earlyMinute),
     lateness: round(-late * WEIGHTS.lateMinute),
+    sameTeacher: round(sameTeacher),
+    splitDay: round(splitDay),
+    examSide: round(examSide),
+    venue: round(venue),
   };
 
   const total = Object.values(parts).reduce((sum, value) => sum + value, 0);

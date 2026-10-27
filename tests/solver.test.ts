@@ -210,6 +210,61 @@ test('a slot-only requirement with no matching offering is unsolved', () => {
   assert.deepEqual(result.unsolved, ['A']);
 });
 
+test('theory and lab of one subject pick the same teacher when possible', () => {
+  const catalog = catalogOf(
+    course('BCSE900L', [
+      { slots: ['A1'], faculty: 'X' },
+      { slots: ['C1'], faculty: 'Y' },
+    ]),
+    course('BCSE900P', [
+      { slots: ['L3', 'L4'], faculty: 'Y' },
+      { slots: ['L31', 'L32'], faculty: 'X' },
+    ]),
+  );
+
+  const result = solveTimetable(catalog, stateWith(['BCSE900L', 'BCSE900P']));
+  const theory = result.solutions[0].entries.find((entry) => entry.code === 'BCSE900L');
+  const lab = result.solutions[0].entries.find((entry) => entry.code === 'BCSE900P');
+
+  assert.ok(theory && lab);
+  assert.equal(theory.faculty, lab.faculty);
+  assert.ok(result.solutions[0].parts.sameTeacher > 0);
+});
+
+test('a lab in the other half of the day beats one in the same half', () => {
+  const catalog = catalogOf(
+    course('BCSE901L', [{ slots: ['A1'], faculty: 'X' }]),
+    course('BCSE901P', [
+      { slots: ['L3', 'L4'], faculty: 'X' },
+      { slots: ['L31', 'L32'], faculty: 'X' },
+    ]),
+  );
+
+  const result = solveTimetable(catalog, stateWith(['BCSE901L', 'BCSE901P']));
+  const lab = result.solutions[0].entries.find((entry) => entry.code === 'BCSE901P');
+
+  assert.deepEqual(lab?.slots, ['L31', 'L32']);
+});
+
+test('a week stays on one exam side instead of mixing A1 with B2', () => {
+  const catalog = catalogOf(
+    course('BCSE902L', [
+      { slots: ['A1'], faculty: 'X' },
+      { slots: ['A2'], faculty: 'X' },
+    ]),
+    course('BCSE903L', [
+      { slots: ['B1'], faculty: 'Y' },
+      { slots: ['B2'], faculty: 'Y' },
+    ]),
+  );
+
+  const result = solveTimetable(catalog, stateWith(['BCSE902L', 'BCSE903L']));
+  const sides = result.solutions[0].entries.map((entry) => entry.slots[0].slice(-1));
+
+  assert.equal(sides[0], sides[1]);
+  assert.equal(result.solutions[0].parts.examSide, 0);
+});
+
 test('the search stays bounded on a wide problem', () => {
   const slots = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'];
   const catalog = catalogOf(

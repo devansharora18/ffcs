@@ -73,7 +73,8 @@ verbatim, so a manual edit and an agent edit are the same mutation.
 - `src/lib/ffcs/grid.ts` — slots as minute intervals; theory and lab periods are not aligned.
 - `src/lib/ffcs/conflicts.ts` — overlap detection and hard constraints.
 - `src/lib/ffcs/solver.ts` — branches on distinct slot patterns, not on faculty variants, then
-  ranks by preferred faculty, gaps, days used and early/late hours.
+  ranks by preferred faculty, same teacher for theory+lab, theory/lab split across halves, exam
+  side, buildings, gaps, days used and early/late hours.
 - `src/lib/agent/tools.ts` — the model's only way to touch the timetable.
 
 ## The skill
