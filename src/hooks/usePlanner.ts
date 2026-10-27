@@ -130,6 +130,19 @@ export function usePlanner() {
     setResult(null);
   }, []);
 
+  const addMany = useCallback(
+    (codes: string[]) => {
+      if (codes.length === 0) return;
+      commit(
+        applyOps(
+          stateRef.current,
+          codes.map((courseCode) => ({ op: 'add' as const, courseCode })),
+        ),
+      );
+    },
+    [commit],
+  );
+
   return {
     state,
     result,
@@ -137,6 +150,7 @@ export function usePlanner() {
     solving,
     canUndo: history.length > 0,
     add,
+    addMany,
     remove,
     setConstraints,
     applyAgent,

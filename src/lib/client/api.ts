@@ -66,6 +66,18 @@ export async function fetchCategoryCourses(
   return payload.results;
 }
 
+export async function fetchSchoolCourses(
+  school: string,
+  signal?: AbortSignal,
+): Promise<CourseSummary[]> {
+  const response = await fetch(`/api/courses?school=${encodeURIComponent(school)}&limit=200`, {
+    signal,
+  });
+  if (!response.ok) throw new Error('courses failed');
+  const payload = (await response.json()) as { results: CourseSummary[] };
+  return payload.results;
+}
+
 export async function solveState(state: TimetableState): Promise<SolveResult> {
   const response = await fetch('/api/timetable', {
     method: 'POST',

@@ -6,6 +6,8 @@ import { agentConfigured, streamChat, type ChatMessage } from '@/lib/client/api'
 import { fileToDataUrl } from '@/lib/client/image';
 import type { SolveResult, TimetableState } from '@/lib/ffcs/types';
 
+import Onboarding from './Onboarding';
+
 const STORAGE_KEY = 'ffcs.chat.v1';
 
 const SUGGESTIONS = [
@@ -18,9 +20,19 @@ type Props = {
   state: TimetableState;
   onAgentState: (state: TimetableState, result: SolveResult) => void;
   onClose?: () => void;
+  schools: string[];
+  hasCourses: boolean;
+  onBuild: (codes: string[]) => void;
 };
 
-export default function Chat({ state, onAgentState, onClose }: Props) {
+export default function Chat({
+  state,
+  onAgentState,
+  onClose,
+  schools,
+  hasCourses,
+  onBuild,
+}: Props) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [busy, setBusy] = useState(false);
@@ -172,7 +184,25 @@ export default function Chat({ state, onAgentState, onClose }: Props) {
       )}
 
       <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-3 py-3">
-        {messages.length === 0 && (
+        {messages.length === 0 && !hasCourses && (
+          <Onboarding
+            schools={schools}
+            onBuild={(codes, school) => {
+              onBuild(codes);
+              setMessages([
+                { role: 'user', content: `${school}: ${codes.join(', ')}` },
+                {
+                  role: 'assistant',
+                  content: `Added ${codes.length} course${codes.length === 1 ? '' : 's'}. The grid is on the left. Ask me to swap a teacher, clear a day, or drop something.`,
+                },
+              ]);
+              // On mobile the chat is a full-screen sheet; show the result.
+              onClose?.();
+            }}
+          />
+        )}
+
+        {messages.length === 0 && hasCourses && (
           <div className="space-y-1.5 px-1">
             <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">Try</p>
             {SUGGESTIONS.map((suggestion) => (

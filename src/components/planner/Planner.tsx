@@ -67,7 +67,7 @@ export default function Planner({
             <Mark />
             <div className="min-w-0">
               <p className="truncate font-display text-lg font-extrabold leading-none tracking-tight">
-                FFCS planner
+                FFCS<span className="hidden sm:inline"> planner</span>
               </p>
               <p className="mt-1 hidden truncate font-mono text-[10px] uppercase tracking-[0.16em] text-muted sm:block">
                 Vellore · {courseCount} courses
@@ -186,6 +186,9 @@ export default function Planner({
                 state={planner.state}
                 onAgentState={planner.applyAgent}
                 onClose={() => setAgentOpen(false)}
+                schools={schools}
+                hasCourses={planner.state.requirements.length > 0}
+                onBuild={planner.addMany}
               />
             </div>
           </aside>
