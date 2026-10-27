@@ -3,7 +3,7 @@
 import { toPng } from 'html-to-image';
 import { useState } from 'react';
 
-export default function ExportButton() {
+export default function ExportButton({ name }: { name: string }) {
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
 
@@ -17,7 +17,8 @@ export default function ExportButton() {
     try {
       const dataUrl = await toPng(node, { pixelRatio: 2, backgroundColor: '#1b1b1f' });
       const link = document.createElement('a');
-      link.download = 'ffcs-timetable.png';
+      const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      link.download = `ffcs-${slug || 'timetable'}.png`;
       link.href = dataUrl;
       link.click();
     } catch {

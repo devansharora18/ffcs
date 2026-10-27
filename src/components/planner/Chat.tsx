@@ -22,17 +22,10 @@ type Props = {
   onClose?: () => void;
   schools: string[];
   hasCourses: boolean;
-  onBuild: (codes: string[]) => void;
+  planName: string;
 };
 
-export default function Chat({
-  state,
-  onAgentState,
-  onClose,
-  schools,
-  hasCourses,
-  onBuild,
-}: Props) {
+export default function Chat({ state, onAgentState, onClose, schools, hasCourses, planName }: Props) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [busy, setBusy] = useState(false);
@@ -155,6 +148,9 @@ export default function Chat({
         <div>
           <h2 className="flex items-center gap-2 font-display text-[15px] font-bold tracking-tight">
             Agent
+            <span className="max-w-[120px] truncate rounded-full bg-panel-2 px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.1em] text-muted">
+              {planName}
+            </span>
             <span
               className={`inline-block h-1.5 w-1.5 rounded-full ${
                 status === 'ready' ? 'bg-lime' : status === 'offline' ? 'bg-red' : 'bg-muted'
@@ -187,17 +183,17 @@ export default function Chat({
         {messages.length === 0 && !hasCourses && (
           <Onboarding
             schools={schools}
-            onBuild={(codes, school) => {
-              onBuild(codes);
-              setMessages([
-                { role: 'user', content: `${school}: ${codes.join(', ')}` },
-                {
-                  role: 'assistant',
-                  content: `Added ${codes.length} course${codes.length === 1 ? '' : 's'}. The grid is on the left. Ask me to swap a teacher, clear a day, or drop something.`,
-                },
-              ]);
-              // On mobile the chat is a full-screen sheet; show the result.
-              onClose?.();
+            onChoose={(school) => {
+              if (status === 'offline') {
+                setMessages([
+                  {
+                    role: 'assistant',
+                    content: `${school}. Which courses do you want? Type a code or a title.`,
+                  },
+                ]);
+                return;
+              }
+              void send(school);
             }}
           />
         )}

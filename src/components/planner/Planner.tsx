@@ -13,6 +13,7 @@ import CourseBuilder from './CourseBuilder';
 import ExportButton from './ExportButton';
 import SelectedCourses from './SelectedCourses';
 import SlotGrid from './SlotGrid';
+import TimetableTabs from './TimetableTabs';
 
 function Mark() {
   return (
@@ -110,10 +111,20 @@ export default function Planner({
               <CourseBuilder schools={schools} onAdd={planner.add} />
             </Panel>
 
+            <TimetableTabs
+              timetables={planner.timetables}
+              activeId={planner.activeId}
+              onSelect={planner.selectTimetable}
+              onCreate={planner.createTimetable}
+              onDuplicate={planner.duplicateTimetable}
+              onRename={planner.renameTimetable}
+              onDelete={planner.deleteTimetable}
+            />
+
             <Panel
               title="Timetable"
               mark="triangle"
-              action={<ExportButton />}
+              action={<ExportButton name={planner.activeName} />}
               bodyClassName="p-0"
             >
               {(chips.length > 0 || unsolved.length > 0 || noArrangement) && (
@@ -175,6 +186,8 @@ export default function Planner({
           </main>
 
           <aside
+            id="agent-panel"
+            aria-label="Planning agent"
             className={
               agentOpen
                 ? 'fixed inset-0 z-40 bg-bg p-3 lg:static lg:z-auto lg:bg-transparent lg:p-0'
@@ -188,7 +201,7 @@ export default function Planner({
                 onClose={() => setAgentOpen(false)}
                 schools={schools}
                 hasCourses={planner.state.requirements.length > 0}
-                onBuild={planner.addMany}
+                planName={planner.activeName}
               />
             </div>
           </aside>

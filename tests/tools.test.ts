@@ -3,7 +3,7 @@ import test from 'node:test';
 
 import { catalog } from '../src/lib/ffcs/catalog-data';
 import type { Catalog, CatalogCourse } from '../src/lib/ffcs/catalog';
-import { categoriesIn, listByCategory, listBySchool } from '../src/lib/ffcs/search';
+import { categoriesIn, listByCategory } from '../src/lib/ffcs/search';
 import { applyOps } from '../src/lib/ffcs/ops';
 import { emptyState } from '../src/lib/ffcs/types';
 import { executeTool } from '../src/lib/agent/tools';
@@ -121,17 +121,6 @@ test('domain facets and the subject list agree', () => {
 
   const courses = listByCategory(catalog, categories[0], 'SCORE');
   assert.ok(courses.length > 0);
-  assert.ok(
-    courses.every((course) =>
-      course.schools.some((name) => name === 'SCORE' || name.startsWith('SCORE (')),
-    ),
-  );
-});
-
-test('the onboarding list only returns courses from the chosen school', () => {
-  const courses = listBySchool(catalog, 'SCORE');
-  assert.ok(courses.length > 0);
-  assert.ok(courses.length <= 200);
   assert.ok(
     courses.every((course) =>
       course.schools.some((name) => name === 'SCORE' || name.startsWith('SCORE (')),

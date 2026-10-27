@@ -17,6 +17,7 @@ that compares real clock intervals:
 - Embedded courses (`BCSE101E`) publish theory and lab as two offerings under one code. Adding one
   reserves both blocks.
 - Courses with no scheduled hours (projects, Indian Constitution) never clash.
+- Several timetables live in tabs. Duplicate a plan, swap one teacher, and compare both side by side.
 
 You can also **paste a screenshot** of the FFCS portal into the chat. The agent reads the course
 codes and slots, verifies every code against the catalog, and adds only what actually exists.

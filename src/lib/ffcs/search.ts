@@ -104,17 +104,6 @@ export function categoriesIn(catalog: Catalog, school?: string | null): string[]
   return [...new Set(pool.flatMap((course) => course.categories))].sort();
 }
 
-/** Every course in one school, for the onboarding picker. */
-export function listBySchool(catalog: Catalog, school: string, limit = 200): CourseSummary[] {
-  return catalog.courses
-    .filter((course) =>
-      course.schools.some((name) => name === school || name.startsWith(`${school} (`)),
-    )
-    .sort((a, b) => a.code.localeCompare(b.code))
-    .slice(0, limit)
-    .map(summarise);
-}
-
 export function offeringsOf(catalog: Catalog, code: string): OfferingDetail[] | null {
   const needle = code.trim().toLowerCase();
   const course = catalog.courses.find((item) => item.code.toLowerCase() === needle);

@@ -1,5 +1,5 @@
 import { catalog } from '@/lib/ffcs/catalog-data';
-import { listByCategory, listBySchool, searchCourses } from '@/lib/ffcs/search';
+import { listByCategory, searchCourses } from '@/lib/ffcs/search';
 
 export const runtime = 'nodejs';
 
@@ -12,10 +12,6 @@ export function GET(request: Request): Response {
 
   if (category) {
     return Response.json({ results: listByCategory(catalog, category, school, limit) });
-  }
-
-  if (school && query.trim().length === 0) {
-    return Response.json({ results: listBySchool(catalog, school, limit) });
   }
 
   return Response.json({ results: searchCourses(catalog, query, limit, school) });
