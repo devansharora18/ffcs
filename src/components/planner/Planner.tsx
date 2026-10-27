@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { usePlanner } from '@/hooks/usePlanner';
 
+import AdSlot from '../ads/AdSlot';
 import Agenda from './Agenda';
 import Chat from './Chat';
 import CoursePicker from './CoursePicker';
@@ -99,6 +100,8 @@ export default function Planner({ courseCount }: { courseCount: number }) {
               <Agenda result={planner.result} />
             </div>
           </section>
+
+          <AdSlot />
 
           <section className="border-t border-line pt-3">
             <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
