@@ -11,7 +11,9 @@
     "catalog:import": "tsx scripts/import-catalog.ts"
   },
   "dependencies": {
+    "html-to-image": "^1.11.13",
     "next": "16.4.3",
+    "openai": "^7.45.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
