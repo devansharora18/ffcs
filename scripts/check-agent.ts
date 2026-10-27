@@ -2,11 +2,13 @@
  * Verifies the OpenCode inference setup: key, model id, and tool calling.
  * Run with: npm run agent:check
  */
+import { randomUUID } from 'node:crypto';
+
 import OpenAI from 'openai';
 
 async function main() {
   const apiKey = process.env.OPENCODE_API_KEY;
-  const baseURL = process.env.OPENCODE_BASE_URL ?? 'https://opencode.ai/inference/openai/v1';
+  const baseURL = process.env.OPENCODE_BASE_URL ?? 'https://opencode.ai/zen/go/v1';
   const model = process.env.OPENCODE_MODEL ?? 'deepseek-v4.1-flash';
 
   if (!apiKey) {
@@ -19,27 +21,23 @@ async function main() {
   console.log(`model    ${model}`);
   console.log(`key      ${apiKey.slice(0, 6)}… (${apiKey.length} chars)`);
 
-  const client = new OpenAI({ apiKey, baseURL, timeout: 60_000 });
-
-  const models = await client.models.list().catch((error: Error) => {
-    console.log(`models.list failed: ${error.message}`);
-    return null;
+  const client = new OpenAI({
+    apiKey,
+    baseURL,
+    timeout: 60_000,
+    defaultHeaders: { 'x-opencode-session': process.env.OPENCODE_SESSION ?? randomUUID() },
   });
-
-  if (models) {
-    const ids = models.data.map((item) => item.id).sort();
-    console.log(`models   ${ids.length} available`);
-    console.log(`         ${ids.slice(0, 12).join(', ')}`);
-  }
 
   const started = Date.now();
   const response = await client.chat.completions.create({
     model,
     messages: [{ role: 'user', content: 'Reply with exactly: ok' }],
-    max_tokens: 20,
+    max_tokens: 500,
   });
 
-  console.log(`reply    ${JSON.stringify(response.choices[0]?.message?.content)}`);
+  const message = response.choices[0]?.message;
+  console.log(`reply    ${JSON.stringify(message?.content)}`);
+  console.log(`finish   ${response.choices[0]?.finish_reason}`);
   console.log(`latency  ${Date.now() - started} ms`);
   console.log(`usage    ${JSON.stringify(response.usage)}`);
 
@@ -60,6 +58,7 @@ async function main() {
         },
       },
     ],
+    max_tokens: 500,
   });
 
   const call = toolResponse.choices[0]?.message?.tool_calls?.[0];

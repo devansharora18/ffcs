@@ -61,7 +61,12 @@ async function runAgent(
   body: ChatRequest,
   send: Send,
 ): Promise<void> {
-  const client = new OpenAI({ apiKey: config.apiKey, baseURL: config.baseURL, timeout: 60_000 });
+  const client = new OpenAI({
+    apiKey: config.apiKey,
+    baseURL: config.baseURL,
+    timeout: 60_000,
+    defaultHeaders: { 'x-opencode-session': config.sessionId },
+  });
   const history = body.messages.slice(-12);
 
   let state: TimetableState = body.state;
