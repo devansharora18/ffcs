@@ -56,6 +56,51 @@ test('search matches faculty names', () => {
   assert.match(result.text, /IYAPPAN/);
 });
 
+test('search results carry the school, and the school filter is authoritative', () => {
+  const all = run('search_courses', { query: 'theory of computation' }, emptyState(), catalog);
+  const payload = JSON.parse(all.text) as { code: string; schools: string[] }[];
+
+  const scope = payload.find((course) => course.code === 'BCSE304L');
+  const score = payload.find((course) => course.code === 'BITE306L');
+  assert.deepEqual(scope?.schools, ['SCOPE']);
+  assert.deepEqual(score?.schools, ['SCORE']);
+
+  const filtered = run(
+    'search_courses',
+    { query: 'theory of computation', school: 'SCORE' },
+    emptyState(),
+    catalog,
+  );
+  const only = JSON.parse(filtered.text) as { code: string }[];
+  assert.ok(only.every((course) => course.code !== 'BCSE304L'));
+  assert.ok(only.some((course) => course.code === 'BITE306L'));
+});
+
+test('add_course refuses a course from another school and names the right one', () => {
+  const result = run(
+    'add_course',
+    { code: 'BCSE304L', school: 'SCORE' },
+    emptyState(),
+    catalog,
+  );
+
+  assert.equal(result.ops.length, 0);
+  assert.equal(result.state.requirements.length, 0);
+  assert.match(result.text, /SCOPE/);
+  assert.match(result.text, /BITE306L/);
+});
+
+test('add_course accepts the course when the school matches', () => {
+  const result = run(
+    'add_course',
+    { code: 'BITE306L', school: 'SCORE' },
+    emptyState(),
+    catalog,
+  );
+  assert.equal(result.state.requirements.length, 1);
+  assert.match(result.text, /SCORE/);
+});
+
 test('who_teaches returns real faculty for a real slot', () => {
   const result = run('who_teaches', { slot: 'A1' }, emptyState(), catalog);
   const payload = JSON.parse(result.text) as { count: number; faculty: { faculty: string }[] };

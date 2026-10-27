@@ -6,6 +6,7 @@ export type CourseSummary = {
   code: string;
   title: string;
   kind: CatalogCourse['kind'];
+  schools: string[];
   offeringCount: number;
   teachers: string[];
   slots: string[];
@@ -19,20 +20,31 @@ function summarise(course: CatalogCourse): CourseSummary {
     code: course.code,
     title: course.title,
     kind: course.kind,
+    schools: course.schools,
     offeringCount: course.offerings.length,
     teachers: teachers.slice(0, 3),
     slots,
   };
 }
 
-/** Ranked keyword search over code, title and faculty. */
-export function searchCourses(catalog: Catalog, query: string, limit = 8): CourseSummary[] {
+/** Ranked keyword search over code, title and faculty, optionally one school. */
+export function searchCourses(
+  catalog: Catalog,
+  query: string,
+  limit = 8,
+  school?: string | null,
+): CourseSummary[] {
   const needle = query.trim().toLowerCase();
   if (needle.length === 0) return [];
 
   const tokens = needle.split(/\s+/).filter(Boolean);
+  const pool = school
+    ? catalog.courses.filter((course) =>
+        course.schools.some((name) => name === school || name.startsWith(`${school} (`)),
+      )
+    : catalog.courses;
 
-  return catalog.courses
+  return pool
     .map((course) => {
       const haystack = `${course.code} ${course.title}`.toLowerCase();
       const titleHit = tokens.every((token) => haystack.includes(token));

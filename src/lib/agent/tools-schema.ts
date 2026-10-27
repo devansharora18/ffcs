@@ -11,6 +11,11 @@ export const toolDefinitions: ChatCompletionTool[] = [
         type: 'object',
         properties: {
           query: { type: 'string', description: 'Course code, title words, or faculty name.' },
+          school: {
+            type: 'string',
+            description:
+              'Optional school filter: SCOPE, SCORE, SENSE, SELECT, SMEC, SHINE, SBST, SCHEME, MTech. Pass it whenever the user names a school.',
+          },
           limit: { type: 'integer', minimum: 1, maximum: 20, description: 'Max results. Default 8.' },
         },
         required: ['query'],
@@ -61,6 +66,11 @@ export const toolDefinitions: ChatCompletionTool[] = [
           faculty: {
             type: 'string',
             description: 'Only when the user named a teacher. Exact name or a unique fragment.',
+          },
+          school: {
+            type: 'string',
+            description:
+              'Only when the user named a school. The tool refuses the add if the course is not in that school.',
           },
         },
         required: ['code'],

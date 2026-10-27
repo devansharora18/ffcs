@@ -72,6 +72,30 @@ function findCourse(catalog: Catalog, code: string): CatalogCourse | undefined {
   return catalog.courses.find((course) => course.code.toLowerCase() === needle);
 }
 
+const inSchool = (course: CatalogCourse, school: string): boolean =>
+  course.schools.some((name) => name === school || name.startsWith(`${school} (`));
+
+/** Courses in `school` whose title shares a meaningful word with `title`. */
+function sameSubjectInSchool(
+  catalog: Catalog,
+  title: string,
+  school: string,
+  exclude: string,
+): CatalogCourse[] {
+  const words = title
+    .toLowerCase()
+    .split(/[^a-z]+/)
+    .filter((word) => word.length > 3);
+
+  return catalog.courses
+    .filter((course) => course.code !== exclude && inSchool(course, school))
+    .filter((course) => {
+      const haystack = course.title.toLowerCase();
+      return words.some((word) => haystack.includes(word));
+    })
+    .slice(0, 3);
+}
+
 function describeEntry(entry: PlacedOffering): string {
   const cells = entry.cells
     .map((cell) => `${DAY_LABEL[cell.day]} ${clock(cell.start)}`)
@@ -127,15 +151,16 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
   switch (name) {
     case 'search_courses': {
       const query = asString(args.query);
+      const school = asString(args.school);
       const limit = Math.min(Math.max(Number(args.limit) || 8, 1), 20);
       if (query.length === 0) return { text: 'Give me something to search for.', ops: [], state };
 
-      const matches = searchCourses(catalog, query, limit);
+      const matches = searchCourses(catalog, query, limit, school || null);
 
       return {
         text: matches.length
           ? JSON.stringify(matches)
-          : 'No course matches that. Try a shorter query or a course code.',
+          : `No course matches that${school ? ` in ${school}` : ''}. Try a shorter query or drop the school filter.`,
         ops: [],
         state,
       };
@@ -208,6 +233,20 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
       const course = findCourse(catalog, code);
       if (!course) return { text: `No course with code ${code}.`, ops: [], state };
 
+      const school = asString(args.school);
+      if (school && !inSchool(course, school)) {
+        const alternatives = sameSubjectInSchool(catalog, course.title, school, course.code);
+        return {
+          text: `${course.code} ${course.title} belongs to ${course.schools.join(', ')}, not ${school}.${
+            alternatives.length
+              ? ` In ${school}: ${alternatives.map((item) => `${item.code} ${item.title}`).join('; ')}.`
+              : ''
+          } Nothing was added.`,
+          ops: [],
+          state,
+        };
+      }
+
       if (state.requirements.some((requirement) => requirement.courseCode === course.code)) {
         return { text: `${course.code} is already in the timetable.`, ops: [], state };
       }
@@ -246,7 +285,9 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
       const next = applyOps(state, ops);
 
       return {
-        text: `Added ${course.code} ${course.title}${offeringId ? ` pinned to one offering` : ' (solver picks the offering)'}.\n${solveAndDescribe(catalog, next)}`,
+        text: `Added ${course.code} ${course.title} (${course.schools.join(', ')})${
+          offeringId ? ' pinned to one offering' : ' (solver picks the offering)'
+        }.\n${solveAndDescribe(catalog, next)}`,
         ops,
         state: next,
       };

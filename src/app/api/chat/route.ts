@@ -108,6 +108,9 @@ async function runAgent(
 
     if (calls.length === 0) break;
 
+    // Separate any pre-tool narration from the answer that follows the tool round.
+    if (content.trim().length > 0) send('text', { delta: '\n\n' });
+
     messages.push({
       role: 'assistant',
       content: content || null,
