@@ -124,6 +124,8 @@ export function buildGroups(
   return { groups, unsolved };
 }
 
+const round = (value: number) => (Object.is(value, -0) ? 0 : Number(value.toFixed(3)));
+
 function score(entries: PlacedOffering[], constraints: TimetableConstraints): Solution {
   const preferred = new Set(constraints.preferredFaculty.map((name) => name.trim().toLowerCase()));
   const days = new Set<number>();
@@ -141,16 +143,16 @@ function score(entries: PlacedOffering[], constraints: TimetableConstraints): So
   }
 
   const parts: ScoreParts = {
-    preferredFaculty: preferredHits * WEIGHTS.preferredFaculty,
-    gaps: -gapMinutes(entries) * WEIGHTS.gapMinute,
-    days: -days.size * WEIGHTS.dayUsed,
-    earliness: -early * WEIGHTS.earlyMinute,
-    lateness: -late * WEIGHTS.lateMinute,
+    preferredFaculty: round(preferredHits * WEIGHTS.preferredFaculty),
+    gaps: round(-gapMinutes(entries) * WEIGHTS.gapMinute),
+    days: round(-days.size * WEIGHTS.dayUsed),
+    earliness: round(-early * WEIGHTS.earlyMinute),
+    lateness: round(-late * WEIGHTS.lateMinute),
   };
 
   const total = Object.values(parts).reduce((sum, value) => sum + value, 0);
   // Copy: the DFS mutates its working array, and the solution must survive it.
-  return { entries: [...entries], score: Number(total.toFixed(3)), parts };
+  return { entries: [...entries], score: round(total), parts };
 }
 
 export function solveGroups(
