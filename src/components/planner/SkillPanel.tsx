@@ -1,16 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+
+const REPO = process.env.NEXT_PUBLIC_GITHUB_REPO ?? 'devansharora18/ffcs';
+const BRANCH = process.env.NEXT_PUBLIC_GITHUB_BRANCH ?? 'main';
+const ZIP_URL = `https://github.com/${REPO}/raw/${BRANCH}/public/ffcs-planner-skill.zip`;
+const REPO_URL = `https://github.com/${REPO}`;
 
 export default function SkillPanel() {
-  const [origin, setOrigin] = useState('');
   const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    setOrigin(window.location.origin);
-  }, []);
-
-  const command = `curl -fsSL ${origin || 'https://your-domain'}/ffcs-planner-skill.zip -o ffcs-skill.zip && unzip -o ffcs-skill.zip`;
+  const command = `curl -fsSL ${ZIP_URL} -o ffcs-skill.zip && unzip -o ffcs-skill.zip`;
 
   async function copy() {
     try {
@@ -30,9 +30,9 @@ export default function SkillPanel() {
             Take the skill with you
           </h2>
           <p className="mt-1 max-w-md text-[11px] leading-relaxed text-muted">
-            SKILL.md, 450 courses, 902 teachers and the Python solver in one archive. Claude Code,
-            OpenCode and any agent that reads a skills folder can use it as-is. On Claude web or
-            desktop, upload the zip.
+            SKILL.md, 450 courses, 902 teachers and the Python solver in one archive, straight from
+            GitHub. Claude Code, OpenCode and any agent that reads a skills folder can use it as-is.
+            On Claude web or desktop, upload the zip.
           </p>
         </div>
 
@@ -57,6 +57,18 @@ export default function SkillPanel() {
           {copied ? 'copied' : 'copy'}
         </button>
       </div>
+
+      <p className="mt-2 font-mono text-[10px] text-muted">
+        <a
+          href={REPO_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-line underline-offset-4 hover:text-lime hover:decoration-lime"
+        >
+          {REPO}
+        </a>{' '}
+        · {BRANCH} · updates when the catalog is re-imported
+      </p>
     </section>
   );
 }
