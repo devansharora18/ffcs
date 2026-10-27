@@ -18,6 +18,9 @@ that compares real clock intervals:
   reserves both blocks.
 - Courses with no scheduled hours (projects, Indian Constitution) never clash.
 
+You can also **paste a screenshot** of the FFCS portal into the chat. The agent reads the course
+codes and slots, verifies every code against the catalog, and adds only what actually exists.
+
 ## Quick start
 
 ```bash

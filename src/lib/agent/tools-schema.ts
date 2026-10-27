@@ -72,6 +72,11 @@ export const toolDefinitions: ChatCompletionTool[] = [
             description:
               'Only when the user named a school. The tool refuses the add if the course is not in that school.',
           },
+          slot: {
+            type: 'string',
+            description:
+              'Only when the user or a screenshot gave a slot pattern, e.g. "B1+TB1". Reserves that slot; the solver still picks the teacher.',
+          },
         },
         required: ['code'],
       },

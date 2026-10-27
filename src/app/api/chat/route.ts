@@ -68,12 +68,29 @@ async function runAgent(
     defaultHeaders: { 'x-opencode-session': config.sessionId },
   });
   const history = body.messages.slice(-12);
+  const lastUserIndex = history.map((message) => message.role).lastIndexOf('user');
 
   let state: TimetableState = body.state;
   const ops: StateOp[] = [];
   const messages: ChatCompletionMessageParam[] = [
     { role: 'system', content: SYSTEM_PROMPT },
-    ...history.map((message) => ({ role: message.role, content: message.content })),
+    ...history.map((message, index): ChatCompletionMessageParam => {
+      // Images are expensive; only the newest user turn carries them.
+      if (message.role === 'user' && message.images?.length && index === lastUserIndex) {
+        return {
+          role: 'user',
+          content: [
+            { type: 'text', text: message.content.trim() || 'Read this screenshot.' },
+            ...message.images.map((url) => ({
+              type: 'image_url' as const,
+              image_url: { url },
+            })),
+          ],
+        };
+      }
+
+      return { role: message.role, content: message.content };
+    }),
   ];
 
   for (let round = 0; round < MAX_ROUNDS; round += 1) {

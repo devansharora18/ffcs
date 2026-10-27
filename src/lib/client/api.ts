@@ -2,7 +2,12 @@ import type { StateOp } from '@/lib/ffcs/ops';
 import type { CourseSummary, OfferingDetail } from '@/lib/ffcs/search';
 import type { SolveResult, TimetableState } from '@/lib/ffcs/types';
 
-export type ChatMessage = { role: 'user' | 'assistant'; content: string };
+export type ChatMessage = {
+  role: 'user' | 'assistant';
+  content: string;
+  /** Data URLs. Only the newest user message is sent with its images. */
+  images?: string[];
+};
 
 export type ChatEvent =
   | { type: 'text'; delta: string }

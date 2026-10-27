@@ -3,7 +3,7 @@ import http from 'node:http';
 import type { AddressInfo } from 'node:net';
 import test from 'node:test';
 
-type CapturedRequest = { messages: { role: string; content?: string }[] };
+type CapturedRequest = { messages: { role: string; content?: unknown }[] };
 
 function fakeOpenAI(requests: CapturedRequest[]) {
   return http.createServer((request, response) => {
@@ -99,7 +99,47 @@ test('chat streams a tool round, then the answer, then the state', async () => {
     assert.equal(requests.length, 2);
     const toolMessage = requests[1].messages.find((message) => message.role === 'tool');
     assert.ok(toolMessage, 'the second round must carry the tool result');
-    assert.match(toolMessage.content ?? '', /BCSE202L/);
+    assert.match(String(toolMessage.content ?? ''), /BCSE202L/);
+  } finally {
+    await new Promise<void>((resolve) => server.close(() => resolve()));
+  }
+});
+
+test('an attached image is forwarded as an image part on the newest turn only', async () => {
+  const requests: CapturedRequest[] = [];
+  const server = fakeOpenAI(requests);
+  await new Promise<void>((resolve) => server.listen(0, '127.0.0.1', resolve));
+  const port = (server.address() as AddressInfo).port;
+
+  process.env.OPENCODE_API_KEY = 'test-key';
+  process.env.OPENCODE_BASE_URL = `http://127.0.0.1:${port}/v1`;
+  process.env.OPENCODE_MODEL = 'test-model';
+
+  try {
+    const { POST } = await import('../src/app/api/chat/route');
+    const response = await POST(
+      new Request('http://localhost/api/chat', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          messages: [
+            {
+              role: 'user',
+              content: 'read this',
+              images: ['data:image/png;base64,iVBORw0KGgo='],
+            },
+          ],
+          state: body.state,
+        }),
+      }),
+    );
+
+    await response.text();
+
+    const sent = requests[0].messages.find((message) => message.role === 'user');
+    assert.ok(Array.isArray(sent?.content));
+    const parts = sent.content as { type: string }[];
+    assert.ok(parts.some((part) => part.type === 'image_url'));
   } finally {
     await new Promise<void>((resolve) => server.close(() => resolve()));
   }

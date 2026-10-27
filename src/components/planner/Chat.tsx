@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { agentConfigured, streamChat, type ChatMessage } from '@/lib/client/api';
+import { fileToDataUrl } from '@/lib/client/image';
 import type { SolveResult, TimetableState } from '@/lib/ffcs/types';
 
 const STORAGE_KEY = 'ffcs.chat.v1';
@@ -25,8 +26,10 @@ export default function Chat({ state, onAgentState, onClose }: Props) {
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState<'checking' | 'ready' | 'offline'>('checking');
   const [error, setError] = useState<string | null>(null);
+  const [pending, setPending] = useState<string[]>([]);
   const [ready, setReady] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     try {
@@ -47,22 +50,43 @@ export default function Chat({ state, onAgentState, onClose }: Props) {
 
   useEffect(() => {
     if (!ready) return;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages.slice(-40)));
+    // Never persist data URLs: a screenshot would blow the 5 MB quota.
+    const plain = messages.slice(-40).map(({ images: _images, ...rest }) => rest);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(plain));
   }, [messages, ready]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ block: 'end' });
   }, [messages, busy]);
 
+  async function addFiles(files: File[]) {
+    const images = files
+      .filter((file) => file.type.startsWith('image/'))
+      .slice(0, 2 - pending.length);
+    if (images.length === 0) return;
+
+    try {
+      const urls = await Promise.all(images.map((file) => fileToDataUrl(file)));
+      setPending((current) => [...current, ...urls].slice(0, 2));
+    } catch {
+      setError('Could not read that image.');
+    }
+  }
+
   async function send(text: string) {
     const trimmed = text.trim();
-    if (trimmed.length === 0 || busy || status === 'offline') return;
+    const images = pending;
+    if ((trimmed.length === 0 && images.length === 0) || busy || status === 'offline') return;
 
     setError(null);
     setBusy(true);
     setInput('');
+    setPending([]);
 
-    const history: ChatMessage[] = [...messages, { role: 'user', content: trimmed }];
+    const history: ChatMessage[] = [
+      ...messages,
+      { role: 'user', content: trimmed, images: images.length > 0 ? images : undefined },
+    ];
     setMessages([...history, { role: 'assistant', content: '' }]);
 
     let received = false;
@@ -167,9 +191,17 @@ export default function Chat({ state, onAgentState, onClose }: Props) {
         {messages.map((message, index) =>
           message.role === 'user' ? (
             <article key={`u-${index}`} aria-label="You" className="flex justify-end">
-              <p className="max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-sm bg-lime px-3 py-2 text-[13px] leading-snug text-on-bright">
-                {message.content}
-              </p>
+              <div className="max-w-[85%] rounded-2xl rounded-br-sm bg-lime px-3 py-2 text-[13px] leading-snug text-on-bright">
+                {message.images?.map((src, imageIndex) => (
+                  <img
+                    key={imageIndex}
+                    src={src}
+                    alt="Attached screenshot"
+                    className="mb-1.5 max-h-48 w-full rounded-lg object-contain"
+                  />
+                ))}
+                {message.content && <p className="whitespace-pre-wrap">{message.content}</p>}
+              </div>
             </article>
           ) : (
             <article key={`a-${index}`} aria-label="Agent">
@@ -195,9 +227,38 @@ export default function Chat({ state, onAgentState, onClose }: Props) {
           void send(input);
         }}
       >
+        {pending.length > 0 && (
+          <div className="mb-2 flex gap-2">
+            {pending.map((src, index) => (
+              <div key={index} className="relative">
+                <img
+                  src={src}
+                  alt=""
+                  className="h-14 w-14 rounded-lg border border-line object-cover"
+                />
+                <button
+                  type="button"
+                  onClick={() => setPending((current) => current.filter((_, i) => i !== index))}
+                  aria-label="Remove image"
+                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-red text-[11px] leading-none text-on-bright"
+                >
+                  ×
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+
         <textarea
           value={input}
           onChange={(event) => setInput(event.target.value)}
+          onPaste={(event) => {
+            const files = Array.from(event.clipboardData.files);
+            if (files.some((file) => file.type.startsWith('image/'))) {
+              event.preventDefault();
+              void addFiles(files);
+            }
+          }}
           onKeyDown={(event) => {
             if (event.key === 'Enter' && !event.shiftKey) {
               event.preventDefault();
@@ -206,18 +267,59 @@ export default function Chat({ state, onAgentState, onClose }: Props) {
           }}
           rows={2}
           disabled={status === 'offline' || busy}
-          placeholder="no 8ams, and keep Tuesday free"
+          placeholder="no 8ams, or paste a screenshot"
           aria-label="Message the agent"
           className="w-full resize-none rounded-xl border border-line bg-panel-2 p-2.5 text-[13px] placeholder:text-muted/70 focus:border-lime focus:outline-none disabled:opacity-60"
         />
+
         <div className="mt-2 flex items-center justify-between gap-2">
-          <span className="font-mono text-[10px] text-muted">
-            {busy ? 'thinking…' : 'enter to send'}
-          </span>
+          <div className="flex min-w-0 items-center gap-2">
+            <button
+              type="button"
+              onClick={() => fileRef.current?.click()}
+              disabled={busy || status === 'offline' || pending.length >= 2}
+              className="flex shrink-0 items-center gap-1 rounded-full border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted hover:border-purple hover:text-ink disabled:opacity-40"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-3 w-3"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                aria-hidden
+              >
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m5 16 5-5 4 4 3-3 2 2" />
+              </svg>
+              image
+            </button>
+            <input
+              ref={fileRef}
+              type="file"
+              accept="image/*"
+              multiple
+              className="hidden"
+              onChange={(event) => {
+                if (event.target.files) void addFiles(Array.from(event.target.files));
+                event.target.value = '';
+              }}
+            />
+            <span className="truncate font-mono text-[10px] text-muted">
+              {busy
+                ? 'thinking…'
+                : pending.length > 0
+                  ? `${pending.length} attached`
+                  : 'enter to send'}
+            </span>
+          </div>
+
           <button
             type="submit"
-            disabled={busy || status === 'offline' || input.trim().length === 0}
-            className="rounded-full bg-lime px-4 py-1.5 font-display text-xs font-bold text-on-bright transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-line disabled:text-muted disabled:hover:scale-100"
+            disabled={
+              busy || status === 'offline' || (input.trim().length === 0 && pending.length === 0)
+            }
+            className="shrink-0 rounded-full bg-lime px-4 py-1.5 font-display text-xs font-bold text-on-bright transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-line disabled:text-muted disabled:hover:scale-100"
           >
             send
           </button>

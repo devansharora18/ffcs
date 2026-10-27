@@ -102,6 +102,19 @@ test('add_course accepts the course when the school matches', () => {
   assert.match(result.text, /SCORE/);
 });
 
+test('add_course reserves an exact slot when one is given', () => {
+  const result = run('add_course', { code: 'BCSE202L', slot: 'B1+TB1' });
+  assert.deepEqual(result.state.requirements[0].slots, ['B1', 'TB1']);
+  assert.equal(result.state.requirements[0].offeringId, undefined);
+  assert.match(result.text, /B1\+TB1/);
+});
+
+test('add_course rejects a slot the course does not run', () => {
+  const result = run('add_course', { code: 'BCSE202L', slot: 'Z9+Z10' });
+  assert.equal(result.ops.length, 0);
+  assert.match(result.text, /no Z9\+Z10 offering/);
+});
+
 test('domain facets and the subject list agree', () => {
   const categories = categoriesIn(catalog, 'SCORE');
   assert.ok(categories.length > 0);

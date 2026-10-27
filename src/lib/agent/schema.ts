@@ -1,9 +1,17 @@
 import { z } from 'zod';
 
-export const messageSchema = z.object({
-  role: z.enum(['user', 'assistant']),
-  content: z.string().min(1).max(4000),
-});
+export const messageSchema = z
+  .object({
+    role: z.enum(['user', 'assistant']),
+    content: z.string().max(4000),
+    images: z
+      .array(z.string().max(3_000_000).startsWith('data:image/'))
+      .max(2)
+      .optional(),
+  })
+  .refine((message) => message.content.trim().length > 0 || (message.images?.length ?? 0) > 0, {
+    message: 'a message needs text or an image',
+  });
 
 export const stateSchema = z.object({
   requirements: z

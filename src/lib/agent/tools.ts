@@ -252,11 +252,30 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
       }
 
       const facultyQuery = asString(args.faculty).toLowerCase();
+      const slotText = asString(args.slot).toUpperCase().replace(/\s+/g, '');
+      const slots = slotText.length > 0 ? slotText.split('+').filter(Boolean) : undefined;
+
+      if (
+        slots &&
+        !course.offerings.some(
+          (offering) => offering.slots.join('+').toUpperCase() === slots.join('+'),
+        )
+      ) {
+        const available = [...new Set(course.offerings.map((offering) => offering.slots.join('+')))];
+        return {
+          text: `${course.code} has no ${slotText} offering. Available: ${available.slice(0, 12).join(', ')}.`,
+          ops: [],
+          state,
+        };
+      }
+
       let offeringId: string | undefined;
 
       if (facultyQuery) {
-        const matches = course.offerings.filter((offering) =>
-          offering.faculty.toLowerCase().includes(facultyQuery),
+        const matches = course.offerings.filter(
+          (offering) =>
+            offering.faculty.toLowerCase().includes(facultyQuery) &&
+            (!slots || offering.slots.join('+').toUpperCase() === slots.join('+')),
         );
         if (matches.length === 0) {
           return {
@@ -281,13 +300,17 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
         offeringId = course.offerings[0].id;
       }
 
-      const ops: StateOp[] = [{ op: 'add', courseCode: course.code, offeringId }];
+      const ops: StateOp[] = [{ op: 'add', courseCode: course.code, offeringId, slots }];
       const next = applyOps(state, ops);
 
+      const how = offeringId
+        ? 'pinned to one offering'
+        : slots
+          ? `slot ${slotText} reserved (solver picks the teacher)`
+          : 'solver picks the offering';
+
       return {
-        text: `Added ${course.code} ${course.title} (${course.schools.join(', ')})${
-          offeringId ? ' pinned to one offering' : ' (solver picks the offering)'
-        }.\n${solveAndDescribe(catalog, next)}`,
+        text: `Added ${course.code} ${course.title} (${course.schools.join(', ')}) — ${how}.\n${solveAndDescribe(catalog, next)}`,
         ops,
         state: next,
       };
