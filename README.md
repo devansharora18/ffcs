@@ -49,7 +49,7 @@ not provider-prefixed. Verify any change with `npm run agent:check`.
 |---|---|
 | `npm run dev` | Dev server |
 | `npm run build` | Production build |
-| `npm test` | 35 tests over grid, conflicts, solver, tools and the chat route |
+| `npm test` | 38 tests over grid, conflicts, solver, tools and the chat route |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run agent:check` | Verifies key, model id and tool calling against the inference API |
 | `npm run catalog:import` | Rebuilds `data/catalog.vellore.json` from `vendor/ffcs-data` |
