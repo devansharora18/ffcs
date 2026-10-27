@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "catalog:import": "tsx scripts/import-catalog.ts",
-    "agent:check": "node --env-file=.env --import tsx scripts/check-agent.ts"
+    "agent:check": "node --env-file=.env --import tsx scripts/check-agent.ts",
+    "solve": "tsx scripts/solve.ts"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.3.0",
