@@ -136,6 +136,22 @@ export const toolDefinitions: ChatCompletionTool[] = [
   {
     type: 'function',
     function: {
+      name: 'set_credits',
+      description:
+        'Override the credits of a course already in the timetable. Credits without a curriculum entry are estimated from the slots, so use this when the student says the value is wrong.',
+      parameters: {
+        type: 'object',
+        properties: {
+          code: { type: 'string', description: 'Course code.' },
+          credits: { type: 'number', description: 'The correct credit value, e.g. 3 or 1.5.' },
+        },
+        required: ['code', 'credits'],
+      },
+    },
+  },
+  {
+    type: 'function',
+    function: {
       name: 'remove_course',
       description: 'Remove a course from the timetable by code.',
       parameters: {

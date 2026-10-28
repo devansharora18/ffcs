@@ -49,7 +49,11 @@ export type SolveOptions = {
   maxNodes?: number;
 };
 
-export function toPlaced(course: CatalogCourse, offeringId: string): PlacedOffering | undefined {
+export function toPlaced(
+  course: CatalogCourse,
+  offeringId: string,
+  creditOverride?: number,
+): PlacedOffering | undefined {
   const offering = course.offerings.find((candidate) => candidate.id === offeringId);
   if (!offering) return undefined;
 
@@ -62,7 +66,8 @@ export function toPlaced(course: CatalogCourse, offeringId: string): PlacedOffer
     venue: offering.venue,
     slots: offering.slots,
     cells: offering.slots.flatMap(slotCells),
-    credits: course.credits,
+    credits: creditOverride ?? course.credits,
+    creditsEstimated: creditOverride === undefined && course.creditsEstimated,
   };
 }
 
@@ -115,7 +120,8 @@ export function buildGroups(
         venue: null,
         slots,
         cells,
-        credits: null,
+        credits: requirement.credits ?? null,
+        creditsEstimated: requirement.credits === undefined,
       };
 
       if (!isAllowed(entry, constraints)) {
@@ -143,7 +149,7 @@ export function buildGroups(
           .map((offering) => offering.id);
 
     const allowed = ids
-      .map((id) => toPlaced(course, id))
+      .map((id) => toPlaced(course, id, requirement.credits))
       .filter((entry): entry is PlacedOffering => entry !== undefined)
       .filter((entry) => isAllowed(entry, constraints));
 

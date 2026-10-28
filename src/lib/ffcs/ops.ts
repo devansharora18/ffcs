@@ -3,6 +3,7 @@ import type { CustomCourse, TimetableConstraints, TimetableState } from './types
 export type StateOp =
   | { op: 'add'; courseCode: string; offeringId?: string; slots?: string[]; custom?: CustomCourse }
   | { op: 'remove'; courseCode: string }
+  | { op: 'credits'; courseCode: string; credits: number }
   | { op: 'constraints'; constraints: Partial<TimetableConstraints> };
 
 function mergeConstraints(
@@ -47,6 +48,16 @@ export function applyOps(state: TimetableState, ops: StateOp[]): TimetableState 
           ...next,
           requirements: next.requirements.filter(
             (requirement) => requirement.courseCode !== op.courseCode,
+          ),
+        };
+        break;
+      case 'credits':
+        next = {
+          ...next,
+          requirements: next.requirements.map((requirement) =>
+            requirement.courseCode === op.courseCode
+              ? { ...requirement, credits: op.credits }
+              : requirement,
           ),
         };
         break;

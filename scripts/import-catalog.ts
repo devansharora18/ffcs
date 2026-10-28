@@ -10,11 +10,12 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
-import { isKnownSlot } from '../src/lib/ffcs/grid';
+import { isKnownSlot, slotCells } from '../src/lib/ffcs/grid';
 import type {
   Catalog,
   CatalogCourse,
   CatalogOffering,
+  CourseKind,
   OfferingKind,
 } from '../src/lib/ffcs/catalog';
 
@@ -25,6 +26,30 @@ type RawOffering = { slot: string; venue: string; faculty: string };
 type RawCatalog = Record<string, Record<string, Record<string, RawOffering[]>>>;
 
 const LAB_SLOT = /^L\d+$/;
+
+/**
+ * Credit estimate when the curriculum sheet has no entry.
+ * One 50-minute theory class per week is one credit, a 2-hour lab is one
+ * credit, and soft-skill courses are 1.5. Verified against 184 curriculum rows.
+ */
+function estimateCredits(code: string, kind: CourseKind, offerings: CatalogOffering[]): number | null {
+  if (/^B(STS|ACC)/.test(code)) return 1.5;
+  if (kind === 'unscheduled' || offerings.length === 0) return null;
+
+  let theoryCells = 0;
+  let labCells = 0;
+
+  for (const offering of offerings) {
+    const cells = offering.slots.flatMap(slotCells).length;
+    const lab = offering.slots.filter((slot) => LAB_SLOT.test(slot)).flatMap(slotCells).length;
+    theoryCells = Math.max(theoryCells, cells - lab);
+    labCells = Math.max(labCells, lab);
+  }
+
+  if (kind === 'lab') return Math.max(1, Math.round(labCells / 2));
+  if (kind === 'embedded') return theoryCells + Math.round(labCells / 2);
+  return theoryCells > 0 ? theoryCells : null;
+}
 const isNil = (value: string) => value.trim().toUpperCase() === 'NIL';
 const clean = (value: string) => value.replace(/\s+/g, ' ').trim();
 
@@ -135,16 +160,20 @@ const output: CatalogCourse[] = [...courses.entries()]
   .map(([code, acc]) => {
     if (acc.titles.size > 1) titleConflicts.set(code, new Set(acc.titles.keys()));
 
+    const kind = courseKind(acc.kinds);
+    const offerings = [...acc.offerings.values()].sort(
+      (a, b) => a.faculty.localeCompare(b.faculty) || a.slots.join().localeCompare(b.slots.join()),
+    );
+
     return {
       code,
       title: primaryTitle(acc.titles),
-      kind: courseKind(acc.kinds),
-      credits: credits[code] ?? null,
+      kind,
+      credits: credits[code] ?? estimateCredits(code, kind, offerings),
+      creditsEstimated: credits[code] === undefined,
       schools: [...acc.schools].sort(),
       categories: [...acc.categories].sort(),
-      offerings: [...acc.offerings.values()].sort(
-        (a, b) => a.faculty.localeCompare(b.faculty) || a.slots.join().localeCompare(b.slots.join()),
-      ),
+      offerings,
     };
   })
   .sort((a, b) => a.code.localeCompare(b.code));

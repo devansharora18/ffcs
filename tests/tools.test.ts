@@ -18,6 +18,7 @@ function fixtureCourse(
     title,
     kind: 'theory',
     credits: null,
+    creditsEstimated: false,
     schools: [],
     categories: [],
     offerings: offers.map((offer) => ({
@@ -207,6 +208,20 @@ test('add_custom_course allows a real code with a slot only the user wants', () 
   assert.equal(result.state.requirements.length, 1);
   assert.deepEqual(result.state.requirements[0].custom?.slots, ['E1', 'TE1']);
   assert.match(result.text, /catalog lists BITE311L with other slots/);
+});
+
+test('set_credits overrides an estimated value', () => {
+  const added = run('add_course', { code: 'BCSE202L' }, emptyState(), catalog);
+  const result = run('set_credits', { code: 'BCSE202L', credits: 4.5 }, added.state, catalog);
+
+  assert.equal(result.state.requirements[0].credits, 4.5);
+  assert.match(result.text, /4\.5 credits/);
+});
+
+test('set_credits refuses a course that is not in the timetable', () => {
+  const result = run('set_credits', { code: 'BCSE202L', credits: 3 }, emptyState(), catalog);
+  assert.equal(result.ops.length, 0);
+  assert.match(result.text, /not in the timetable/);
 });
 
 test('domain facets and the subject list agree', () => {

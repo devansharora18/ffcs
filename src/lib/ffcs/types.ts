@@ -26,6 +26,8 @@ export type Requirement = {
   slots?: string[];
   /** Manual entry, bypassing the catalog lookup. */
   custom?: CustomCourse;
+  /** User-supplied credit override for this course. */
+  credits?: number;
 };
 
 export type TimetableState = {
@@ -44,6 +46,8 @@ export type PlacedOffering = {
   cells: SlotCell[];
   /** Null when the catalog has no credit value for the course. */
   credits: number | null;
+  /** True when the value came from the slot estimate rather than a source. */
+  creditsEstimated: boolean;
 };
 
 export type Conflict = {

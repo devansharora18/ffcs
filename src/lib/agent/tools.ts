@@ -447,6 +447,26 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
       };
     }
 
+    case 'set_credits': {
+      const code = asString(args.code).toUpperCase();
+      const credits = Number(args.credits);
+
+      if (!Number.isFinite(credits) || credits < 0 || credits > 30) {
+        return { text: 'Give a credit value between 0 and 30.', ops: [], state };
+      }
+      if (!state.requirements.some((requirement) => requirement.courseCode === code)) {
+        return { text: `${code} is not in the timetable.`, ops: [], state };
+      }
+
+      const ops: StateOp[] = [{ op: 'credits', courseCode: code, credits }];
+      const next = applyOps(state, ops);
+      return {
+        text: `Set ${code} to ${credits} credits.\n${solveAndDescribe(catalog, next)}`,
+        ops,
+        state: next,
+      };
+    }
+
     case 'remove_course': {
       const course = findCourse(catalog, asString(args.code));
       if (!course) return { text: `No course with code ${asString(args.code)}.`, ops: [], state };

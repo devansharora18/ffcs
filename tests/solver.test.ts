@@ -21,6 +21,7 @@ function course(
     title: code,
     kind,
     credits: null,
+    creditsEstimated: false,
     schools: [],
     categories: [],
     offerings: offers.map((offer) => ({
@@ -292,6 +293,17 @@ test('a manual course with an unknown slot is reported, not placed', () => {
 
   assert.deepEqual(result.unsolved, ['NEW102']);
   assert.equal(result.solutions.length, 0);
+});
+
+test('a credit override wins over the catalog value', () => {
+  const catalog = catalogOf(course('A', [{ slots: ['A1'], faculty: 'X' }]));
+  const result = solveTimetable(catalog, {
+    requirements: [{ courseCode: 'A', credits: 4 }],
+    constraints: emptyConstraints(),
+  });
+
+  assert.equal(result.solutions[0].entries[0].credits, 4);
+  assert.equal(result.solutions[0].entries[0].creditsEstimated, false);
 });
 
 test('the search stays bounded on a wide problem', () => {

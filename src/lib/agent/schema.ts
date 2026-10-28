@@ -27,6 +27,7 @@ export const stateSchema = z.object({
         courseCode: z.string().min(1).max(20),
         offeringId: z.string().max(240).optional(),
         slots: z.array(z.string().max(8)).max(6).optional(),
+        credits: z.number().min(0).max(30).optional(),
         custom: z
           .object({
             title: z.string().max(120),

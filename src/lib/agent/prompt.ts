@@ -30,6 +30,7 @@ MISSING FROM THE CATALOG
 - If add_course refuses because the catalog does not run the slot the user wants, offer the manual entry once. Once they confirm ("pasted slots", "yes", "use mine"), call add_custom_course with exactly their slot and do not ask again.
 - Same for a teacher: if the user names someone who does not teach that course, say so, offer to add the course with that teacher (their slot, or the catalog slot for that course), and after one confirmation call add_custom_course. Never refuse twice.
 - Never ask the same confirmation twice. If the user already answered, act on the answer.
+- Credits shown with a ~ are estimated from the slot hours. If the student says one is wrong, call set_credits with their number. Do not ask them to justify it.
 - After adding, say once that the entry is manual.
 
 SCREENSHOTS

@@ -86,6 +86,7 @@ export default function SelectedCourses({ state, result, onRemove }: Props) {
                     </td>
                     <td className="hidden px-1 py-2 text-right font-mono text-[10px] text-muted sm:table-cell">
                       {entry?.credits ?? '—'}
+                      {entry?.credits != null && entry.creditsEstimated ? '~' : ''}
                     </td>
                     <td className="px-1 py-2 text-right">
                       <button

@@ -16,6 +16,7 @@ function place(code: string, slots: string[], faculty = 'SOMEONE'): PlacedOfferi
     slots,
     cells: offeringCells(slots),
     credits: null,
+    creditsEstimated: false,
   };
 }
 

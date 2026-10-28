@@ -23,8 +23,10 @@ export type CatalogCourse = {
   code: string;
   title: string;
   kind: CourseKind;
-  /** The source dataset carries no credit values. Never guess these. */
+  /** Exact when a curriculum sheet listed the code, otherwise an estimate. */
   credits: number | null;
+  /** True when `credits` was derived from the slots instead of a source. */
+  creditsEstimated: boolean;
   schools: string[];
   categories: string[];
   offerings: CatalogOffering[];

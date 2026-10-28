@@ -12,7 +12,8 @@
       "code": "BAARB101",
       "title": "Arabic Level I",
       "kind": "embedded",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -69,7 +70,8 @@
       "code": "BABIT101",
       "title": "Biochemistry",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -123,7 +125,8 @@
       "code": "BABIT102",
       "title": "Microbiology",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SBST (Fresher)"
       ],
@@ -218,7 +221,8 @@
       "code": "BABIT103",
       "title": "Cell and Molecular Biology",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SBST (Fresher)",
         "SCE ('25 Batch)",
@@ -410,7 +414,8 @@
       "code": "BABIT202",
       "title": "Fundamentals of Bioinformatics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -482,7 +487,8 @@
       "code": "BABIT302",
       "title": "Industrial Enzymology",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -510,7 +516,8 @@
       "code": "BABIT303",
       "title": "Biochemical Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -559,7 +566,8 @@
       "code": "BABIT307",
       "title": "Pharmaceutical Biotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -587,7 +595,8 @@
       "code": "BABIT310",
       "title": "Plant Biotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -636,7 +645,8 @@
       "code": "BABIT311",
       "title": "Animal Biotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -664,7 +674,8 @@
       "code": "BABMD301",
       "title": "Human Anatomy and Biomechanics",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -688,7 +699,8 @@
       "code": "BACHE320",
       "title": "Chemical Product Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -717,7 +729,8 @@
       "code": "BACHE326",
       "title": "Fuels and Combustion",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -746,7 +759,8 @@
       "code": "BACHE333",
       "title": "Transport Phenomena",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -775,7 +789,8 @@
       "code": "BACHE334",
       "title": "Chemical Sensors for Industrial Applications",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -804,7 +819,8 @@
       "code": "BACHI101",
       "title": "Chinese Level I",
       "kind": "embedded",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -895,7 +911,8 @@
       "code": "BACHY105",
       "title": "Applied Chemistry",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -1588,7 +1605,8 @@
       "code": "BACHY106",
       "title": "Chemistry for Electrical and Electronics Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT (Fresher)"
       ],
@@ -1710,7 +1728,8 @@
       "code": "BACHY107",
       "title": "Applied Chemistry for Electronics Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -2102,7 +2121,8 @@
       "code": "BACHY109",
       "title": "Applied Chemistry for Engineers",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC (Fresher)"
       ],
@@ -2359,7 +2379,8 @@
       "code": "BACLE102",
       "title": "Environmental Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)"
       ],
@@ -2427,7 +2448,8 @@
       "code": "BACLE103",
       "title": "Mechanics of Solids",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)"
       ],
@@ -2495,7 +2517,8 @@
       "code": "BACLE104",
       "title": "Waste Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -2525,7 +2548,8 @@
       "code": "BACLE105",
       "title": "Disaster Mitigation and Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -2576,7 +2600,8 @@
       "code": "BACLE106",
       "title": "Urban Planning and Development",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -2606,7 +2631,8 @@
       "code": "BACLE202",
       "title": "Soil Mechanics and Foundation Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)"
       ],
@@ -2674,7 +2700,8 @@
       "code": "BACLE204",
       "title": "Transportation Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)"
       ],
@@ -2742,7 +2769,8 @@
       "code": "BACLE207",
       "title": "Artificial Intelligence and Machine Learning in Civil Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)"
       ],
@@ -2792,7 +2820,8 @@
       "code": "BACLE301",
       "title": "Construction Materials and Techniques",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -2822,7 +2851,8 @@
       "code": "BACLE303",
       "title": "Digital Management and Practices in Construction",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -2858,7 +2888,8 @@
       "code": "BACLE316",
       "title": "Solid Waste Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -2887,7 +2918,8 @@
       "code": "BACLE319",
       "title": "Essentials for Data Science and AI for Civil Engineers",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -2914,7 +2946,8 @@
       "code": "BACLE402",
       "title": "Engineering Geology",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -2954,7 +2987,8 @@
       "code": "BACLE417",
       "title": "Sustainability Practices in Design of Buildings",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -2983,7 +3017,8 @@
       "code": "BACSE101",
       "title": "Problem Solving using Python",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -3025,7 +3060,8 @@
       "code": "BACSE102",
       "title": "Problem Solving using Java",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST (Fresher)",
         "SCE ('25 Batch)",
@@ -4093,7 +4129,8 @@
       "code": "BACSE103",
       "title": "Computation Structures",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)"
@@ -4955,7 +4992,8 @@
       "code": "BACSE104",
       "title": "Structured and Object-Oriented Programming",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCOPE (Fresher)",
@@ -6567,7 +6605,8 @@
       "code": "BACSE105",
       "title": "Data Structures and Algorithms",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCOPE (Fresher)",
@@ -8162,7 +8201,8 @@
       "code": "BACSE106",
       "title": "Operating Systems",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCOPE (Fresher)",
@@ -9782,7 +9822,8 @@
       "code": "BACSE201",
       "title": "Models of Computation",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)"
       ],
@@ -10136,7 +10177,8 @@
       "code": "BACSE202",
       "title": "Database Systems",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)"
       ],
@@ -10762,7 +10804,8 @@
       "code": "BACSE203",
       "title": "Computer Networks",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)"
       ],
@@ -11388,7 +11431,8 @@
       "code": "BACSE204",
       "title": "Software Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)"
@@ -12106,7 +12150,8 @@
       "code": "BACSE205",
       "title": "Fundamentals of Artificial Intelligence and Machine Learning",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)"
@@ -12717,6 +12762,7 @@
       "title": "Innovative Design Project",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)"
       ],
@@ -12729,7 +12775,8 @@
       "code": "BACSE301",
       "title": "Exploratory Data Analysis",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -13181,7 +13228,8 @@
       "code": "BACSE302",
       "title": "Machine Learning and Optimization",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -13218,7 +13266,8 @@
       "code": "BACSE305",
       "title": "Foundations of Data Science",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -13273,7 +13322,8 @@
       "code": "BACSE313",
       "title": "Internet of Things",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)"
       ],
@@ -13305,7 +13355,8 @@
       "code": "BACSE319",
       "title": "Cryptography and Network Security",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCORE ('25 Batch)"
       ],
@@ -13374,7 +13425,8 @@
       "code": "BACSE320",
       "title": "Penetration Testing and Vulnerability Assessment",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -13484,7 +13536,8 @@
       "code": "BACSE324",
       "title": "Embedded Systems Architecture",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -13938,7 +13991,8 @@
       "code": "BACSE325",
       "title": "Full Stack Development",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)"
       ],
@@ -14389,7 +14443,8 @@
       "code": "BACSE328",
       "title": "Computer Vision",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)"
       ],
@@ -14421,7 +14476,8 @@
       "code": "BACSE339",
       "title": "Distributed Ledger Technology",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)"
       ],
@@ -14453,7 +14509,8 @@
       "code": "BACSE341",
       "title": "Fundamentals of Augmented and Virtual Reality",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)"
       ],
@@ -14485,7 +14542,8 @@
       "code": "BACSE344",
       "title": "Cloud Infrastructure and Architecture",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -14544,7 +14602,8 @@
       "code": "BAECE101",
       "title": "Signals and Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -14658,7 +14717,8 @@
       "code": "BAECE102",
       "title": "Digital Logic Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)",
         "SENSE (Fresher)"
@@ -15213,7 +15273,8 @@
       "code": "BAECE103",
       "title": "Network Theory",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)",
         "SENSE (Fresher)"
@@ -15328,7 +15389,8 @@
       "code": "BAECE201",
       "title": "Probability Theory and Random Processes",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -15442,7 +15504,8 @@
       "code": "BAECE202",
       "title": "Engineering Electromagnetics",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -15576,7 +15639,8 @@
       "code": "BAECE203",
       "title": "Analog Electronics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -15851,7 +15915,8 @@
       "code": "BAECE204",
       "title": "Microcontrollers and Embedded C Programming",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -16189,7 +16254,8 @@
       "code": "BAECE205",
       "title": "Control Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -16303,7 +16369,8 @@
       "code": "BAECE206",
       "title": "Digital Signal Processing",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -16560,7 +16627,8 @@
       "code": "BAECE207",
       "title": "Analog and Digital Communication Systems",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -16818,6 +16886,7 @@
       "title": "Innovative Design Project",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -16830,7 +16899,8 @@
       "code": "BAECE301",
       "title": "Antenna and Microwave Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -16871,7 +16941,8 @@
       "code": "BAECE302",
       "title": "VLSI System Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -16939,7 +17010,8 @@
       "code": "BAECE315",
       "title": "Embedded System Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -17007,7 +17079,8 @@
       "code": "BAECE339",
       "title": "Fundamentals of Robotics and Automation",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -17048,7 +17121,8 @@
       "code": "BAECE340",
       "title": "Sensor Technology",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -17116,7 +17190,8 @@
       "code": "BAECE347",
       "title": "Laser Technology",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -17140,7 +17215,8 @@
       "code": "BAECE350",
       "title": "Artificial Intelligence and Data Science",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -17208,7 +17284,8 @@
       "code": "BAECE351",
       "title": "Embedded Connectivity and Peripheral Integration",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -17274,7 +17351,8 @@
       "code": "BAECE352",
       "title": "PCB Design for Electronic System",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -17376,7 +17454,8 @@
       "code": "BAEEE101",
       "title": "Basic Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -17432,7 +17511,8 @@
       "code": "BAEEE103",
       "title": "Analog Electronics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT (Fresher)"
       ],
@@ -17554,7 +17634,8 @@
       "code": "BAEEE201",
       "title": "Digital Electronics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT (Fresher)"
       ],
@@ -17649,7 +17730,8 @@
       "code": "BAEEE202",
       "title": "Control Systems",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT ('25 Batch)"
       ],
@@ -17754,7 +17836,8 @@
       "code": "BAEEE204",
       "title": "Electromagnetic Field Theory",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT (Fresher)"
       ],
@@ -17788,7 +17871,8 @@
       "code": "BAEEE206",
       "title": "Electrical Machines",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT ('25 Batch)"
       ],
@@ -17884,6 +17968,7 @@
       "title": "Innovative Design Project",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "SELECT ('25 Batch)"
       ],
@@ -17897,7 +17982,8 @@
       "code": "BAEEE324",
       "title": "Engineering Optimization",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -17924,7 +18010,8 @@
       "code": "BAEIE101",
       "title": "Signals and Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT (Fresher)"
       ],
@@ -17948,7 +18035,8 @@
       "code": "BAEIE102",
       "title": "Sensors and Signal Conditioning",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT ('25 Batch)"
       ],
@@ -17989,7 +18077,8 @@
       "code": "BAEIE204",
       "title": "Signal Processing",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT ('25 Batch)"
       ],
@@ -18030,7 +18119,8 @@
       "code": "BAEIE307",
       "title": "Artificial Intelligence",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -18058,7 +18148,8 @@
       "code": "BAENG101",
       "title": "Technical English Communication",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SBST (Fresher)",
         "SCE ('25 Batch)",
@@ -20290,7 +20381,8 @@
       "code": "BAESP101",
       "title": "Spanish Level I",
       "kind": "embedded",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -20550,7 +20642,8 @@
       "code": "BAEVD205",
       "title": "VLSI Circuit Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -20618,7 +20711,8 @@
       "code": "BAEVD303",
       "title": "ASIC Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -20686,7 +20780,8 @@
       "code": "BAEVD401",
       "title": "FPGA based System Design and Prototyping",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE ('25 Batch)"
       ],
@@ -20727,7 +20822,8 @@
       "code": "BAFRE101",
       "title": "French Level I",
       "kind": "embedded",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -20969,7 +21065,8 @@
       "code": "BAFRE201",
       "title": "French for Engineers: Language and Communication Lab",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21005,7 +21102,8 @@
       "code": "BAGER101",
       "title": "German Level I",
       "kind": "embedded",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21300,7 +21398,8 @@
       "code": "BAGER201",
       "title": "German Level II",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21336,7 +21435,8 @@
       "code": "BAHIN101",
       "title": "Prathamik Hindi",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21375,7 +21475,8 @@
       "code": "BAHIN102",
       "title": "Prayojanmulak Hindi",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21430,7 +21531,8 @@
       "code": "BAHST101",
       "title": "Applied Human Anatomy and Physiology",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SHINE ('25 Batch)"
       ],
@@ -21471,7 +21573,8 @@
       "code": "BAHST102",
       "title": "Fundamentals of Artificial Intelligence for Healthcare",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SHINE ('25 Batch)",
         "SHINE (Fresher)"
@@ -21507,7 +21610,8 @@
       "code": "BAHST103",
       "title": "Diagnostics, Therapeutic and Surgical Equipments",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SHINE ('25 Batch)"
       ],
@@ -21548,7 +21652,8 @@
       "code": "BAHST201",
       "title": "Bio-Medical Imaging and Image Processing",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SHINE ('25 Batch)"
       ],
@@ -21580,7 +21685,8 @@
       "code": "BAHST202",
       "title": "Materials in Healthcare",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SHINE (Fresher)"
       ],
@@ -21621,7 +21727,8 @@
       "code": "BAHST203",
       "title": "Molecular and Cellular Biology for Health Sciences",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SHINE ('25 Batch)",
         "SHINE (Fresher)"
@@ -21691,7 +21798,8 @@
       "code": "BAHST206",
       "title": "Biomechanics",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SHINE ('25 Batch)"
       ],
@@ -21716,6 +21824,7 @@
       "title": "Innovative Design Project",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "SHINE ('25 Batch)"
       ],
@@ -21728,7 +21837,8 @@
       "code": "BAHST301",
       "title": "Biofabrication Technologies",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SHINE ('25 Batch)"
       ],
@@ -21760,7 +21870,8 @@
       "code": "BAHST304",
       "title": "Biosensors, Wearable Devices, and Internet of Medical Things",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SHINE ('25 Batch)"
       ],
@@ -21784,7 +21895,8 @@
       "code": "BAHST305",
       "title": "Bio-MEMS and Bio-NEMS",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21813,7 +21925,8 @@
       "code": "BAHST306",
       "title": "Preclinical and Clinical Trial Design for Medical Devices",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21842,7 +21955,8 @@
       "code": "BAHST308",
       "title": "Tissue Engineering and Regenerative Medicine",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21879,7 +21993,8 @@
       "code": "BAHST310",
       "title": "Bioinspired Engineering and Biomimetic Technologies",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21908,7 +22023,8 @@
       "code": "BAHST313",
       "title": "Virtual Reality and Immersive Technologies in Healthcare",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21945,7 +22061,8 @@
       "code": "BAHST315",
       "title": "Precision/Personalized Medicine",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21975,6 +22092,7 @@
       "title": "India Studies",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -21993,7 +22111,8 @@
       "code": "BAHUM103",
       "title": "Ethics and Values",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -22467,7 +22586,8 @@
       "code": "BAHUM106",
       "title": "Micro Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -22587,7 +22707,8 @@
       "code": "BAHUM107",
       "title": "Macro Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -22653,7 +22774,8 @@
       "code": "BAHUM109",
       "title": "Principles of Sociology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -22749,7 +22871,8 @@
       "code": "BAHUM110",
       "title": "Sustainability and Society",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -22854,7 +22977,8 @@
       "code": "BAHUM111",
       "title": "Introduction to Psychology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -22986,7 +23110,8 @@
       "code": "BAHUM112",
       "title": "Psychology in Everyday Life",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -23034,7 +23159,8 @@
       "code": "BAHUM114",
       "title": "Literature Through Films",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -23064,7 +23190,8 @@
       "code": "BAHUM118",
       "title": "Indian Heritage and Culture",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -23121,7 +23248,8 @@
       "code": "BAHUM119",
       "title": "International Relations",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23208,7 +23336,8 @@
       "code": "BAHUM126",
       "title": "Popular Culture and Visual Narratives",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23237,7 +23366,8 @@
       "code": "BAHUM127",
       "title": "Reading, Writing, and Cognition",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23266,7 +23396,8 @@
       "code": "BAHUM129",
       "title": "Literatures in the Digital Age",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23295,7 +23426,8 @@
       "code": "BAHUM130",
       "title": "The Art of Public Speaking and Presentation",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23324,7 +23456,8 @@
       "code": "BAHUM226",
       "title": "Indian Classical Music",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23363,7 +23496,8 @@
       "code": "BAHUM238",
       "title": "Environmental Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23391,7 +23525,8 @@
       "code": "BAITE201",
       "title": "Operating System Principles",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCORE ('25 Batch)"
       ],
@@ -23513,7 +23648,8 @@
       "code": "BAITE203",
       "title": "Computer Networks and Data Communications",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCORE ('25 Batch)"
       ],
@@ -23636,6 +23772,7 @@
       "title": "Innovative Design Project",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "SCORE ('25 Batch)"
       ],
@@ -23649,7 +23786,8 @@
       "code": "BAITE311",
       "title": "Introduction to Finance",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23688,7 +23826,8 @@
       "code": "BAITE312",
       "title": "Financial Analytics",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23727,7 +23866,8 @@
       "code": "BAJAP101",
       "title": "Japanese Level I",
       "kind": "embedded",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23826,7 +23966,8 @@
       "code": "BAJAP201",
       "title": "Japanese Level II",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -23853,7 +23994,8 @@
       "code": "BAMAT101",
       "title": "Multivariable Calculus and Differential Equations",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SBST (Fresher)",
         "SCE ('25 Batch)",
@@ -24042,7 +24184,8 @@
       "code": "BAMAT201",
       "title": "Complex Variables and Linear Algebra",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SENSE ('25 Batch)",
@@ -24358,7 +24501,8 @@
       "code": "BAMAT202",
       "title": "Linear Algebra",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT (Fresher)"
       ],
@@ -24444,7 +24588,8 @@
       "code": "BAMAT203",
       "title": "Linear Algebra and Dynamical Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SBST (Fresher)",
         "SHINE ('25 Batch)",
@@ -24551,7 +24696,8 @@
       "code": "BAMAT205",
       "title": "Discrete Mathematics and Linear Algebra",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCOPE (Fresher)",
@@ -25399,7 +25545,8 @@
       "code": "BAMAT206",
       "title": "Linear Algebra and Integral Transforms",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC (Fresher)"
       ],
@@ -25503,7 +25650,8 @@
       "code": "BAMAT207",
       "title": "Probability and Statistics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)"
@@ -26402,7 +26550,8 @@
       "code": "BAMAT208",
       "title": "Operations Research",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -26477,7 +26626,8 @@
       "code": "BAMAT210",
       "title": "Discrete Mathematics",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCORE ('25 Batch)"
       ],
@@ -26551,7 +26701,8 @@
       "code": "BAMEE201",
       "title": "Mechanics of Materials",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC (Fresher)"
       ],
@@ -26835,7 +26986,8 @@
       "code": "BAMEE202",
       "title": "Metallurgy and Mechanical Behaviour of Materials",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -27119,7 +27271,8 @@
       "code": "BAMEE204",
       "title": "Fluid Mechanics and Machinery",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -27403,7 +27556,8 @@
       "code": "BAMEE205",
       "title": "Engineering Innovation and Modelling",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC (Fresher)"
       ],
@@ -27607,7 +27761,8 @@
       "code": "BAMEE208",
       "title": "Additive Manufacturing: Processes and Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -27653,6 +27808,7 @@
       "title": "Innovative Design Project",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -27665,7 +27821,8 @@
       "code": "BAMEE305",
       "title": "Precision Engineering and Metrology",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -27841,7 +27998,8 @@
       "code": "BAMEE310",
       "title": "Fundamentals of Mechatronics Systems",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SELECT ('25 Batch)",
@@ -27913,7 +28071,8 @@
       "code": "BAMEE315",
       "title": "Energy Policy and Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -27937,7 +28096,8 @@
       "code": "BAMEE318",
       "title": "Vehicle Systems Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -27978,7 +28138,8 @@
       "code": "BAMEE322",
       "title": "Industrial Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -28002,7 +28163,8 @@
       "code": "BAMEE323",
       "title": "Operations Research and Decision Analytics",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -28031,7 +28193,8 @@
       "code": "BAMEE338",
       "title": "Introduction to Aeronautics",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -28075,7 +28238,8 @@
       "code": "BAMEE344",
       "title": "Electric Vehicle Instrumentation and Data Analytics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -28125,7 +28289,8 @@
       "code": "BAMEE345",
       "title": "Battery Pack Design and Battery Management System",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -28162,7 +28327,8 @@
       "code": "BAMEE401",
       "title": "Production and Operations Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC ('25 Batch)"
       ],
@@ -28247,7 +28413,8 @@
       "code": "BAMGT301",
       "title": "Financial and Cost Accounting",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -28286,7 +28453,8 @@
       "code": "BAPHY102",
       "title": "Physics for Biologist",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SBST (Fresher)",
         "SHINE ('25 Batch)",
@@ -28483,7 +28651,8 @@
       "code": "BAPHY103",
       "title": "Physics and Mechanics for Engineers",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)"
       ],
@@ -28533,7 +28702,8 @@
       "code": "BAPHY105",
       "title": "Engineering Physics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCOPE (Fresher)",
@@ -29847,7 +30017,8 @@
       "code": "BARB101L",
       "title": "Arabic",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -29942,7 +30113,8 @@
       "code": "BASTS101",
       "title": "Qualitative and Quantitative Skills Practice I",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE ('25 Batch)",
         "SCORE ('25 Batch)",
@@ -30719,7 +30891,8 @@
       "code": "BASTS102",
       "title": "Qualitative and Quantitative Skills Practice II",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE ('25 Batch)",
         "SCOPE ('25 Batch)",
@@ -31405,7 +31578,8 @@
       "code": "BBIT201L",
       "title": "Principles of Chemical Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31428,7 +31602,8 @@
       "code": "BBIT201P",
       "title": "Chemical Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31451,7 +31626,8 @@
       "code": "BBIT202L",
       "title": "Biochemistry",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31474,7 +31650,8 @@
       "code": "BBIT202P",
       "title": "Biochemistry Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31497,7 +31674,8 @@
       "code": "BBIT204L",
       "title": "Cell Biology and Genetics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31520,7 +31698,8 @@
       "code": "BBIT204P",
       "title": "Cell Biology and Genetics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31543,7 +31722,8 @@
       "code": "BBIT205L",
       "title": "Bioinformatics",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31589,7 +31769,8 @@
       "code": "BBIT205P",
       "title": "Bioinformatics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31639,7 +31820,8 @@
       "code": "BBIT206L",
       "title": "Analytical Techniques in Biotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31689,7 +31871,8 @@
       "code": "BBIT206P",
       "title": "Analytical Techniques in Biotechnology Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31775,7 +31958,8 @@
       "code": "BBIT207L",
       "title": "Molecular Biology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -31816,7 +32000,8 @@
       "code": "BBIT207P",
       "title": "Molecular Biology Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -31875,7 +32060,8 @@
       "code": "BBIT208L",
       "title": "Biochemistry",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -31916,7 +32102,8 @@
       "code": "BBIT209L",
       "title": "Molecular Biology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -31975,7 +32162,8 @@
       "code": "BBIT209P",
       "title": "Molecular Biology Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32088,7 +32276,8 @@
       "code": "BBIT301L",
       "title": "Principles of Bioprocess Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32138,7 +32327,8 @@
       "code": "BBIT301P",
       "title": "Bioprocess Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32215,7 +32405,8 @@
       "code": "BBIT302L",
       "title": "Genetic Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32265,7 +32456,8 @@
       "code": "BBIT302P",
       "title": "Genetic Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32333,7 +32525,8 @@
       "code": "BBIT303L",
       "title": "Genomics and Proteomics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32392,7 +32585,8 @@
       "code": "BBIT304L",
       "title": "Biochemical Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32442,7 +32636,8 @@
       "code": "BBIT305L",
       "title": "Immunology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32492,7 +32687,8 @@
       "code": "BBIT305P",
       "title": "Immunology Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32542,7 +32738,8 @@
       "code": "BBIT306L",
       "title": "Animal Biotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32592,7 +32789,8 @@
       "code": "BBIT307L",
       "title": "Plant Biotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32651,7 +32849,8 @@
       "code": "BBIT308L",
       "title": "Industrial Biotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32692,7 +32891,8 @@
       "code": "BBIT310L",
       "title": "AI in Biology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32724,7 +32924,8 @@
       "code": "BBIT312L",
       "title": "Pharmaceutical Biotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32747,7 +32948,8 @@
       "code": "BBIT313L",
       "title": "Regenerative Medicine",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32770,7 +32972,8 @@
       "code": "BBIT314L",
       "title": "Stem Cell Technology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32793,7 +32996,8 @@
       "code": "BBIT316L",
       "title": "Nanobiotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32816,7 +33020,8 @@
       "code": "BBIT318L",
       "title": "Forensic Science and Technology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32839,7 +33044,8 @@
       "code": "BBIT322L",
       "title": "Cancer Biology and Informatics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32862,7 +33068,8 @@
       "code": "BBIT324L",
       "title": "Cell Biology and Genetics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -32903,7 +33110,8 @@
       "code": "BBIT327L",
       "title": "Data Analytics in Bioinformatics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -32944,7 +33152,8 @@
       "code": "BBIT328L",
       "title": "Downstream Processing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -32985,7 +33194,8 @@
       "code": "BBIT328P",
       "title": "Downstream Processing Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -33065,7 +33275,8 @@
       "code": "BBIT402L",
       "title": "Neurobiology and Cognitive Science",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -33088,7 +33299,8 @@
       "code": "BBIT406L",
       "title": "Computational Biology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST"
       ],
@@ -33120,7 +33332,8 @@
       "code": "BBIT417L",
       "title": "Analytical Bioinformatics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -33161,7 +33374,8 @@
       "code": "BBIT417P",
       "title": "Analytical Bioinformatics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -33202,7 +33416,8 @@
       "code": "BBIT418L",
       "title": "Biological Databases",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -33243,7 +33458,8 @@
       "code": "BBIT418P",
       "title": "Biological Databases Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -33284,7 +33500,8 @@
       "code": "BBMD101L",
       "title": "Anatomy and Physiology",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33306,7 +33523,8 @@
       "code": "BBMD101P",
       "title": "Anatomy and Physiology Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33338,7 +33556,8 @@
       "code": "BBMD102L",
       "title": "Biomedical Instrumentation and Measurements - I",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33368,7 +33587,8 @@
       "code": "BBMD102P",
       "title": "Biomedical Instrumentation and Measurements - I Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33418,7 +33638,8 @@
       "code": "BBMD201L",
       "title": "Biomedical Instrumentation and Measurements - II",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33450,7 +33671,8 @@
       "code": "BBMD202L",
       "title": "Bio Signal Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33480,7 +33702,8 @@
       "code": "BBMD202P",
       "title": "Bio Signal Analysis Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33530,7 +33753,8 @@
       "code": "BBMD203L",
       "title": "Medical Image Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33560,7 +33784,8 @@
       "code": "BBMD203P",
       "title": "Medical Image Analysis Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33610,7 +33835,8 @@
       "code": "BBMD204L",
       "title": "Medical Imaging Techniques",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33633,7 +33859,8 @@
       "code": "BBMD205L",
       "title": "Biomaterials",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33656,7 +33883,8 @@
       "code": "BBMD206L",
       "title": "Biomechanics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33679,7 +33907,8 @@
       "code": "BBMD207L",
       "title": "Hospital Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33702,7 +33931,8 @@
       "code": "BBMD208L",
       "title": "Telemedicine and Telecare",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33725,7 +33955,8 @@
       "code": "BBMD209L",
       "title": "Health Informatics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33748,7 +33979,8 @@
       "code": "BBMD210L",
       "title": "Medical Robotics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -33771,7 +34003,8 @@
       "code": "BCHE201L",
       "title": "Computational Methods in Chemical Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -33803,7 +34036,8 @@
       "code": "BCHE201P",
       "title": "Computational Methods in Chemical Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -33835,7 +34069,8 @@
       "code": "BCHE204L",
       "title": "Transport Phenomena",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -33889,7 +34124,8 @@
       "code": "BCHE205L",
       "title": "Momentum Transfer",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -33939,7 +34175,8 @@
       "code": "BCHE205P",
       "title": "Momentum Transfer Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34025,7 +34262,8 @@
       "code": "BCHE207L",
       "title": "Mass Transfer I",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34084,7 +34322,8 @@
       "code": "BCHE208L",
       "title": "Heat Transfer",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34134,7 +34373,8 @@
       "code": "BCHE208P",
       "title": "Heat Transfer Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34220,7 +34460,8 @@
       "code": "BCHE303L",
       "title": "Chemical Reaction Engineering I",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34270,7 +34511,8 @@
       "code": "BCHE303P",
       "title": "Chemical Reaction Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34356,7 +34598,8 @@
       "code": "BCHE304L",
       "title": "Chemical Process Technology and Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34410,7 +34653,8 @@
       "code": "BCHE305L",
       "title": "Process Dynamics and Control",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34460,7 +34704,8 @@
       "code": "BCHE305P",
       "title": "Process Dynamics and Control Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34546,7 +34791,8 @@
       "code": "BCHE306L",
       "title": "Chemical Reaction Engineering II",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34578,7 +34824,8 @@
       "code": "BCHE307L",
       "title": "Process Modelling and Simulation",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34616,7 +34863,8 @@
       "code": "BCHE307P",
       "title": "Process Modelling and Simulation Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34657,7 +34905,8 @@
       "code": "BCHE308L",
       "title": "Chemical Process Equipment Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34689,7 +34938,8 @@
       "code": "BCHE308P",
       "title": "Chemical Process Equipment Design Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34721,7 +34971,8 @@
       "code": "BCHE310L",
       "title": "Polymer Technology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34744,7 +34995,8 @@
       "code": "BCHE311L",
       "title": "Process Utilities and Pipeline Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34812,7 +35064,8 @@
       "code": "BCHE314L",
       "title": "Fuels and Combustion",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34835,7 +35088,8 @@
       "code": "BCHE315L",
       "title": "Biochemical Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34867,7 +35121,8 @@
       "code": "BCHE316L",
       "title": "Pharmaceutical Technology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34890,7 +35145,8 @@
       "code": "BCHE317L",
       "title": "Petroleum Refining Technology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34922,7 +35178,8 @@
       "code": "BCHE318L",
       "title": "Safety and Hazard Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34945,7 +35202,8 @@
       "code": "BCHE319E",
       "title": "Process Plant Design and Simulation",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34976,7 +35234,8 @@
       "code": "BCHE320L",
       "title": "Chemical Product Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -34999,7 +35258,8 @@
       "code": "BCHE322L",
       "title": "Nanoscience and Nanotechnology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -35022,7 +35282,8 @@
       "code": "BCHE402L",
       "title": "Food Process Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -35054,7 +35315,8 @@
       "code": "BCHE406L",
       "title": "AI in Chemical Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCHEME"
       ],
@@ -35077,7 +35339,8 @@
       "code": "BCHI101L",
       "title": "Chinese I",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -35173,6 +35436,7 @@
       "title": "Engineering Chemistry",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -35232,6 +35496,7 @@
       "title": "Engineering Chemistry Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -35326,7 +35591,8 @@
       "code": "BCLE202L",
       "title": "Fluid Mechanics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -35349,7 +35615,8 @@
       "code": "BCLE202P",
       "title": "Fluid Mechanics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -35372,7 +35639,8 @@
       "code": "BCLE206E",
       "title": "Building Planning and Drawing",
       "kind": "embedded",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -35437,7 +35705,8 @@
       "code": "BCLE207L",
       "title": "Soil Mechanics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -35478,7 +35747,8 @@
       "code": "BCLE207P",
       "title": "Soil Mechanics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -35546,7 +35816,8 @@
       "code": "BCLE208L",
       "title": "Structural Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -35587,7 +35858,8 @@
       "code": "BCLE210L",
       "title": "AI in Civil Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -35610,7 +35882,8 @@
       "code": "BCLE211L",
       "title": "Urban Planning and Development",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -35633,7 +35906,8 @@
       "code": "BCLE212L",
       "title": "Natural Disaster Mitigation and Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -35729,7 +36003,8 @@
       "code": "BCLE213E",
       "title": "Remote Sensing and GIS",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -35777,7 +36052,8 @@
       "code": "BCLE214L",
       "title": "Global Warming",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -35836,7 +36112,8 @@
       "code": "BCLE215L",
       "title": "Waste Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -35904,7 +36181,8 @@
       "code": "BCLE216L",
       "title": "Water Resource Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -35999,7 +36277,8 @@
       "code": "BCLE305L",
       "title": "Transportation Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36031,7 +36310,8 @@
       "code": "BCLE306L",
       "title": "Water Resources Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36063,7 +36343,8 @@
       "code": "BCLE306P",
       "title": "Water Resources Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36095,7 +36376,8 @@
       "code": "BCLE307L",
       "title": "Construction Practices and Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36127,7 +36409,8 @@
       "code": "BCLE308L",
       "title": "Design of Steel Structures",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36159,7 +36442,8 @@
       "code": "BCLE308P",
       "title": "Steel Structures Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36191,7 +36475,8 @@
       "code": "BCLE309L",
       "title": "Estimating and Costing",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36221,7 +36506,8 @@
       "code": "BCLE311L",
       "title": "Industrial Waste Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36244,7 +36530,8 @@
       "code": "BCLE312L",
       "title": "Air and Noise Pollution Control",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36267,7 +36554,8 @@
       "code": "BCLE313L",
       "title": "Solid Waste Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36290,7 +36578,8 @@
       "code": "BCLE317E",
       "title": "Building Information Modeling",
       "kind": "embedded",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36321,7 +36610,8 @@
       "code": "BCLE401L",
       "title": "Traffic Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE"
       ],
@@ -36345,6 +36635,7 @@
       "title": "Computer Programming: Python",
       "kind": "embedded",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCOPE"
       ],
@@ -36397,6 +36688,7 @@
       "title": "Structured and Object-Oriented Programming",
       "kind": "theory",
       "credits": 2,
+      "creditsEstimated": false,
       "schools": [
         "SCOPE"
       ],
@@ -36475,6 +36767,7 @@
       "title": "Structured and Object-Oriented Programming Lab",
       "kind": "lab",
       "credits": 2,
+      "creditsEstimated": false,
       "schools": [
         "SCOPE"
       ],
@@ -36577,6 +36870,7 @@
       "title": "Computer Programming: Java",
       "kind": "embedded",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCOPE",
         "SCORE",
@@ -36805,7 +37099,8 @@
       "code": "BCSE202L",
       "title": "Data Structures and Algorithms",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE",
@@ -36904,7 +37199,8 @@
       "code": "BCSE202P",
       "title": "Data Structures and Algorithms Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE",
@@ -37003,7 +37299,8 @@
       "code": "BCSE203E",
       "title": "Web Programming",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -38178,7 +38475,8 @@
       "code": "BCSE204L",
       "title": "Design and Analysis of Algorithms",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE",
@@ -38754,7 +39052,8 @@
       "code": "BCSE204P",
       "title": "Design and Analysis of Algorithms Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE",
@@ -39330,7 +39629,8 @@
       "code": "BCSE205L",
       "title": "Computer Architecture and Organization",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE",
@@ -39843,7 +40143,8 @@
       "code": "BCSE206L",
       "title": "Foundations of Data Science",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -39986,7 +40287,8 @@
       "code": "BCSE207L",
       "title": "Programming for Data Science",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -40059,7 +40361,8 @@
       "code": "BCSE207P",
       "title": "Programming for Data Science Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -40139,7 +40442,8 @@
       "code": "BCSE208L",
       "title": "Data Mining",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -40212,7 +40516,8 @@
       "code": "BCSE208P",
       "title": "Data Mining Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -40292,7 +40597,8 @@
       "code": "BCSE209L",
       "title": "Machine Learning",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -40508,7 +40814,8 @@
       "code": "BCSE209P",
       "title": "Machine Learning Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -40724,7 +41031,8 @@
       "code": "BCSE301L",
       "title": "Software Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -41550,7 +41858,8 @@
       "code": "BCSE301P",
       "title": "Software Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -42367,7 +42676,8 @@
       "code": "BCSE302L",
       "title": "Database Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -42896,7 +43206,8 @@
       "code": "BCSE302P",
       "title": "Database Systems Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -43425,7 +43736,8 @@
       "code": "BCSE303L",
       "title": "Operating Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE",
@@ -43956,7 +44268,8 @@
       "code": "BCSE303P",
       "title": "Operating Systems Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE",
@@ -44487,7 +44800,8 @@
       "code": "BCSE304L",
       "title": "Theory of Computation",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -45043,7 +45357,8 @@
       "code": "BCSE305L",
       "title": "Embedded Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -45878,7 +46193,8 @@
       "code": "BCSE306L",
       "title": "Artificial Intelligence",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -46407,7 +46723,8 @@
       "code": "BCSE307L",
       "title": "Compiler Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -46927,7 +47244,8 @@
       "code": "BCSE307P",
       "title": "Compiler Design Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -47447,7 +47765,8 @@
       "code": "BCSE308L",
       "title": "Computer Networks",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE",
@@ -47996,7 +48315,8 @@
       "code": "BCSE308P",
       "title": "Computer Networks Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE",
@@ -48545,7 +48865,8 @@
       "code": "BCSE309L",
       "title": "Cryptography and Network Security",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -49324,7 +49645,8 @@
       "code": "BCSE309P",
       "title": "Cryptography and Network Security Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50094,7 +50416,8 @@
       "code": "BCSE310L",
       "title": "IoT Architectures and Protocols",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50181,7 +50504,8 @@
       "code": "BCSE311L",
       "title": "Sensors and Actuator Devices",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50235,7 +50559,8 @@
       "code": "BCSE311P",
       "title": "Sensors and Actuator Devices Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50294,7 +50619,8 @@
       "code": "BCSE312L",
       "title": "Programming for IoT Boards",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50349,7 +50675,8 @@
       "code": "BCSE312P",
       "title": "Programming for IoT Boards Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50409,7 +50736,8 @@
       "code": "BCSE313L",
       "title": "Fundamentals of Fog and Edge Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50478,7 +50806,8 @@
       "code": "BCSE314L",
       "title": "Privacy and Security in IoT",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50538,7 +50867,8 @@
       "code": "BCSE315L",
       "title": "Wearable Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50598,7 +50928,8 @@
       "code": "BCSE316L",
       "title": "Design of Smart Cities",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50658,7 +50989,8 @@
       "code": "BCSE317L",
       "title": "Information Security",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50754,7 +51086,8 @@
       "code": "BCSE318L",
       "title": "Data Privacy",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50868,7 +51201,8 @@
       "code": "BCSE319L",
       "title": "Penetration Testing and Vulnerability Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -50931,7 +51265,8 @@
       "code": "BCSE319P",
       "title": "Penetration Testing and Vulnerability Analysis Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51000,7 +51335,8 @@
       "code": "BCSE320L",
       "title": "Web Application Security",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51060,7 +51396,8 @@
       "code": "BCSE321L",
       "title": "Malware Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51115,7 +51452,8 @@
       "code": "BCSE321P",
       "title": "Malware Analysis Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51175,7 +51513,8 @@
       "code": "BCSE322L",
       "title": "Digital Forensics",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51230,7 +51569,8 @@
       "code": "BCSE322P",
       "title": "Digital Forensics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51290,7 +51630,8 @@
       "code": "BCSE323L",
       "title": "Digital Watermarking and Steganography",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51350,7 +51691,8 @@
       "code": "BCSE324L",
       "title": "Foundations of Blockchain Technology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51437,7 +51779,8 @@
       "code": "BCSE325L",
       "title": "Introduction to Bitcoin",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51488,7 +51831,8 @@
       "code": "BCSE326L",
       "title": "Blockchain Architecture Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51530,7 +51874,8 @@
       "code": "BCSE327L",
       "title": "Smart Contracts",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51568,7 +51913,8 @@
       "code": "BCSE327P",
       "title": "Smart Contracts Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51600,7 +51946,8 @@
       "code": "BCSE328L",
       "title": "Cryptocurrency Technologies",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51651,7 +51998,8 @@
       "code": "BCSE329L",
       "title": "Blockchain and Distributed Ledger Technology",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51690,7 +52038,8 @@
       "code": "BCSE329P",
       "title": "Blockchain and Distributed Ledger Technology Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51732,7 +52081,8 @@
       "code": "BCSE330L",
       "title": "Public Key Infrastructure and Trust Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51783,7 +52133,8 @@
       "code": "BCSE331L",
       "title": "Exploratory Data Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51854,7 +52205,8 @@
       "code": "BCSE331P",
       "title": "Exploratory Data Analysis Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -51932,7 +52284,8 @@
       "code": "BCSE332L",
       "title": "Deep Learning",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -52067,7 +52420,8 @@
       "code": "BCSE332P",
       "title": "Deep Learning Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -52202,7 +52556,8 @@
       "code": "BCSE334L",
       "title": "Predictive Analytics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -52274,6 +52629,7 @@
       "title": "Cloud Architecture Design",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -52838,7 +53194,8 @@
       "code": "BCSE402L",
       "title": "Big Data Analytics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -52879,7 +53236,8 @@
       "code": "BCSE403L",
       "title": "Digital Image Processing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -52947,7 +53305,8 @@
       "code": "BCSE404L",
       "title": "Internet and Web Programming",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -52979,7 +53338,8 @@
       "code": "BCSE405L",
       "title": "Advanced Java Programming",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53011,7 +53371,8 @@
       "code": "BCSE406L",
       "title": "NoSQL Databases",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53070,7 +53431,8 @@
       "code": "BCSE407L",
       "title": "Computer Vision",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53111,7 +53473,8 @@
       "code": "BCSE408L",
       "title": "Cloud Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53251,7 +53614,8 @@
       "code": "BCSE409L",
       "title": "Natural Language Processing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53373,7 +53737,8 @@
       "code": "BCSE410L",
       "title": "Cyber Security",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53414,7 +53779,8 @@
       "code": "BCSE412L",
       "title": "Parallel Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53437,7 +53803,8 @@
       "code": "BCSE414L",
       "title": "High Performance Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53460,7 +53827,8 @@
       "code": "BCSE417L",
       "title": "Machine Vision",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -53567,7 +53935,8 @@
       "code": "BCSE417P",
       "title": "Machine Vision Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCOPE"
@@ -53674,7 +54043,8 @@
       "code": "BCSE418L",
       "title": "Explainable Artificial Intelligence",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53720,7 +54090,8 @@
       "code": "BCSE419L",
       "title": "Speech and Language Processing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53770,7 +54141,8 @@
       "code": "BCSE419P",
       "title": "Speech and Language Processing lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53820,7 +54192,8 @@
       "code": "BCSE431L",
       "title": "Fundamentals of Quantum Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -53843,7 +54216,8 @@
       "code": "BCSE432E",
       "title": "Reinforcement Learning",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE"
       ],
@@ -54038,7 +54412,8 @@
       "code": "BECE102L",
       "title": "Digital Systems Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE",
@@ -54119,7 +54494,8 @@
       "code": "BECE102P",
       "title": "Digital Systems Design Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE",
@@ -54218,7 +54594,8 @@
       "code": "BECE201L",
       "title": "Electronic Materials and Devices",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -54241,7 +54618,8 @@
       "code": "BECE202L",
       "title": "Signals and Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -54273,7 +54651,8 @@
       "code": "BECE203L",
       "title": "Circuit Theory",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -54307,7 +54686,8 @@
       "code": "BECE204L",
       "title": "Microprocessors and Microcontrollers",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE",
@@ -54991,7 +55371,8 @@
       "code": "BECE204P",
       "title": "Microprocessors and Microcontrollers Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE",
@@ -55837,7 +56218,8 @@
       "code": "BECE205L",
       "title": "Engineering Electromagnetics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -55869,7 +56251,8 @@
       "code": "BECE206L",
       "title": "Analog Circuits",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -55901,7 +56284,8 @@
       "code": "BECE206P",
       "title": "Analog Circuits Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -55951,7 +56335,8 @@
       "code": "BECE207L",
       "title": "Random Processes",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -56073,7 +56458,8 @@
       "code": "BECE208E",
       "title": "Data Structures and Algorithms",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -56131,7 +56517,8 @@
       "code": "BECE209E",
       "title": "Structured and Object Oriented Programming",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -56164,7 +56551,8 @@
       "code": "BECE301L",
       "title": "Digital Signal Processing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -56286,7 +56674,8 @@
       "code": "BECE301P",
       "title": "Digital Signal Processing Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -56517,6 +56906,7 @@
       "title": "Control Systems",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SENSE"
       ],
@@ -56647,7 +57037,8 @@
       "code": "BECE303L",
       "title": "VLSI System Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -56796,7 +57187,8 @@
       "code": "BECE303P",
       "title": "VLSI System Design Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -57080,7 +57472,8 @@
       "code": "BECE304L",
       "title": "Analog Communication Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -57202,7 +57595,8 @@
       "code": "BECE304P",
       "title": "Analog Communication Systems Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -57432,7 +57826,8 @@
       "code": "BECE305L",
       "title": "Antenna and Microwave Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -57554,7 +57949,8 @@
       "code": "BECE305P",
       "title": "Antenna and Microwave Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -57784,7 +58180,8 @@
       "code": "BECE306L",
       "title": "Digital Communication Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -57906,7 +58303,8 @@
       "code": "BECE306P",
       "title": "Digital Communication Systems Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58136,7 +58534,8 @@
       "code": "BECE309L",
       "title": "Artificial Intelligence and Machine Learning",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58214,7 +58613,8 @@
       "code": "BECE310L",
       "title": "Satellite Communications",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58247,7 +58647,8 @@
       "code": "BECE311L",
       "title": "Radar Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58270,7 +58671,8 @@
       "code": "BECE312L",
       "title": "Robotics and Automation",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58312,7 +58714,8 @@
       "code": "BECE313L",
       "title": "Information Theory and Coding",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58363,7 +58766,8 @@
       "code": "BECE316E",
       "title": "Digital Image Processing",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58404,7 +58808,8 @@
       "code": "BECE317L",
       "title": "Wireless and Mobile Communications",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58499,7 +58904,8 @@
       "code": "BECE317P",
       "title": "Wireless and Mobile Communications Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58675,7 +59081,8 @@
       "code": "BECE318L",
       "title": "Optical Fiber Communications",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58770,7 +59177,8 @@
       "code": "BECE318P",
       "title": "Optical Fiber Communications Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -58946,7 +59354,8 @@
       "code": "BECE320E",
       "title": "Embedded C Programming",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT",
         "SENSE"
@@ -59344,7 +59753,8 @@
       "code": "BECE355L",
       "title": "Advanced Cloud Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT",
         "SENSE"
@@ -59549,7 +59959,8 @@
       "code": "BECE401L",
       "title": "Computer Communications and Networks",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -59653,7 +60064,8 @@
       "code": "BECE401P",
       "title": "Computer Communications and Networks Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -59847,7 +60259,8 @@
       "code": "BECE403E",
       "title": "Embedded Systems Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -59888,7 +60301,8 @@
       "code": "BECE406E",
       "title": "FPGA Based System Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -59981,7 +60395,8 @@
       "code": "BECE407E",
       "title": "ASIC Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -60021,7 +60436,8 @@
       "code": "BECE409E",
       "title": "Sensors Technology",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -60061,7 +60477,8 @@
       "code": "BECE411L",
       "title": "Cryptography and Network Security",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -60093,7 +60510,8 @@
       "code": "BEEE101P",
       "title": "Basic Electrical Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60126,6 +60544,7 @@
       "title": "Basic Electrical and Electronics Engineering",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -60230,6 +60649,7 @@
       "title": "Basic Electrical and Electronics Engineering Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -60414,7 +60834,8 @@
       "code": "BEEE206L",
       "title": "Digital Electronics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60437,7 +60858,8 @@
       "code": "BEEE206P",
       "title": "Digital Electronics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60469,7 +60891,8 @@
       "code": "BEEE208L",
       "title": "Analog Electronics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60528,7 +60951,8 @@
       "code": "BEEE208P",
       "title": "Analog Electronics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60632,7 +61056,8 @@
       "code": "BEEE211E",
       "title": "VLSI Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60724,7 +61149,8 @@
       "code": "BEEE213L",
       "title": "Embedded Systems Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60756,7 +61182,8 @@
       "code": "BEEE215L",
       "title": "DC Machines and Transformers",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60778,7 +61205,8 @@
       "code": "BEEE215P",
       "title": "DC Machines and Transformers Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60801,7 +61229,8 @@
       "code": "BEEE301L",
       "title": "Power Electronics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60851,7 +61280,8 @@
       "code": "BEEE302L",
       "title": "Digital Signal Processing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -60928,7 +61358,8 @@
       "code": "BEEE302P",
       "title": "Digital Signal Processing Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61068,7 +61499,8 @@
       "code": "BEEE303L",
       "title": "Control Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61136,7 +61568,8 @@
       "code": "BEEE303P",
       "title": "Control Systems Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61258,7 +61691,8 @@
       "code": "BEEE304L",
       "title": "Power Systems Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61312,7 +61746,8 @@
       "code": "BEEE305L",
       "title": "Measurements and Instrumentation",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61366,7 +61801,8 @@
       "code": "BEEE305P",
       "title": "Measurements and Instrumentation Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61470,7 +61906,8 @@
       "code": "BEEE306L",
       "title": "Power Systems Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61520,7 +61957,8 @@
       "code": "BEEE306P",
       "title": "Power Systems Analysis Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61597,7 +62035,8 @@
       "code": "BEEE307L",
       "title": "Electric Drives",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61629,7 +62068,8 @@
       "code": "BEEE307P",
       "title": "Power Electronics and Drives Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61670,7 +62110,8 @@
       "code": "BEEE308L",
       "title": "Communication Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61702,7 +62143,8 @@
       "code": "BEEE309L",
       "title": "Microprocessors and Microcontrollers",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61734,7 +62176,8 @@
       "code": "BEEE309P",
       "title": "Microprocessors and Microcontrollers Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61793,7 +62236,8 @@
       "code": "BEEE310L",
       "title": "Digital Image Processing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61816,7 +62260,8 @@
       "code": "BEEE312L",
       "title": "AC Machines",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61862,7 +62307,8 @@
       "code": "BEEE312P",
       "title": "AC Machines Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61948,7 +62394,8 @@
       "code": "BEEE405L",
       "title": "Renewable Energy Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -61971,7 +62418,8 @@
       "code": "BEEE406L",
       "title": "FACTS and HVDC",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -62003,7 +62451,8 @@
       "code": "BEEE409L",
       "title": "Robotics and Control",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -62035,7 +62484,8 @@
       "code": "BEEE410L",
       "title": "Machine Learning",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -62076,7 +62526,8 @@
       "code": "BEEE411L",
       "title": "Artificial Intelligence",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -62108,7 +62559,8 @@
       "code": "BEEE416L",
       "title": "Electric Vehicles",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -62149,7 +62601,8 @@
       "code": "BEEE422L",
       "title": "Deep Learning",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -62181,7 +62634,8 @@
       "code": "BEEE425L",
       "title": "Machine Vision",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -62204,7 +62658,8 @@
       "code": "BEIE301L",
       "title": "Biomedical Instrumentation",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SELECT"
       ],
@@ -62228,6 +62683,7 @@
       "title": "Technical English Communication",
       "kind": "theory",
       "credits": 2,
+      "creditsEstimated": false,
       "schools": [
         "SCOPE"
       ],
@@ -62250,6 +62706,7 @@
       "title": "Technical English Communication Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCOPE"
       ],
@@ -62273,6 +62730,7 @@
       "title": "Technical Report Writing",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCHEME",
@@ -62312,7 +62770,8 @@
       "code": "BESP101L",
       "title": "Spanish I",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -62575,7 +63034,8 @@
       "code": "BEVD309L",
       "title": "Testing of VLSI Circuits",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SENSE"
       ],
@@ -62598,7 +63058,8 @@
       "code": "BFRE101L",
       "title": "French I",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -62877,7 +63338,8 @@
       "code": "BGER101L",
       "title": "German I",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -63156,7 +63618,8 @@
       "code": "BHST207L",
       "title": "Biochemistry and Molecular Pharmacology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63179,7 +63642,8 @@
       "code": "BHST207P",
       "title": "Biochemistry and Molecular Pharmacology Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63211,7 +63675,8 @@
       "code": "BHST303L",
       "title": "Image Processing and Data Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63234,7 +63699,8 @@
       "code": "BHST303P",
       "title": "Image Processing and Data Analysis Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63257,7 +63723,8 @@
       "code": "BHST304L",
       "title": "Devices for Diagnostics and Therapeutics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63280,7 +63747,8 @@
       "code": "BHST306L",
       "title": "Biotechnology for Healthcare",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63303,7 +63771,8 @@
       "code": "BHST308L",
       "title": "Microbiology and Pathology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63326,7 +63795,8 @@
       "code": "BHST308P",
       "title": "Microbiology and Pathology Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63358,7 +63828,8 @@
       "code": "BHST404L",
       "title": "Regenerative Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63381,7 +63852,8 @@
       "code": "BHST410L",
       "title": "Public Health and Epidemiology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63404,7 +63876,8 @@
       "code": "BHST412L",
       "title": "Healthcare Law and IPR",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63427,7 +63900,8 @@
       "code": "BHST414L",
       "title": "Advanced AI and ML in Healthcare",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SHINE"
       ],
@@ -63450,7 +63924,8 @@
       "code": "BHUM102E",
       "title": "Indian Classical Music",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -63524,7 +63999,8 @@
       "code": "BHUM103L",
       "title": "Micro Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -63592,7 +64068,8 @@
       "code": "BHUM104L",
       "title": "Macro Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -63687,7 +64164,8 @@
       "code": "BHUM105L",
       "title": "Public Policy and Administration",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -63728,7 +64206,8 @@
       "code": "BHUM106L",
       "title": "Principles of Sociology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -63868,7 +64347,8 @@
       "code": "BHUM107L",
       "title": "Sustainability and Society",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -63981,7 +64461,8 @@
       "code": "BHUM108L",
       "title": "Urban Community Development",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -64058,7 +64539,8 @@
       "code": "BHUM109L",
       "title": "Social Work and Sustainability",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -64108,7 +64590,8 @@
       "code": "BHUM110L",
       "title": "Cognitive Psychology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -64150,6 +64633,7 @@
       "title": "Happiness and Well-being",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCHEME",
@@ -64244,6 +64728,7 @@
       "title": "Mass Communication",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64293,6 +64778,7 @@
       "title": "Rural Development",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64378,6 +64864,7 @@
       "title": "Introduction to Psychology",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64454,6 +64941,7 @@
       "title": "Industrial Psychology",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64494,6 +64982,7 @@
       "title": "Development Economics",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64543,6 +65032,7 @@
       "title": "International Economics",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64601,6 +65091,7 @@
       "title": "Economics of Strategy",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64632,6 +65123,7 @@
       "title": "Game Theory",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64663,6 +65155,7 @@
       "title": "Behavioral Economics",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64721,6 +65214,7 @@
       "title": "Mathematics for Economic Analysis",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64761,6 +65255,7 @@
       "title": "Political Science",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64801,6 +65296,7 @@
       "title": "International Relations",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64841,6 +65337,7 @@
       "title": "Indian Culture and Heritage",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64899,6 +65396,7 @@
       "title": "Contemporary India",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64930,6 +65428,7 @@
       "title": "Financial Management",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -64961,6 +65460,7 @@
       "title": "Economics of Money, Banking and Financial Markets",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -65010,6 +65510,7 @@
       "title": "Digital Logic and Microprocessors",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65033,6 +65534,7 @@
       "title": "Digital Logic and Microprocessors Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65056,6 +65558,7 @@
       "title": "Computer Architecture and Organization",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65142,6 +65645,7 @@
       "title": "Database Systems",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65228,6 +65732,7 @@
       "title": "Database Systems Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65314,6 +65819,7 @@
       "title": "Operating Systems",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65400,6 +65906,7 @@
       "title": "Operating Systems Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65486,6 +65993,7 @@
       "title": "Web Technologies",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65572,6 +66080,7 @@
       "title": "Web Technologies Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65658,6 +66167,7 @@
       "title": "Computer Networks",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65744,6 +66254,7 @@
       "title": "Computer Networks Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65830,6 +66341,7 @@
       "title": "Theory of Computation",
       "kind": "theory",
       "credits": 4,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -65934,6 +66446,7 @@
       "title": "Software Engineering",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66020,6 +66533,7 @@
       "title": "Software Engineering Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66106,6 +66620,7 @@
       "title": "Artificial Intelligence",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66192,6 +66707,7 @@
       "title": "Artificial Intelligence Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66278,6 +66794,7 @@
       "title": "Human Computer Interaction",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66301,6 +66818,7 @@
       "title": "Data Mining",
       "kind": "embedded",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66366,6 +66884,7 @@
       "title": "Multimedia Systems",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66389,6 +66908,7 @@
       "title": "Network and Information Security",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66457,6 +66977,7 @@
       "title": "Distributed Computing",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66525,6 +67046,7 @@
       "title": "Embedded Systems and IoT",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66656,6 +67178,7 @@
       "title": "Embedded Systems and IoT Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66778,6 +67301,7 @@
       "title": "Object Oriented Analysis and Design",
       "kind": "embedded",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66826,6 +67350,7 @@
       "title": "Soft Computing",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66867,6 +67392,7 @@
       "title": "Quantum Computing",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66908,6 +67434,7 @@
       "title": "Network Management",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66931,6 +67458,7 @@
       "title": "Mobile Application Development",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -66963,6 +67491,7 @@
       "title": "Big Data Analytics",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -67022,6 +67551,7 @@
       "title": "Cloud Computing",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -67063,6 +67593,7 @@
       "title": "Cyber Security",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -67086,6 +67617,7 @@
       "title": "Blockchain Technology",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCORE"
       ],
@@ -67108,7 +67640,8 @@
       "code": "BJAP101L",
       "title": "Japanese I",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -67276,6 +67809,7 @@
       "title": "Calculus",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SCOPE"
       ],
@@ -67299,6 +67833,7 @@
       "title": "Calculus Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SCOPE"
       ],
@@ -67322,6 +67857,7 @@
       "title": "Differential Equations and Transforms",
       "kind": "theory",
       "credits": 4,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -67446,6 +67982,7 @@
       "title": "Complex Variables and Linear Algebra",
       "kind": "theory",
       "credits": 4,
+      "creditsEstimated": false,
       "schools": [
         "SCE",
         "SCHEME",
@@ -67548,6 +68085,7 @@
       "title": "Probability and Statistics",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -68507,6 +69045,7 @@
       "title": "Probability and Statistics Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -69457,6 +69996,7 @@
       "title": "Discrete Mathematics and Graph Theory",
       "kind": "theory",
       "credits": 4,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCOPE",
@@ -69514,7 +70054,8 @@
       "code": "BMEE102P",
       "title": "Engineering Design Visualisation Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -69544,7 +70085,8 @@
       "code": "BMEE201L",
       "title": "Engineering Mechanics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCE",
@@ -69582,7 +70124,8 @@
       "code": "BMEE202L",
       "title": "Mechanics of Solids",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -69623,7 +70166,8 @@
       "code": "BMEE202P",
       "title": "Mechanics of Solids Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -69682,7 +70226,8 @@
       "code": "BMEE203L",
       "title": "Engineering Thermodynamics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SCORE",
@@ -69708,7 +70253,8 @@
       "code": "BMEE204L",
       "title": "Fluid Mechanics and Machines",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -69740,7 +70286,8 @@
       "code": "BMEE204P",
       "title": "Fluid Mechanics and Machines Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -69781,7 +70328,8 @@
       "code": "BMEE205E",
       "title": "Renewable Energy Systems",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -69847,7 +70395,8 @@
       "code": "BMEE206P",
       "title": "Machine Drawing Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -69883,7 +70432,8 @@
       "code": "BMEE207L",
       "title": "Kinematics and Dynamics of Machines",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70023,7 +70573,8 @@
       "code": "BMEE207P",
       "title": "Kinematics and Dynamics of Machines Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70289,7 +70840,8 @@
       "code": "BMEE208L",
       "title": "Industrial Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70339,7 +70891,8 @@
       "code": "BMEE209L",
       "title": "Materials Science and Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70371,7 +70924,8 @@
       "code": "BMEE209P",
       "title": "Materials Science and Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70421,7 +70975,8 @@
       "code": "BMEE210L",
       "title": "Mechatronics and Measurement Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70453,7 +71008,8 @@
       "code": "BMEE210P",
       "title": "Mechatronics and Measurement Systems Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70503,7 +71059,8 @@
       "code": "BMEE212L",
       "title": "Quality Control and Improvement",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70545,7 +71102,8 @@
       "code": "BMEE213E",
       "title": "Automotive Vehicles",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SMEC"
@@ -70579,7 +71137,8 @@
       "code": "BMEE215L",
       "title": "Engineering Optimization",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70723,7 +71282,8 @@
       "code": "BMEE301L",
       "title": "Design of Machine Elements",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -70887,7 +71447,8 @@
       "code": "BMEE302L",
       "title": "Metal Casting and Welding",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -71027,7 +71588,8 @@
       "code": "BMEE302P",
       "title": "Metal Casting and Welding Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -71293,7 +71855,8 @@
       "code": "BMEE303L",
       "title": "Thermal Engineering Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -71433,7 +71996,8 @@
       "code": "BMEE303P",
       "title": "Thermal Engineering Systems Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -71699,7 +72263,8 @@
       "code": "BMEE304L",
       "title": "Metal Forming and Machining",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -71848,7 +72413,8 @@
       "code": "BMEE304P",
       "title": "Metal Forming and Machining Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -71997,7 +72563,8 @@
       "code": "BMEE305L",
       "title": "Manufacturing Planning and Control",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72030,7 +72597,8 @@
       "code": "BMEE306L",
       "title": "Computer Aided Design and Finite Element Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72134,7 +72702,8 @@
       "code": "BMEE306P",
       "title": "Computer Aided Design and Finite Element Analysis Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72238,7 +72807,8 @@
       "code": "BMEE307L",
       "title": "Product Design and Development",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72271,7 +72841,8 @@
       "code": "BMEE309L",
       "title": "Lean Manufacturing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72313,7 +72884,8 @@
       "code": "BMEE310L",
       "title": "Supply Chain Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72364,7 +72936,8 @@
       "code": "BMEE313E",
       "title": "Non-destructive Testing",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72405,7 +72978,8 @@
       "code": "BMEE314E",
       "title": "Mechanical Vibrations and Acoustics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72437,7 +73011,8 @@
       "code": "BMEE316E",
       "title": "Industrial Robotics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72524,7 +73099,8 @@
       "code": "BMEE317L",
       "title": "Mechatronic Systems Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72547,7 +73123,8 @@
       "code": "BMEE319E",
       "title": "Advanced Materials Characterization Methods",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72598,7 +73175,8 @@
       "code": "BMEE320L",
       "title": "Refrigeration and Air-conditioning",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72621,7 +73199,8 @@
       "code": "BMEE321L",
       "title": "Composite Materials",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72653,7 +73232,8 @@
       "code": "BMEE322L",
       "title": "Engineering Failure Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72676,7 +73256,8 @@
       "code": "BMEE323L",
       "title": "Gas Dynamics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72708,7 +73289,8 @@
       "code": "BMEE324E",
       "title": "Turbomachines",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72765,7 +73347,8 @@
       "code": "BMEE325L",
       "title": "Internal Combustion Engines",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72799,7 +73382,8 @@
       "code": "BMEE326L",
       "title": "Power Plant Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -72831,7 +73415,8 @@
       "code": "BMEE330L",
       "title": "Control Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -73034,7 +73619,8 @@
       "code": "BMEE330P",
       "title": "Microcontrollers and Interfacing Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -73426,7 +74012,8 @@
       "code": "BMEE355E",
       "title": "Cloud Computing",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SCHEME",
@@ -73822,7 +74409,8 @@
       "code": "BMEE401L",
       "title": "Computer Integrated Manufacturing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -73926,7 +74514,8 @@
       "code": "BMEE401P",
       "title": "Computer Integrated Manufacturing Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74030,7 +74619,8 @@
       "code": "BMEE402L",
       "title": "Heat and Mass Transfer",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74188,7 +74778,8 @@
       "code": "BMEE402P",
       "title": "Heat and Mass Transfer Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74490,7 +75081,8 @@
       "code": "BMEE403L",
       "title": "Design of Jigs, Fixtures and Press Tools",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74513,7 +75105,8 @@
       "code": "BMEE404L",
       "title": "Design of Transmission Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74547,7 +75140,8 @@
       "code": "BMEE406E",
       "title": "Advanced Manufacturing Processes",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74579,7 +75173,8 @@
       "code": "BMEE407L",
       "title": "Artificial Intelligence",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74773,7 +75368,8 @@
       "code": "BMEE408E",
       "title": "Additive Manufacturing",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74832,7 +75428,8 @@
       "code": "BMEE409E",
       "title": "Computational Fluid Dynamics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74899,7 +75496,8 @@
       "code": "BMEE410L",
       "title": "Industrial Revolution 4.0",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74923,7 +75521,8 @@
       "code": "BMEE413L",
       "title": "Design of Chassis Components",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -74957,7 +75556,8 @@
       "code": "BMEE414L",
       "title": "Vehicle Body and Aerodynamics Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SMEC"
@@ -74993,7 +75593,8 @@
       "code": "BMEE415L",
       "title": "Electrical Machines, Drives and Power Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SMEC"
       ],
@@ -75017,7 +75618,8 @@
       "code": "BMEE416L",
       "title": "Autonomous Vehicle Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SBST",
         "SMEC"
@@ -75043,7 +75645,8 @@
       "code": "BMGT101L",
       "title": "Principles of Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCOPE",
         "SMEC"
@@ -75086,6 +75689,7 @@
       "title": "Engineering Physics",
       "kind": "theory",
       "credits": 3,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -75154,6 +75758,7 @@
       "title": "Engineering Physics Lab",
       "kind": "lab",
       "credits": 1,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCHEME",
@@ -75190,7 +75795,8 @@
       "code": "BPHY201L",
       "title": "Optics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE",
         "SCHEME",
@@ -75217,7 +75823,8 @@
       "code": "BPHY202L",
       "title": "Classical Mechanics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "SCE",
         "SCHEME",
@@ -75245,6 +75852,7 @@
       "title": "Indian Constitution",
       "kind": "unscheduled",
       "credits": 2,
+      "creditsEstimated": false,
       "schools": [
         "SHINE"
       ],
@@ -75258,6 +75866,7 @@
       "title": "Quantitative Skills Practice II",
       "kind": "theory",
       "credits": 1.5,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -76172,6 +76781,7 @@
       "title": "Advanced Competitive Coding - I",
       "kind": "theory",
       "credits": 1.5,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCHEME",
@@ -77122,6 +77732,7 @@
       "title": "Advanced Competitive Coding - II",
       "kind": "theory",
       "credits": 1.5,
+      "creditsEstimated": false,
       "schools": [
         "SBST",
         "SCE",
@@ -78529,7 +79140,8 @@
       "code": "CHY1701",
       "title": "Engineering Chemistry",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -78570,7 +79182,8 @@
       "code": "CSE1002",
       "title": "Problem Solving and Object Oriented Programming",
       "kind": "lab",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -78597,7 +79210,8 @@
       "code": "CSE1030",
       "title": "Introduction to Internet of Things",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -78665,7 +79279,8 @@
       "code": "CSE1031",
       "title": "Web Technologies",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -78696,7 +79311,8 @@
       "code": "CSE1032",
       "title": "Cloud Computing Techniques",
       "kind": "theory",
-      "credits": null,
+      "credits": 5,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -78721,7 +79337,8 @@
       "code": "CSE2010",
       "title": "Advanced C Programming",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -78752,7 +79369,8 @@
       "code": "CSI1001",
       "title": "Principles of Database Systems",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -78783,7 +79401,8 @@
       "code": "CSI1002",
       "title": "Operating System Principles",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -78814,7 +79433,8 @@
       "code": "CSI1003",
       "title": "Formal Languages and Automata Theory",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -78846,7 +79466,8 @@
       "code": "CSI1004",
       "title": "Computer Organization and Architecture",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -78869,7 +79490,8 @@
       "code": "CSI1007",
       "title": "Software Engineering Principles",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -79037,7 +79659,8 @@
       "code": "CSI2001",
       "title": "Digital logic and Computer Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -79069,7 +79692,8 @@
       "code": "CSI2002",
       "title": "Data Structures and Algorithm Analysis",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -79101,7 +79725,8 @@
       "code": "CSI2003",
       "title": "Advanced Algorithms",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -79269,7 +79894,8 @@
       "code": "CSI2004",
       "title": "Advanced Database Management Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -79365,7 +79991,8 @@
       "code": "CSI2005",
       "title": "Principles of Compiler Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -79461,7 +80088,8 @@
       "code": "CSI2006",
       "title": "Microprocessor and Interfacing Techniques",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -79697,7 +80325,8 @@
       "code": "CSI2007",
       "title": "Data Communication and Networks",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -79874,7 +80503,8 @@
       "code": "CSI2008",
       "title": "Programming in Java",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -79924,7 +80554,8 @@
       "code": "CSI3001",
       "title": "Cloud Computing Methodologies",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -80082,7 +80713,8 @@
       "code": "CSI3002",
       "title": "Applied Cryptography and Network Security",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -80130,7 +80762,8 @@
       "code": "CSI3003",
       "title": "Artificial Intelligence and Expert Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -80162,7 +80795,8 @@
       "code": "CSI3004",
       "title": "Data Science Programming",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -80278,7 +80912,8 @@
       "code": "CSI3005",
       "title": "Advanced Data Visualization Techniques",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech ('25 Batch)",
@@ -80547,7 +81182,8 @@
       "code": "CSI3006",
       "title": "Soft Computing Techniques",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)",
         "MTech (SCOPE)"
@@ -80644,7 +81280,8 @@
       "code": "CSI3007",
       "title": "Advanced Python Programming",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -80791,7 +81428,8 @@
       "code": "CSI3008",
       "title": "Internet of Everything",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech ('25 Batch)",
@@ -80916,7 +81554,8 @@
       "code": "CSI3010",
       "title": "Data Warehousing and Data Mining",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -81002,7 +81641,8 @@
       "code": "CSI3012",
       "title": "Distributed Systems",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)",
         "MTech (SCOPE)"
@@ -81180,7 +81820,8 @@
       "code": "CSI3013",
       "title": "Blockchain Technologies",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -81248,7 +81889,8 @@
       "code": "CSI3014",
       "title": "Software Verification and Validation",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech ('25 Batch)",
@@ -81355,7 +81997,8 @@
       "code": "CSI3015",
       "title": "Software Project Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech ('25 Batch)",
@@ -81480,7 +82123,8 @@
       "code": "CSI3017",
       "title": "Business Intelligence",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -81504,7 +82148,8 @@
       "code": "CSI3019",
       "title": "Advanced Data Compression Techniques",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -81572,7 +82217,8 @@
       "code": "CSI3020",
       "title": "Advanced Graph Algorithms",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech ('25 Batch)",
@@ -81697,7 +82343,8 @@
       "code": "CSI3022",
       "title": "Cyber Security and Application Security",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -81819,7 +82466,8 @@
       "code": "CSI3023",
       "title": "Advanced Server Side Programming",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -81919,7 +82567,8 @@
       "code": "CSI3024",
       "title": "Software Application Architecture",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -81961,7 +82610,8 @@
       "code": "CSI3025",
       "title": "Application Development and Deployment Architecture",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -82027,7 +82677,8 @@
       "code": "CSI3026",
       "title": "Machine Learning",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -82093,7 +82744,8 @@
       "code": "CSI3028",
       "title": "Deep Learning",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)",
         "MTech (SCOPE)"
@@ -82136,7 +82788,8 @@
       "code": "CSI3029",
       "title": "Front End Design and Testing",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -82201,7 +82854,8 @@
       "code": "CSI3030",
       "title": "Internetworking with TCP/IP",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)",
         "MTech (SCOPE)"
@@ -82289,7 +82943,8 @@
       "code": "CSI3032",
       "title": "Advances in Pervasive Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)",
         "MTech (SCOPE)"
@@ -82350,7 +83005,8 @@
       "code": "CSI4001",
       "title": "Natural Language Processing and Computational Linguistics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -82490,7 +83146,8 @@
       "code": "CSI4004",
       "title": "Text Mining",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech ('25 Batch)",
@@ -82642,7 +83299,8 @@
       "code": "CSI4005",
       "title": "Augmented Reality and Virtual Reality",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -82746,7 +83404,8 @@
       "code": "CSI4006",
       "title": "Game Theory",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -82796,7 +83455,8 @@
       "code": "CSI4007",
       "title": "GPU Programming",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -82838,6 +83498,7 @@
       "title": "Capstone Project",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -82850,7 +83511,8 @@
       "code": "EEE1001",
       "title": "Basic Electrical and Electronics Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -82881,7 +83543,8 @@
       "code": "EEE1024",
       "title": "Fundamentals of Electrical and Electronics Engineering",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -82921,7 +83584,8 @@
       "code": "ENG1901",
       "title": "Technical English - I",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -82946,7 +83610,8 @@
       "code": "ENG1911",
       "title": "General English - I",
       "kind": "embedded",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -82977,7 +83642,8 @@
       "code": "ESP1001",
       "title": "ESPANOL FUNDAMENTAL",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -82999,7 +83665,8 @@
       "code": "FRE1001",
       "title": "Francais quotidien",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -83021,7 +83688,8 @@
       "code": "GER1001",
       "title": "Grundstufe Deutsch",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -83043,7 +83711,8 @@
       "code": "HIN1001",
       "title": "Basic Hindi",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -83066,7 +83735,8 @@
       "code": "HIN1003",
       "title": "Prathamik Hindi",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -83089,7 +83759,8 @@
       "code": "IACSI201",
       "title": "Design and Analysis of Algorithms",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83211,7 +83882,8 @@
       "code": "IACSI203",
       "title": "Computer Organization and Architecture",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83285,7 +83957,8 @@
       "code": "IACSI204",
       "title": "Database Systems Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83407,7 +84080,8 @@
       "code": "IACSI205",
       "title": "Operating System Fundamentals",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83529,7 +84203,8 @@
       "code": "IAHUM106",
       "title": "Micro Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83579,7 +84254,8 @@
       "code": "IAHUM110",
       "title": "Sustainability and Society",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83602,7 +84278,8 @@
       "code": "IAHUM111",
       "title": "Introduction to Psychology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83643,7 +84320,8 @@
       "code": "IAHUM226",
       "title": "Indian Classical Music",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83666,7 +84344,8 @@
       "code": "IAMAT201",
       "title": "Applied Linear Algebra",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83810,7 +84489,8 @@
       "code": "IASTS101",
       "title": "Qualitative and Quantitative Skills Practice I",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)"
       ],
@@ -83986,7 +84666,8 @@
       "code": "MAT1022",
       "title": "Linear Algebra",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -84010,7 +84691,8 @@
       "code": "MAT1023",
       "title": "Computational Thinking for Data Analytics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -84051,7 +84733,8 @@
       "code": "MAT1026",
       "title": "Discrete Mathematics",
       "kind": "theory",
-      "credits": null,
+      "credits": 5,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84098,7 +84781,8 @@
       "code": "MAT1027",
       "title": "Design and Analysis of Algorithms",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84166,7 +84850,8 @@
       "code": "MAT1028",
       "title": "Operations Research for Data Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 5,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84213,7 +84898,8 @@
       "code": "MAT1029",
       "title": "Statistical Quality Control",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84281,7 +84967,8 @@
       "code": "MAT1030",
       "title": "Statistical Computing for Data Analysis",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84328,7 +85015,8 @@
       "code": "MAT1031",
       "title": "Bio Statistics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -84396,7 +85084,8 @@
       "code": "MAT1032",
       "title": "Decision Modelling Techniques",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -84461,7 +85150,8 @@
       "code": "MAT2001",
       "title": "Statistics for Engineers",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84529,7 +85219,8 @@
       "code": "MAT2002",
       "title": "Applications of Differential and Difference Equations",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech ('25 Batch)",
         "MTech (SCOPE)"
@@ -84563,7 +85254,8 @@
       "code": "MAT3011",
       "title": "Non Parametric Tests",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84595,7 +85287,8 @@
       "code": "MAT3012",
       "title": "Data Warehousing and Data Mining",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84618,7 +85311,8 @@
       "code": "MAT3013",
       "title": "Data Engineering for Analytics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84649,7 +85343,8 @@
       "code": "MAT5016",
       "title": "Time Series Analysis and Forecasting",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84699,7 +85394,8 @@
       "code": "MAT5017",
       "title": "Multivariate Data Analysis",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84749,7 +85445,8 @@
       "code": "MAT5022",
       "title": "Modelling and Simulation",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -84797,7 +85494,8 @@
       "code": "MAT5024",
       "title": "Decision Support Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -84843,7 +85541,8 @@
       "code": "MAT6002",
       "title": "Regression Analysis and Predictive Models",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -84893,7 +85592,8 @@
       "code": "MAT6005",
       "title": "Machine learning for Data Science",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -84943,7 +85643,8 @@
       "code": "MAT6007",
       "title": "Deep Learning",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -84991,7 +85692,8 @@
       "code": "MAT6009",
       "title": "Design and Analysis of Experiments",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -85059,7 +85761,8 @@
       "code": "MAT6012",
       "title": "Programming for Data Analysis",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -85111,7 +85814,8 @@
       "code": "MAT6015",
       "title": "Big Data Analytics and Visualization",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -85159,7 +85863,8 @@
       "code": "MAT6017",
       "title": "Actuarial Statistics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -85191,7 +85896,8 @@
       "code": "MDI3001",
       "title": "Advances in Web Technologies",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -85440,7 +86146,8 @@
       "code": "MDI3002",
       "title": "Foundations of Data Science",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech ('25 Batch)",
@@ -85520,7 +86227,8 @@
       "code": "MDI3003",
       "title": "Advanced Predictive Analytics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -85588,7 +86296,8 @@
       "code": "MDI3005",
       "title": "Advances in Data Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -85647,7 +86356,8 @@
       "code": "MDI3006",
       "title": "Advanced Data Analytics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -85697,7 +86407,8 @@
       "code": "MDI4001",
       "title": "Machine Learning for Data Science",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech",
         "MTech (SCOPE)"
@@ -85946,7 +86657,8 @@
       "code": "MDI4009",
       "title": "Neural Networks and Deep Learning",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -86005,7 +86717,8 @@
       "code": "MGT1022",
       "title": "Lean Start-up Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -86044,6 +86757,7 @@
       "title": "Masters Thesis",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -86056,7 +86770,8 @@
       "code": "PHY1701",
       "title": "Engineering Physics",
       "kind": "embedded",
-      "credits": null,
+      "credits": 4,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -86088,7 +86803,8 @@
       "code": "PHY1901",
       "title": "Introduction to Innovative Projects",
       "kind": "theory",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -86150,7 +86866,8 @@
       "code": "PHY1999",
       "title": "Introduction to Innovative Projects",
       "kind": "theory",
-      "credits": null,
+      "credits": 1,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -86173,6 +86890,7 @@
       "title": "Science, Engineering and Technology Project - I",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -86185,7 +86903,8 @@
       "code": "STS2022",
       "title": "Arithmetic Problem Solving",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -86289,7 +87008,8 @@
       "code": "STS3021",
       "title": "Getting Started to Skill Enhancement",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -86393,7 +87113,8 @@
       "code": "STS3022",
       "title": "Enhancing Problem Solving Skills",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -86506,7 +87227,8 @@
       "code": "STS4021",
       "title": "Introduction to Programming Skills",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -86619,7 +87341,8 @@
       "code": "STS4022",
       "title": "Enhancing Programming Ability",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
@@ -86804,7 +87527,8 @@
       "code": "SWE2025",
       "title": "Personal Software Process",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -86827,7 +87551,8 @@
       "code": "SWE2031",
       "title": "Global Software Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -86851,6 +87576,7 @@
       "title": "Software Design and Development Project",
       "kind": "unscheduled",
       "credits": null,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -86863,7 +87589,8 @@
       "code": "SWE4008",
       "title": "High Performance Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech"
       ],
@@ -86886,7 +87613,8 @@
       "code": "TAM1003",
       "title": "Tamil",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
+      "creditsEstimated": true,
       "schools": [
         "MTech (SCOPE)"
       ],
