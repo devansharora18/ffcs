@@ -139,6 +139,38 @@ Vellore only, one semester. The source does not state the term, so the UI never 
   `who_teaches` and `add_course` with real catalog data and asks instead of guessing when two
   faculty match. The tool loop is also covered by a fake OpenAI-compatible server in tests.
 
+## Ads
+
+One slot, below the timetable. Two ways to fill it.
+
+**Direct sponsor — no approval, works today**
+
+```bash
+NEXT_PUBLIC_SPONSOR_CONTACT=sponsors@yourdomain
+```
+
+The slot then reads "Sponsor slot — ask about it" with a mailto. This is what the unit economics in
+`docs/MONETIZATION.md` assume: one campus sponsor beats AdSense at this traffic level.
+
+**Google AdSense**
+
+1. Apply at `adsense.google.com`, add the deployed domain, wait for approval.
+2. Create a **Display** ad unit. Copy the publisher id (`ca-pub-…`) and the unit id.
+3. Set both:
+
+```bash
+NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-1234567890123456
+NEXT_PUBLIC_ADSENSE_SLOT=1234567890
+```
+
+4. Deploy. `npm run build` writes `public/ads.txt` from the client id, so the crawler file cannot
+   drift from the live site.
+5. For EEA/UK/Switzerland traffic add a certified consent manager (Google CMP). Elsewhere the
+   `/privacy` page carries the disclosure.
+
+With no client id the slot renders a house ad and loads nothing from Google. The ad unit is never
+placed inside the timetable grid.
+
 ## Docs
 
 - `docs/DECISIONS.md` — every assumption, with its reason.

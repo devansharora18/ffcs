@@ -186,6 +186,16 @@ export default function Planner({
             <SkillPanel />
 
             <AdSlot />
+
+            <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-line pt-3 font-mono text-[10px] text-muted">
+              <span>Vellore · timetable data compiled October 2026</span>
+              <a
+                href="/privacy"
+                className="underline decoration-line underline-offset-4 hover:text-lime hover:decoration-lime"
+              >
+                privacy
+              </a>
+            </footer>
           </main>
 
           <aside

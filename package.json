@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsx scripts/build-skill-zip.ts && next build",
+    "build": "tsx scripts/build-skill-zip.ts && tsx scripts/build-ads.ts && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
@@ -12,7 +12,8 @@
     "agent:check": "node --env-file=.env --import tsx scripts/check-agent.ts",
     "solve": "tsx scripts/solve.ts",
     "skill:sync": "tsx scripts/build-skill-data.ts && tsx scripts/build-skill-zip.ts",
-    "skill:zip": "tsx scripts/build-skill-zip.ts"
+    "skill:zip": "tsx scripts/build-skill-zip.ts",
+    "ads:build": "tsx scripts/build-ads.ts"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.3.0",
