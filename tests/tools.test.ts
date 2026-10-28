@@ -53,8 +53,8 @@ test('search matches the real catalog by title', () => {
 });
 
 test('search matches faculty names', () => {
-  const result = run('search_courses', { query: 'SATYAJIT' }, emptyState(), catalog);
-  assert.match(result.text, /SATYAJIT/);
+  const result = run('search_courses', { query: 'IYAPPAN' }, emptyState(), catalog);
+  assert.match(result.text, /IYAPPAN/);
 });
 
 test('search results carry the school, and the school filter is authoritative', () => {

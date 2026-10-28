@@ -7,7 +7,7 @@
  * de-duplicated by faculty + venue + slot. This is how "keep the previous
  * courses" is guaranteed even though some upstream PRs delete stale data.
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
@@ -28,11 +28,13 @@ let sources = 0;
 
 async function main() {
   for (const root of ROOTS) {
-    const module = (await import(pathToFileURL(resolve(root, 'faculty.ts')).href)) as {
-      data: RawData;
-    };
+    // A `.json` root is an already-extracted dataset (the deployed site bundle);
+    // a directory root is a CodeChefVIT `src/data` tree.
+    const source: RawData = root.endsWith('.json')
+      ? (JSON.parse(readFileSync(root, 'utf8')) as RawData)
+      : ((await import(pathToFileURL(resolve(root, 'faculty.ts')).href)) as { data: RawData }).data;
 
-    for (const [school, categories] of Object.entries(module.data)) {
+    for (const [school, categories] of Object.entries(source)) {
       for (const [category, subjects] of Object.entries(categories)) {
         if (!subjects) {
           console.warn(`skipping empty category ${school} / ${category}`);

@@ -1,17 +1,18 @@
-vendor/ffcs-union.json is the union of CodeChefVIT/ffcs `src/data` from:
+vendor/ffcs-union.json is built from two sources:
 
-  prod (b2bafad)
-  PR #293  removed stale data, added SCOPE/AIML courses
-  PR #296  SCOPE_F fresher data
-  PR #297  SCE_F fresher data (+ SCE ('25 Batch))
-  PR #298  SCORE_F BYB data
+  1. vendor/ffcs-site.json
+     The dataset the live site (ffcs.codechefvit.com) actually serves, extracted
+     from its page bundle on 2026-10-28. It is older than the repository and
+     still contains courses the repo deleted (e.g. BITE302L Database Systems).
 
-Every course and offering from every tree is kept; duplicates are removed by
-faculty + venue + slot. Upstream PRs that delete stale rows therefore cannot
-remove anything here.
+  2. CodeChefVIT/ffcs at origin/prod (69aaf95), which already includes PRs
+     293/296/297/298, exported from src/data.
 
-Rebuild with:
-  npx tsx scripts/build-union.ts <prod/src/data> <pr293/src/data> ... > none
-(the script writes vendor/ffcs-union.json)
+Every course and offering from both sources is kept; duplicates are removed by
+faculty + venue + slot. Nothing from either source can disappear.
+
+Rebuild:
+  npx tsx scripts/build-union.ts vendor/ffcs-site.json <prod/src/data>
+  npm run catalog:import
 
 The repository is MIT. Course offerings are factual allocation data.

@@ -5,7 +5,7 @@ export default function Home() {
   const schools = [
     ...new Set(
       catalog.courses.flatMap((course) =>
-        course.schools.map((name) => name.replace(/ \('\d\d Batch\)$/, '')),
+        course.schools.map((name) => name.replace(/ \((?:'\d\d Batch|Fresher)\)$/, '')),
       ),
     ),
   ].sort();

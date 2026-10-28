@@ -81,7 +81,7 @@ verbatim, so a manual edit and an agent edit are the same mutation.
 ## The skill
 
 `skill/ffcs-planner/` is a standalone agent skill: a **Python** solver, the full catalog, and a
-greppable list of all 1108 teachers. No Node, no server, no API key.
+greppable list of all 1425 teachers. No Node, no server, no API key.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/devansharora18/ffcs/main/install.sh | bash
@@ -105,8 +105,8 @@ python3 scripts/solve.py timetable.example.json
 
 | File | Contents |
 |---|---|
-| `data/teachers.txt` | 4815 lines: `FACULTY \| CODE \| Title \| slots \| venue` |
-| `data/catalog.json` | 520 courses with every offering |
+| `data/teachers.txt` | 6996 lines: `FACULTY \| CODE \| Title \| slots \| venue` |
+| `data/catalog.json` | 701 courses with every offering |
 | `data/slots.json` | slot → day/start/end |
 | `scripts/solve.py` | deterministic solver, prints the grid and writes `*.solved.json` |
 | `scripts/find.py` | course, teacher and slot queries |
@@ -122,9 +122,9 @@ plus open PRs 293/296/297/298 (MIT, see `vendor/ffcs-data/NOTICE`) and normalise
 
 | | |
 |---|---|
-| Courses | 520 |
-| Faculty offerings | 4,815 |
-| Faculty | 1,108 |
+| Courses | 701 |
+| Faculty offerings | 6,996 |
+| Faculty | 1,425 |
 | Unknown slot codes | 0 |
 | Courses with no scheduled hours | 11 |
 | Credits | `null` — the source has none |
