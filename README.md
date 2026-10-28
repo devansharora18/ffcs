@@ -18,7 +18,7 @@ that compares real clock intervals:
   reserves both blocks.
 - Courses with no scheduled hours (projects, Indian Constitution) never clash.
 - Several timetables live in tabs. Duplicate a plan, swap one teacher, and compare both side by side.
-- A subject or teacher missing from the data can be typed in by hand under "subject or teacher missing?".
+- A subject or teacher missing from the data can be typed in by hand, or you can ask the agent — it proposes the exact entry and waits for one confirmation.
 
 You can also **paste a screenshot** of the FFCS portal into the chat. The agent reads the course
 codes and slots, verifies every code against the catalog, and adds only what actually exists.

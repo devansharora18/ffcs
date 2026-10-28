@@ -85,6 +85,27 @@ export const toolDefinitions: ChatCompletionTool[] = [
   {
     type: 'function',
     function: {
+      name: 'add_custom_course',
+      description:
+        'Add a course or teacher that is genuinely missing from the catalog. Only call this AFTER the user has explicitly confirmed, and only when add_course reported the code as unknown. Slots are required.',
+      parameters: {
+        type: 'object',
+        properties: {
+          code: { type: 'string', description: 'Course code as the student sees it.' },
+          title: { type: 'string', description: 'Course title.' },
+          faculty: { type: 'string', description: 'Teacher name, even if not in the catalog.' },
+          slots: {
+            type: 'string',
+            description: 'Slot pattern, e.g. "B1+TB1" or "L3+L4". Must be a real slot code.',
+          },
+        },
+        required: ['code', 'title', 'faculty', 'slots'],
+      },
+    },
+  },
+  {
+    type: 'function',
+    function: {
       name: 'remove_course',
       description: 'Remove a course from the timetable by code.',
       parameters: {

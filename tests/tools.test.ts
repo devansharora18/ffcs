@@ -119,6 +119,47 @@ test('add_course rejects a slot the course does not run', () => {
   assert.match(result.text, /no Z9\+Z10 offering/);
 });
 
+test('add_custom_course stores a manual entry for a code the catalog lacks', () => {
+  const result = run(
+    'add_custom_course',
+    { code: 'BITE410L', title: 'Machine Learning', faculty: 'PROF X', slots: 'B1+TB1' },
+    emptyState(),
+    catalog,
+  );
+
+  assert.equal(result.state.requirements.length, 1);
+  assert.deepEqual(result.state.requirements[0].custom, {
+    title: 'Machine Learning',
+    faculty: 'PROF X',
+    slots: ['B1', 'TB1'],
+  });
+  assert.match(result.text, /manual entry/);
+});
+
+test('add_custom_course refuses an unknown slot', () => {
+  const result = run(
+    'add_custom_course',
+    { code: 'NEW101', title: 'X', faculty: 'Y', slots: 'ZZ9' },
+    emptyState(),
+    catalog,
+  );
+
+  assert.equal(result.ops.length, 0);
+  assert.match(result.text, /Unknown slot/);
+});
+
+test('add_custom_course defers to add_course for a real code', () => {
+  const result = run(
+    'add_custom_course',
+    { code: 'BCSE202L', title: 'x', faculty: 'y', slots: 'B1+TB1' },
+    emptyState(),
+    catalog,
+  );
+
+  assert.equal(result.ops.length, 0);
+  assert.match(result.text, /is in the catalog/);
+});
+
 test('domain facets and the subject list agree', () => {
   const categories = categoriesIn(catalog, 'SCORE');
   assert.ok(categories.length > 0);

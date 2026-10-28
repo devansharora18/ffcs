@@ -316,6 +316,55 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
       };
     }
 
+    case 'add_custom_course': {
+      const code = asString(args.code).trim().toUpperCase();
+      const title = asString(args.title);
+      const faculty = asString(args.faculty);
+      const slotText = asString(args.slots).toUpperCase().replace(/\s+/g, '');
+      const slots = slotText.split('+').filter(Boolean);
+
+      if (code.length === 0) return { text: 'A course code is required.', ops: [], state };
+      if (slots.length === 0) {
+        return { text: 'A slot is required, e.g. B1+TB1 or L3+L4.', ops: [], state };
+      }
+
+      const unknown = slots.filter((slot) => !isKnownSlot(slot));
+      if (unknown.length > 0) {
+        return {
+          text: `Unknown slot ${unknown.join(', ')}. Slot codes look like A1, TA1, L3.`,
+          ops: [],
+          state,
+        };
+      }
+
+      if (findCourse(catalog, code)) {
+        return {
+          text: `${code} is in the catalog. Use add_course instead, so the real teachers are offered.`,
+          ops: [],
+          state,
+        };
+      }
+
+      if (state.requirements.some((requirement) => requirement.courseCode === code)) {
+        return { text: `${code} is already in the timetable.`, ops: [], state };
+      }
+
+      const custom = {
+        title: title || code,
+        faculty: faculty || 'MANUAL',
+        slots,
+      };
+      const ops: StateOp[] = [{ op: 'add', courseCode: code, custom }];
+      const next = applyOps(state, ops);
+
+      return {
+        text: `Added ${code} ${custom.title} as a manual entry (${custom.faculty}, ${slotText}) — not verified against the catalog.
+${solveAndDescribe(catalog, next)}`,
+        ops,
+        state: next,
+      };
+    }
+
     case 'remove_course': {
       const course = findCourse(catalog, asString(args.code));
       if (!course) return { text: `No course with code ${asString(args.code)}.`, ops: [], state };
