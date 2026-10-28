@@ -36,6 +36,7 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
   const [ready, setReady] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     try {
@@ -64,6 +65,17 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
   useEffect(() => {
     endRef.current?.scrollIntoView({ block: 'end' });
   }, [messages, busy]);
+
+  // Keep the composer ready: on first paint (desktop) and again after every
+  // turn, without popping the mobile keyboard when the panel is closed.
+  useEffect(() => {
+    if (busy || status === 'offline') return;
+
+    const element = inputRef.current;
+    if (!element || element.disabled || element.offsetParent === null) return;
+
+    element.focus();
+  }, [busy, status]);
 
   async function addFiles(files: File[]) {
     const images = files
@@ -297,6 +309,7 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
         )}
 
         <textarea
+          ref={inputRef}
           value={input}
           onChange={(event) => setInput(event.target.value)}
           onPaste={(event) => {
