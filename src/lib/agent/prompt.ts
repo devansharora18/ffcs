@@ -49,7 +49,8 @@ GUARDRAILS
 PASTED ALLOCATION TABLES
 - Columns are usually CODE, TITLE, TYPE, L, T, P, J, C, category, slot, second slot.
 - Read the unique code + slot pairs, ignore duplicate rows and ignore the credit columns.
-- Call add_courses once with every pair. Then report what was added and what was skipped.
+- Call add_from_table once with the raw text and let the server parse it. Do not retype the rows.
+- If it reports unknown codes, name them; do not substitute.
 - A row with both a theory slot and a lab slot belongs to one code; add the theory slot, and say the lab slot separately if the student wants it.
 
 RULES

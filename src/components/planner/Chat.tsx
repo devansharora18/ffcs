@@ -25,6 +25,26 @@ type Props = {
   planName: string;
 };
 
+function MessageText({ text }: { text: string }) {
+  const [open, setOpen] = useState(false);
+  const lines = text.split('\n');
+
+  if (lines.length <= 8) return <p className="whitespace-pre-wrap">{text}</p>;
+
+  return (
+    <div>
+      <p className="whitespace-pre-wrap">{open ? text : `${lines.slice(0, 6).join('\n')}\n…`}</p>
+      <button
+        type="button"
+        onClick={() => setOpen((current) => !current)}
+        className="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-on-bright/70 underline underline-offset-4 hover:text-on-bright"
+      >
+        {open ? 'show less' : `show all ${lines.length} lines`}
+      </button>
+    </div>
+  );
+}
+
 export default function Chat({ state, onAgentState, onClose, schools, hasCourses, planName }: Props) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
@@ -98,6 +118,7 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
 
     let received = false;
     let completed = false;
+    let appliedOps = 0;
 
     try {
       for await (const event of streamChat(
@@ -116,6 +137,7 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
           });
         } else if (event.type === 'done') {
           completed = true;
+          appliedOps = event.ops.length;
           onAgentState(event.state, event.result);
         } else if (event.type === 'error') {
           setError(event.message);
@@ -136,7 +158,13 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
           next.pop();
         }
         if (!received && completed) {
-          next.push({ role: 'assistant', content: 'Done — the timetable is updated.' });
+          next.push({
+            role: 'assistant',
+            content:
+              appliedOps > 0
+                ? 'Done — the timetable is updated.'
+                : 'Nothing changed. Try again, or send fewer rows.',
+          });
         }
         return next;
       });
@@ -250,7 +278,7 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
                     className="mb-1.5 max-h-48 w-full rounded-lg object-contain"
                   />
                 ))}
-                {message.content && <p className="whitespace-pre-wrap">{message.content}</p>}
+                {message.content && <MessageText text={message.content} />}
               </div>
             </article>
           ) : (

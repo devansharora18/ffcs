@@ -115,6 +115,24 @@ export const toolDefinitions: ChatCompletionTool[] = [
   {
     type: 'function',
     function: {
+      name: 'add_from_table',
+      description:
+        'Use when the student pastes an allocation table (tab-separated rows containing course codes and slots). Pass the raw text once; the server parses rows, drops duplicates, validates slots and adds the courses. Never retype the rows yourself.',
+      parameters: {
+        type: 'object',
+        properties: {
+          table: {
+            type: 'string',
+            description: 'The pasted table text, verbatim.',
+          },
+        },
+        required: ['table'],
+      },
+    },
+  },
+  {
+    type: 'function',
+    function: {
       name: 'add_custom_course',
       description:
         'Add a course or teacher that is genuinely missing from the catalog. Only call this AFTER the user has explicitly confirmed, and only when add_course reported the code as unknown. Slots are required.',

@@ -215,6 +215,29 @@ test('the solve summary reports credits against the 27.5 cap', () => {
   assert.match(result.text, /Credits [\d.]+\+?\/27\.5/);
 });
 
+test('add_from_table parses a pasted allocation table once per code', () => {
+  const table = [
+    'COURSE CODE\tCOURSE TITLE\tTYPE\tL\tT\tP\tJ\tC\tCAT\tslot',
+    'BITE306L\tTheory of Computation\tTH\t3\t0\t0\t0\t4\tDC\tA1+TA1+TAA1',
+    'BITE306L\tTheory of Computation\tTH\t3\t0\t0\t0\t4\tDC\tA2+TA2+TAA2',
+    'BITE303L\tOperating Systems\tTH\t3\t0\t0\t0\t3\tDC\tG1+TG1',
+    'NOPE999\tUnknown Course\tTH\t3\t0\t0\t0\t3\tDC\tA1',
+  ].join('\n');
+
+  const result = run('add_from_table', { table }, emptyState(), catalog);
+
+  assert.deepEqual(
+    result.state.requirements.map((requirement) => requirement.courseCode).sort(),
+    ['BITE303L', 'BITE306L'],
+  );
+  assert.deepEqual(result.state.requirements.find((r) => r.courseCode === 'BITE306L')?.slots, [
+    'A1',
+    'TA1',
+    'TAA1',
+  ]);
+  assert.match(result.text, /Unknown codes: NOPE999/);
+});
+
 test('set_credits overrides an estimated value', () => {
   const added = run('add_course', { code: 'BCSE202L' }, emptyState(), catalog);
   const result = run('set_credits', { code: 'BCSE202L', credits: 4.5 }, added.state, catalog);

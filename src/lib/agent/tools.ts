@@ -383,6 +383,61 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
       };
     }
 
+    case 'add_from_table': {
+      const table = asString(args.table);
+      if (table.length < 5) {
+        return { text: 'Paste the allocation table text.', ops: [], state };
+      }
+
+      const ops: StateOp[] = [];
+      const added: string[] = [];
+      const unknown = new Set<string>();
+      const seen = new Set<string>();
+
+      for (const line of table.split(/\r?\n/).slice(0, 300)) {
+        const code = /(?:^|[\s|])([A-Z]{2,6}\d{3,4}[A-Z]?)(?=[\s|]|$)/.exec(line)?.[1];
+        if (!code || seen.has(code)) continue;
+        seen.add(code);
+
+        const course = findCourse(catalog, code);
+        if (!course) {
+          unknown.add(code);
+          continue;
+        }
+        if (
+          state.requirements.some((requirement) => requirement.courseCode === code) ||
+          ops.some((op) => op.op === 'add' && op.courseCode === code)
+        ) {
+          continue;
+        }
+
+        const candidates = (line.toUpperCase().match(/\b[A-Z]{1,3}\d{1,2}(?:\+[A-Z]{1,3}\d{1,2})*\b/g) ?? [])
+          .filter((slot) => slot.split('+').every((part) => isKnownSlot(part)));
+
+        const match = candidates.find((slot) =>
+          course.offerings.some(
+            (offering) => offering.slots.join('+').toUpperCase() === slot,
+          ),
+        );
+
+        ops.push({
+          op: 'add',
+          courseCode: code,
+          slots: match ? match.split('+') : undefined,
+        });
+        added.push(code);
+      }
+
+      const next = applyOps(state, ops);
+      const unknownList = unknown.size > 0 ? ` Unknown codes: ${[...unknown].join(', ')}.` : '';
+
+      return {
+        text: `Parsed ${seen.size} rows: added ${added.length}${added.length ? ` (${added.join(', ')})` : ''}.${unknownList}\n${solveAndDescribe(catalog, next)}`,
+        ops,
+        state: next,
+      };
+    }
+
     case 'add_custom_course': {
       const code = asString(args.code).trim().toUpperCase();
       const title = asString(args.title);
