@@ -1,0 +1,82 @@
+/**
+ * Unions several CodeChefVIT `src/data` trees into one source file.
+ *
+ *   npx tsx scripts/build-union.ts /path/to/prod /path/to/pr293 ...
+ *
+ * Nothing is ever removed: courses and offerings from every tree are merged,
+ * de-duplicated by faculty + venue + slot. This is how "keep the previous
+ * courses" is guaranteed even though some upstream PRs delete stale data.
+ */
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
+
+type RawOffering = { slot: string; venue: string; faculty: string };
+type RawSchool = Record<string, Record<string, RawOffering[]>>;
+type RawData = Record<string, RawSchool>;
+
+const ROOTS = process.argv.slice(2);
+if (ROOTS.length === 0) {
+  console.error('usage: tsx scripts/build-union.ts <dataDir> [dataDir…]');
+  process.exit(1);
+}
+
+const clean = (value: string) => value.replace(/\s+/g, ' ').trim();
+
+const union: RawData = {};
+let sources = 0;
+
+async function main() {
+  for (const root of ROOTS) {
+    const module = (await import(pathToFileURL(resolve(root, 'faculty.ts')).href)) as {
+      data: RawData;
+    };
+
+    for (const [school, categories] of Object.entries(module.data)) {
+      for (const [category, subjects] of Object.entries(categories)) {
+        if (!subjects) {
+          console.warn(`skipping empty category ${school} / ${category}`);
+          continue;
+        }
+        for (const [key, offerings] of Object.entries(subjects)) {
+          union[school] ??= {};
+          union[school][category] ??= {};
+          const target = (union[school][category][key] ??= []);
+          const seen = new Set(
+            target.map((item) => `${clean(item.faculty)}|${clean(item.venue)}|${clean(item.slot)}`),
+          );
+
+          for (const offering of offerings) {
+            const id = `${clean(offering.faculty)}|${clean(offering.venue)}|${clean(offering.slot)}`;
+            if (seen.has(id)) continue;
+            seen.add(id);
+            target.push(offering);
+          }
+        }
+      }
+    }
+
+    sources += 1;
+    console.log(`merged ${root}`);
+  }
+
+  mkdirSync('vendor', { recursive: true });
+  writeFileSync('vendor/ffcs-union.json', JSON.stringify(union));
+
+  const courses = new Set<string>();
+  let offerings = 0;
+  for (const categories of Object.values(union)) {
+    for (const subjects of Object.values(categories)) {
+      for (const [key, list] of Object.entries(subjects)) {
+        courses.add(key.split(' - ')[0]);
+        offerings += list.length;
+      }
+    }
+  }
+
+  console.log(`sources   ${sources}`);
+  console.log(`courses   ${courses.size}`);
+  console.log(`offerings ${offerings}`);
+}
+
+void main();

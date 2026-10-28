@@ -7,7 +7,7 @@
  * dropped — that report is how bad rows get found before students do.
  */
 
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 import { isKnownSlot } from '../src/lib/ffcs/grid';
@@ -17,9 +17,8 @@ import type {
   CatalogOffering,
   OfferingKind,
 } from '../src/lib/ffcs/catalog';
-import { data } from '../vendor/ffcs-data/faculty';
 
-const SOURCE = 'codechefvit/ffcs@b2bafad';
+const SOURCE = 'codechefvit/ffcs prod + prs 293/296/297/298 (union)';
 const OUTPUT = resolve('data/catalog.vellore.json');
 
 type RawOffering = { slot: string; venue: string; faculty: string };
@@ -51,13 +50,15 @@ type Acc = {
   kinds: Set<OfferingKind>;
 };
 
+const data = JSON.parse(readFileSync('vendor/ffcs-union.json', 'utf8')) as RawCatalog;
+
 const courses = new Map<string, Acc>();
 const unknownSlots = new Map<string, { count: number; samples: Set<string> }>();
 const titleConflicts = new Map<string, Set<string>>();
 const nilOfferings: string[] = [];
 const malformedKeys: string[] = [];
 
-for (const [school, categories] of Object.entries(data as RawCatalog)) {
+for (const [school, categories] of Object.entries(data)) {
   for (const [category, subjects] of Object.entries(categories)) {
     for (const [key, rawOfferings] of Object.entries(subjects)) {
       const separator = key.indexOf(' - ');
