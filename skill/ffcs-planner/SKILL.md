@@ -107,6 +107,22 @@ python3 scripts/find.py --school SCORE "operating systems"
 SCOPE+SCORE. Never infer the school from the code prefix, and never tell a student a SCOPE code is
 theirs without checking.
 
+## Courses the catalog does not have
+
+If a student names a course or teacher that is genuinely missing, add it inline.
+You must supply the slots yourself; they are checked against the grid.
+
+```json
+{
+  "courseCode": "BITE410L",
+  "custom": { "title": "Machine Learning", "faculty": "PROF X", "slots": ["B1", "TB1"] }
+}
+```
+
+The solver treats it like any other course: it occupies those cells, clashes are detected and it is
+ranked normally. It is not verified against the catalog, so say so when you report it. Get one
+confirmation from the student before adding a manual entry.
+
 ## Rules the solver enforces
 
 - **Theory hours are 50 minutes; labs are 2-hour blocks.** `L1+L2` runs 08:00–09:40 and clashes

@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import test from 'node:test';
 
 import { catalog } from '../src/lib/ffcs/catalog-data';
@@ -54,6 +56,45 @@ test('the python solver returns the same arrangements as the typescript one', { 
   execFileSync('python3', [SCRIPT, INPUT], { stdio: 'ignore' });
 
   const python = JSON.parse(readFileSync(OUTPUT, 'utf8')) as {
+    result: { solutions: { entries: { id: string }[] }[]; unsolved: string[]; nodes: number };
+  };
+
+  const ids = (solutions: { entries: { id: string }[] }[]) =>
+    solutions.map((solution) => solution.entries.map((entry) => entry.id).sort());
+
+  assert.deepEqual(ids(python.result.solutions), ids(typescript.solutions));
+  assert.deepEqual(python.result.unsolved, typescript.unsolved);
+  assert.equal(python.result.nodes, typescript.nodes);
+});
+
+test('both solvers place a manual course identically', { skip: !hasPython() }, () => {
+  const state: TimetableState = {
+    requirements: [
+      { courseCode: 'BITE303L' },
+      {
+        courseCode: 'GHOST900',
+        custom: { title: 'Ghost Course', faculty: 'PROF X', slots: ['A1'] },
+      },
+    ],
+    constraints: {
+      avoidDays: [],
+      avoidWindows: [],
+      preferredFaculty: [],
+      avoidedFaculty: [],
+    },
+  };
+
+  const directory = mkdtempSync(join(tmpdir(), 'ffcs-parity-'));
+  const input = join(directory, 'custom.json');
+  writeFileSync(
+    input,
+    JSON.stringify({ requirements: state.requirements, constraints: state.constraints }),
+  );
+
+  const typescript = solveTimetable(catalog, state);
+  execFileSync('python3', [SCRIPT, input], { stdio: 'ignore' });
+
+  const python = JSON.parse(readFileSync(join(directory, 'custom.solved.json'), 'utf8')) as {
     result: { solutions: { entries: { id: string }[] }[]; unsolved: string[]; nodes: number };
   };
 

@@ -224,6 +224,37 @@ def build_groups(
             continue
         seen.add(code)
 
+        # Manual entry: the course is not in the catalog, the user supplied it.
+        custom = requirement.get("custom")
+        if custom:
+            slots = [
+                slot.strip().upper()
+                for slot in custom.get("slots", [])
+                if slot and slot.strip()
+            ]
+            cells = [tuple(cell) for slot in slots for cell in slot_cells.get(slot, [])]
+
+            if not slots or not cells:
+                unsolved.append(code)
+                continue
+
+            entry = {
+                "id": f"custom~{code}~{'+'.join(slots)}~{custom.get('faculty', 'MANUAL')}",
+                "code": code,
+                "title": custom.get("title") or code,
+                "kind": "lab" if all(re.fullmatch(r"L\d+", slot) for slot in slots) else "theory",
+                "faculty": custom.get("faculty") or "MANUAL",
+                "venue": None,
+                "slots": slots,
+                "cells": cells,
+            }
+
+            if is_allowed(entry, constraints):
+                groups.append({"courseCode": code, "candidates": [entry]})
+            else:
+                unsolved.append(code)
+            continue
+
         course = by_code.get(code)
         if course is None:
             unsolved.append(code)
