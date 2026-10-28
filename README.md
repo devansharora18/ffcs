@@ -57,7 +57,7 @@ not provider-prefixed. Verify any change with `npm run agent:check`.
 | `npm test` | 45 tests over grid, conflicts, solver, tools, chat route and python parity |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run agent:check` | Verifies key, model id and tool calling against the inference API |
-| `npm run catalog:import` | Rebuilds `data/catalog.vellore.json` from `vendor/ffcs-data` |
+| `npm run catalog:import` | Rebuilds `data/catalog.vellore.json` from `vendor/catalog-source.json` |
 | `npm run solve -- timetable.json` | Solves a timetable with the TypeScript engine |
 | `npm run skill:sync` | Regenerates the skill's catalog, slot map and teacher list |
 
@@ -116,9 +116,8 @@ same request. Regenerate the skill's data after re-importing the catalog with `n
 
 ## Data
 
-The catalog is vendored from [CodeChefVIT/ffcs](https://github.com/CodeChefVIT/ffcs) at `prod`
-plus open PRs 293/296/297/298 (MIT, see `vendor/ffcs-data/NOTICE`) and normalised by
-`npm run catalog:import`:
+The catalog is compiled from VIT's published FFCS allotment listings and normalised by
+`npm run catalog:import`. `vendor/README.md` describes the two source files:
 
 | | |
 |---|---|

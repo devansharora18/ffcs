@@ -1,7 +1,7 @@
 /**
- * Unions several CodeChefVIT `src/data` trees into one source file.
+ * Unions several allotment data trees into one source file.
  *
- *   npx tsx scripts/build-union.ts /path/to/prod /path/to/pr293 ...
+ *   npx tsx scripts/build-catalog-source.ts <dataDir> [dataDir…]
  *
  * Nothing is ever removed: courses and offerings from every tree are merged,
  * de-duplicated by faculty + venue + slot. This is how "keep the previous
@@ -17,7 +17,7 @@ type RawData = Record<string, RawSchool>;
 
 const ROOTS = process.argv.slice(2);
 if (ROOTS.length === 0) {
-  console.error('usage: tsx scripts/build-union.ts <dataDir> [dataDir…]');
+  console.error('usage: tsx scripts/build-catalog-source.ts <dataDir> [dataDir…]');
   process.exit(1);
 }
 
@@ -29,7 +29,7 @@ let sources = 0;
 async function main() {
   for (const root of ROOTS) {
     // A `.json` root is an already-extracted dataset (the deployed site bundle);
-    // a directory root is a CodeChefVIT `src/data` tree.
+    // a directory root is an allotment data tree.
     const source: RawData = root.endsWith('.json')
       ? (JSON.parse(readFileSync(root, 'utf8')) as RawData)
       : ((await import(pathToFileURL(resolve(root, 'faculty.ts')).href)) as { data: RawData }).data;
@@ -63,7 +63,7 @@ async function main() {
   }
 
   mkdirSync('vendor', { recursive: true });
-  writeFileSync('vendor/ffcs-union.json', JSON.stringify(union));
+  writeFileSync('vendor/catalog-source.json', JSON.stringify(union));
 
   const courses = new Set<string>();
   let offerings = 0;

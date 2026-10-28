@@ -52,7 +52,7 @@ enough): `src/app/api/chat/route.ts` keeps the bucket in process memory.
 
 - **Credits are unknown for all 701 courses.** Import VIT's official credit list before enabling a
   credit total or `maxCredits`.
-- **The catalog is vendored, not scraped.** Replace `vendor/ffcs-data` with an importer from VIT's
+- **The catalog is compiled, not scraped live.** Replace `vendor/catalog-source.json` with an importer from VIT's
   published FFCS Excel/PDF when available, then re-run `npm run catalog:import`.
 - **No faculty-correction feed.** Students cannot report "this faculty is not actually offering this
   slot", which both competitors get wrong every semester.

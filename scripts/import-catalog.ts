@@ -1,5 +1,5 @@
 /**
- * Turns the vendored FFCS dataset into data/catalog.vellore.json.
+ * Turns the merged catalog source into data/catalog.vellore.json.
  *
  * Run with: npm run catalog:import
  *
@@ -18,7 +18,7 @@ import type {
   OfferingKind,
 } from '../src/lib/ffcs/catalog';
 
-const SOURCE = 'codechefvit/ffcs prod + prs 293/296/297/298 (union)';
+const SOURCE = 'Vellore allotment, October 2026';
 const OUTPUT = resolve('data/catalog.vellore.json');
 
 type RawOffering = { slot: string; venue: string; faculty: string };
@@ -50,7 +50,7 @@ type Acc = {
   kinds: Set<OfferingKind>;
 };
 
-const data = JSON.parse(readFileSync('vendor/ffcs-union.json', 'utf8')) as RawCatalog;
+const data = JSON.parse(readFileSync('vendor/catalog-source.json', 'utf8')) as RawCatalog;
 
 const courses = new Map<string, Acc>();
 const unknownSlots = new Map<string, { count: number; samples: Set<string> }>();
