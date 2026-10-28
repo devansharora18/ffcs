@@ -3,10 +3,6 @@ import '@fontsource-variable/bricolage-grotesque';
 import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
-
-import { ads } from '@/config/ads';
-
 import './globals.css';
 
 const title = 'FFCS planner — build your VIT timetable by talking';
@@ -30,14 +26,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="font-sans antialiased">{children}</body>
-      {ads.client && (
-        <Script
-          async
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ads.client}`}
-        />
-      )}
     </html>
   );
 }

@@ -5,13 +5,13 @@ import { useState } from 'react';
 import { usePlanner } from '@/hooks/usePlanner';
 import { DAY_LABEL, clock } from '@/lib/ffcs/format';
 import { DAYS } from '@/lib/ffcs/grid';
-import AdSlot from '../ads/AdSlot';
 import Doodles from '../ui/Doodles';
 import { Panel } from '../ui/Panel';
 import Chat from './Chat';
 import CourseBuilder from './CourseBuilder';
 import ExportButton from './ExportButton';
 import SelectedCourses from './SelectedCourses';
+import SupportPanel from './SupportPanel';
 import SkillPanel from './SkillPanel';
 import SlotGrid from './SlotGrid';
 import TimetableTabs from './TimetableTabs';
@@ -185,7 +185,7 @@ export default function Planner({
 
             <SkillPanel />
 
-            <AdSlot />
+            <SupportPanel />
 
             <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-line pt-3 font-mono text-[10px] text-muted">
               <span>Vellore · timetable data compiled October 2026</span>

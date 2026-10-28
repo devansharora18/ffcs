@@ -35,19 +35,10 @@ export default function Privacy() {
         </section>
 
         <section>
-          <h2 className="font-display text-base font-bold text-ink">Ads</h2>
+          <h2 className="font-display text-base font-bold text-ink">No ads, no tracking</h2>
           <p className="mt-1">
-            This page shows at most one ad slot below the timetable. When ad serving is enabled,
-            Google may set cookies to personalise ads. You can review or reset those choices at{' '}
-            <a
-              className="text-lime underline underline-offset-4"
-              href="https://myadcenter.google.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Google Ad Center
-            </a>
-            . With no ad network configured, the slot shows a plain sponsor notice and sets no cookies.
+            There is no ad network, no analytics and no third-party script on this site. Nothing is
+            sold, and no cookies are set beyond what the app itself needs to run.
           </p>
         </section>
 

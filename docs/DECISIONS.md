@@ -32,8 +32,8 @@ Assumptions made while building, with the reason. Change one and the diff is vis
     `/zen/go/v1` bills the Go subscription and needs an `x-opencode-session` header;
     `/inference/openai/v1` bills credits. The credit balance is $0, so the app defaults to Go.
     `muse-spark-1.3-contributor` answers on Go but spends its budget on reasoning before content.
-13. **Ads are one slot below the timetable, never inside the grid.** An ad that looks like a class
-    destroys the only thing this product sells: trust in the grid.
+13. **No ads and no analytics.** No ad network, no third-party script, no tracking. The site asks
+    for a GitHub star and links to the author instead, so the grid stays the only thing on screen.
 14. **Chat history is client-side, last 40 messages.** Only the last 12 are sent per turn.
 15. **No offline mode.** The solver runs server-side so the 604 KB catalog never enters the client
     bundle.

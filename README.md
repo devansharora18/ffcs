@@ -40,9 +40,6 @@ Without a key the planner still works: search, add, solve, export. Only the chat
 | `OPENCODE_API_KEY` | — | Service-account key. Server-side only. |
 | `OPENCODE_BASE_URL` | `https://opencode.ai/zen/go/v1` | Go subscription. Needs the session header, which `config.ts` sends. |
 | `OPENCODE_MODEL` | `deepseek-v4.1-flash` | `muse-spark-1.3-contributor` also answers on Go. |
-| `NEXT_PUBLIC_ADSENSE_CLIENT` | unset | Unset renders a house ad for the slot. |
-| `NEXT_PUBLIC_ADSENSE_SLOT` | unset | Ad unit id. |
-| `NEXT_PUBLIC_SPONSOR_CONTACT` | unset | Adds a mailto to the house ad. |
 
 The other gateway, `https://opencode.ai/inference/openai/v1`, bills a credit balance instead of the
 subscription and does not need the session header. Model ids must be bare (`deepseek-v4.1-flash`),
@@ -139,41 +136,8 @@ Vellore only, one semester. The source does not state the term, so the UI never 
   `who_teaches` and `add_course` with real catalog data and asks instead of guessing when two
   faculty match. The tool loop is also covered by a fake OpenAI-compatible server in tests.
 
-## Ads
-
-One slot, below the timetable. Two ways to fill it.
-
-**Direct sponsor — no approval, works today**
-
-```bash
-NEXT_PUBLIC_SPONSOR_CONTACT=sponsors@yourdomain
-```
-
-The slot then reads "Sponsor slot — ask about it" with a mailto. This is what the unit economics in
-`docs/MONETIZATION.md` assume: one campus sponsor beats AdSense at this traffic level.
-
-**Google AdSense**
-
-1. Apply at `adsense.google.com`, add the deployed domain, wait for approval.
-2. Create a **Display** ad unit. Copy the publisher id (`ca-pub-…`) and the unit id.
-3. Set both:
-
-```bash
-NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-1234567890123456
-NEXT_PUBLIC_ADSENSE_SLOT=1234567890
-```
-
-4. Deploy. `npm run build` writes `public/ads.txt` from the client id, so the crawler file cannot
-   drift from the live site.
-5. For EEA/UK/Switzerland traffic add a certified consent manager (Google CMP). Elsewhere the
-   `/privacy` page carries the disclosure.
-
-With no client id the slot renders a house ad and loads nothing from Google. The ad unit is never
-placed inside the timetable grid.
-
 ## Docs
 
 - `docs/DECISIONS.md` — every assumption, with its reason.
-- `docs/MONETIZATION.md` — unit costs and why one sponsor beats ads.
 - `docs/TODO.md` — what is blocked and the exact commands.
 - `docs/PLAN.md` — the 13 steps.

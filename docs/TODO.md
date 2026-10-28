@@ -29,15 +29,6 @@ Notes:
   Go-only model in practice.
 - `.env` is gitignored. Never commit the key.
 
-## Ads
-
-1. Apply for AdSense, then set `NEXT_PUBLIC_ADSENSE_CLIENT` and `NEXT_PUBLIC_ADSENSE_SLOT`.
-2. Add `public/ads.txt`:
-   `google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0`
-3. Add a consent banner (a Google-certified CMP is required in the EEA/UK; India still expects
-   notice). Without consent, do not serve personalised ads.
-4. Sell the direct sponsor slot instead — see `docs/MONETIZATION.md`.
-
 ## Deploy
 
 ```bash
@@ -62,4 +53,4 @@ enough): `src/app/api/chat/route.ts` keeps the bucket in process memory.
 - Visual pass on real iOS Safari and Android Chrome. Verified in headless Chrome at 390/1440 only.
 - First-run onboarding: the grid is empty with no example timetable.
 - No analytics. Decide tracking before launch, and keep it off the timetable itself.
-- Rate limit is per request, not per solve. See the leverage section in `docs/MONETIZATION.md`.
+- Rate limit is per request, not per solve.

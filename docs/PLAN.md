@@ -14,7 +14,7 @@ Built in 13 steps. Each one is a commit.
 | 8 | Timetable grid (desktop) and agenda (mobile) | done |
 | 9 | Chat panel, requirements list, undo, local persistence | done |
 | 10 | PNG export | done |
-| 11 | Ad slot, metadata, monetization model | done |
+| 11 | Support panel, metadata, privacy page | done |
 | 12 | Hardening: types, tests, build, docs | done |
 | 13 | Standalone Python solver, teacher list and installable skill | done |
 
