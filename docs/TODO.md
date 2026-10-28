@@ -39,6 +39,17 @@ npx vercel --prod
 Move the rate limiter to a shared store before running more than one instance (Upstash free tier is
 enough): `src/app/api/chat/route.ts` keeps the bucket in process memory.
 
+## Security
+
+- **Rate limiting is per isolate.** `src/app/api/chat/route.ts` keeps the counter in process memory,
+  so on Cloudflare/Vercel it resets with every cold start and scales out. Move it to a shared store
+  (Upstash, Cloudflare KV or a Durable Object) before promoting the site widely.
+- **The session cookie is a speed bump, not authentication.** `/api/chat` requires a signed,
+  same-site cookie and a same-origin `Origin`, which stops drive-by abuse; it does not stop someone
+  who fetches a cookie first. Add real auth (or a proof-of-work challenge) if the key is ever drained.
+- **Set a spend cap in the provider dashboard.** That is the only limit an attacker cannot bypass.
+- Set `SESSION_SECRET` in production so the cookie does not depend on the API key.
+
 ## Data
 
 - **Credits are unknown for all 728 courses.** Import VIT's official credit list before enabling a

@@ -5,14 +5,14 @@ import { z } from 'zod';
  * a whole semester can be pasted, while still bounding a single request.
  */
 export const MAX_MESSAGE_CHARS = 120_000;
-export const MAX_HISTORY_CHARS = 80_000;
+export const MAX_HISTORY_CHARS = 32_000;
 
 export const messageSchema = z
   .object({
     role: z.enum(['user', 'assistant']),
     content: z.string().max(MAX_MESSAGE_CHARS),
     images: z
-      .array(z.string().max(3_000_000).startsWith('data:image/'))
+      .array(z.string().max(1_200_000).startsWith('data:image/'))
       .max(2)
       .optional(),
   })

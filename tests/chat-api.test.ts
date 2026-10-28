@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import http from 'node:http';
 import type { AddressInfo } from 'node:net';
-import test from 'node:test';
+import test, { before } from 'node:test';
 
 type CapturedRequest = { messages: { role: string; content?: unknown }[] };
 
@@ -54,6 +54,18 @@ function fakeOpenAI(requests: CapturedRequest[]) {
   });
 }
 
+/**
+ * The chat route requires a signed session cookie. GET issues it.
+ */
+let cookie = '';
+
+before(async () => {
+  // Pin the signing key so the cookie survives the API-key changes below.
+  process.env.SESSION_SECRET = 'test-secret';
+  const { GET } = await import('../src/app/api/chat/route');
+  cookie = (GET().headers.get('set-cookie') ?? '').split(';')[0];
+});
+
 const body = {
   messages: [{ role: 'user', content: 'find data structures' }],
   state: {
@@ -82,7 +94,7 @@ test('chat streams a tool round, then the answer, then the state', async () => {
     const response = await POST(
       new Request('http://localhost/api/chat', {
         method: 'POST',
-        headers: { 'content-type': 'application/json' },
+        headers: { 'content-type': 'application/json', cookie },
         body: JSON.stringify(body),
       }),
     );
@@ -120,7 +132,7 @@ test('an attached image is forwarded as an image part on the newest turn only', 
     const response = await POST(
       new Request('http://localhost/api/chat', {
         method: 'POST',
-        headers: { 'content-type': 'application/json' },
+        headers: { 'content-type': 'application/json', cookie },
         body: JSON.stringify({
           messages: [
             {
@@ -145,6 +157,58 @@ test('an attached image is forwarded as an image part on the newest turn only', 
   }
 });
 
+test('chat rejects a request without a session cookie', async () => {
+  process.env.OPENCODE_API_KEY = 'test-key';
+  const { POST } = await import('../src/app/api/chat/route');
+
+  const response = await POST(
+    new Request('http://localhost/api/chat', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(body),
+    }),
+  );
+
+  assert.equal(response.status, 401);
+});
+
+test('chat rejects a cross-site origin', async () => {
+  process.env.OPENCODE_API_KEY = 'test-key';
+  const { POST } = await import('../src/app/api/chat/route');
+
+  const response = await POST(
+    new Request('http://localhost/api/chat', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        cookie,
+        origin: 'https://evil.example',
+      },
+      body: JSON.stringify(body),
+    }),
+  );
+
+  assert.equal(response.status, 403);
+});
+
+test('chat rejects an oversized body before parsing it', async () => {
+  process.env.OPENCODE_API_KEY = 'test-key';
+  const { POST } = await import('../src/app/api/chat/route');
+
+  const response = await POST(
+    new Request('http://localhost/api/chat', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', cookie },
+      body: JSON.stringify({
+        messages: [{ role: 'user', content: 'x'.repeat(3_100_000) }],
+        state: body.state,
+      }),
+    }),
+  );
+
+  assert.equal(response.status, 413);
+});
+
 test('chat refuses without a key instead of failing mid-stream', async () => {
   delete process.env.OPENCODE_API_KEY;
   const { POST } = await import('../src/app/api/chat/route');
@@ -152,7 +216,7 @@ test('chat refuses without a key instead of failing mid-stream', async () => {
   const response = await POST(
     new Request('http://localhost/api/chat', {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: { 'content-type': 'application/json', cookie },
       body: JSON.stringify(body),
     }),
   );
@@ -167,7 +231,7 @@ test('chat rejects a malformed body', async () => {
   const response = await POST(
     new Request('http://localhost/api/chat', {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: { 'content-type': 'application/json', cookie },
       body: JSON.stringify({ messages: [{}], state: {} }),
     }),
   );

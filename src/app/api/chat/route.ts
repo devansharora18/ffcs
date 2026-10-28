@@ -8,6 +8,7 @@ import {
   chatRequestSchema,
   type ChatRequest,
 } from '@/lib/agent/schema';
+import { issueSession, readSession, sameOrigin } from '@/lib/agent/session';
 import { executeTool } from '@/lib/agent/tools';
 import { toolDefinitions } from '@/lib/agent/tools-schema';
 import { catalog } from '@/lib/ffcs/catalog-data';
@@ -17,17 +18,20 @@ import type { TimetableState } from '@/lib/ffcs/types';
 
 export const runtime = 'nodejs';
 
-const MAX_ROUNDS = 6;
+const MAX_ROUNDS = 4;
 const MAX_TOOL_CHARS = 4000;
-const MAX_OUTPUT_TOKENS = 2048;
+const MAX_OUTPUT_TOKENS = 1200;
+const MAX_BODY_BYTES = 3_000_000;
 const WINDOW_MS = 10 * 60 * 1000;
-const MAX_REQUESTS = 30;
+/** Per session cookie, and a second ceiling for the whole isolate. */
+const MAX_REQUESTS = 15;
+const MAX_REQUESTS_PER_ISOLATE = 120;
 
 // Best effort only: one process, one bucket. Swap for a shared store before
 // this runs on more than one instance.
 const buckets = new Map<string, { count: number; resetAt: number }>();
 
-function rateLimited(key: string): boolean {
+function overLimit(key: string, max: number): boolean {
   const now = Date.now();
   const bucket = buckets.get(key);
 
@@ -37,10 +41,46 @@ function rateLimited(key: string): boolean {
   }
 
   bucket.count += 1;
-  return bucket.count > MAX_REQUESTS;
+  return bucket.count > max;
 }
 
 type Send = (event: string, data: unknown) => void;
+
+type BodyResult = { ok: true; value: unknown } | { ok: false; tooLarge: boolean };
+
+/**
+ * Reads the body with a byte cap instead of trusting Content-Length, which is
+ * absent on chunked requests and trivially forged.
+ */
+async function readBody(request: Request, max: number): Promise<BodyResult> {
+  if (!request.body) return { ok: false, tooLarge: false };
+
+  const reader = request.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      total += value.byteLength;
+      if (total > max) {
+        await reader.cancel();
+        return { ok: false, tooLarge: true };
+      }
+      chunks.push(value);
+    }
+  } catch {
+    return { ok: false, tooLarge: false };
+  }
+
+  try {
+    return { ok: true, value: JSON.parse(Buffer.concat(chunks.map((c) => Buffer.from(c))).toString('utf8')) };
+  } catch {
+    return { ok: false, tooLarge: false };
+  }
+}
 
 function describeAgentError(error: unknown): string {
   const raw = error instanceof Error ? error.message : 'agent failed';
@@ -198,13 +238,36 @@ export async function POST(request: Request): Promise<Response> {
     );
   }
 
-  const key =
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'local';
-  if (rateLimited(key)) {
+  // The endpoint spends real credit, so it is not open to the world.
+  if (!sameOrigin(request)) {
+    return Response.json({ error: 'bad_origin' }, { status: 403 });
+  }
+
+  const session = readSession(request);
+  if (!session) {
+    return Response.json({ error: 'no_session' }, { status: 401 });
+  }
+
+  // Cheap reject, then a streamed read so a lying or missing length cannot
+  // force the whole body into memory.
+  const declared = Number(request.headers.get('content-length') ?? 0);
+  if (Number.isFinite(declared) && declared > MAX_BODY_BYTES) {
+    return Response.json({ error: 'payload_too_large' }, { status: 413 });
+  }
+
+  if (overLimit(session, MAX_REQUESTS) || overLimit('isolate', MAX_REQUESTS_PER_ISOLATE)) {
     return Response.json({ error: 'rate_limited' }, { status: 429 });
   }
 
-  const parsed = chatRequestSchema.safeParse(await request.json().catch(() => null));
+  const raw = await readBody(request, MAX_BODY_BYTES);
+  if (!raw.ok) {
+    return Response.json(
+      { error: raw.tooLarge ? 'payload_too_large' : 'bad_request' },
+      { status: raw.tooLarge ? 413 : 400 },
+    );
+  }
+
+  const parsed = chatRequestSchema.safeParse(raw.value);
   if (!parsed.success) {
     return Response.json({ error: 'bad_request', issues: parsed.error.issues }, { status: 400 });
   }
@@ -235,6 +298,11 @@ export async function POST(request: Request): Promise<Response> {
   });
 }
 
+/** Hands out the signed session cookie the POST endpoint requires. */
 export function GET(): Response {
-  return Response.json({ configured: agentConfig() !== null });
+  const session = issueSession();
+  return Response.json(
+    { configured: agentConfig() !== null },
+    { headers: { 'set-cookie': session.header } },
+  );
 }

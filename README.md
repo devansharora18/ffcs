@@ -87,7 +87,7 @@ curl -fsSL https://raw.githubusercontent.com/devansharora18/ffcs/main/install.sh
 curl -fsSL https://raw.githubusercontent.com/devansharora18/ffcs/main/install.sh | bash -s -- --claude
 ```
 
-The installer picks `~/.config/opencode/skill` when OpenCode is present, otherwise `~/.claude/skills`,
+The installer picks `~/.config/opencode/skills` when OpenCode is present, otherwise `~/.claude/skills`,
 or `--dir PATH` for anything else. It downloads `public/ffcs-planner-skill.zip` from the same repo and
 replaces any previous copy. The archive root is `ffcs-planner/`, which is the layout Claude and
 OpenCode expect; upload the same zip on Claude web/desktop. Forking? Set `NEXT_PUBLIC_GITHUB_REPO`
@@ -131,7 +131,10 @@ Vellore only, one semester. The source does not state the term, so the UI never 
 
 - Credits are unknown, so no credit total and no `maxCredits` yet.
 - Anonymous only: the timetable lives in `localStorage`, share is a PNG.
-- Rate limiting is per process. Move it to a shared store before more than one instance.
+- The chat endpoint requires a signed session cookie plus a same-origin request, and the body is
+  read with a hard 3 MB cap. Rate limiting is still per isolate — move it to a shared store before
+  promoting the site (`docs/TODO.md`). Security headers and `poweredByHeader: false` are set in
+  `next.config.ts`.
 - The agent is verified against `deepseek-v4.1-flash` on the OpenCode Go gateway: it calls
   `who_teaches` and `add_course` with real catalog data and asks instead of guessing when two
   faculty match. The tool loop is also covered by a fake OpenAI-compatible server in tests.

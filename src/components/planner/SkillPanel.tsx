@@ -82,7 +82,7 @@ export default function SkillPanel() {
         >
           {REPO}
         </a>{' '}
-        · {BRANCH} · installs to ~/.config/opencode/skill
+        · {BRANCH} · installs to ~/.config/opencode/skills
       </p>
     </section>
   );

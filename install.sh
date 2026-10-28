@@ -5,7 +5,7 @@
 #   curl -fsSL https://raw.githubusercontent.com/devansharora18/ffcs/main/install.sh | bash
 #
 # Pass options after `bash -s --`:
-#   --opencode        install to ~/.config/opencode/skill  (default when OpenCode exists)
+#   --opencode        install to ~/.config/opencode/skills (default when OpenCode exists)
 #   --claude          install to ~/.claude/skills
 #   --dir PATH        install to PATH/ffcs-planner
 #   --help
@@ -24,7 +24,7 @@ usage() {
   cat <<'TEXT'
 Install the FFCS planner skill.
 
-  --opencode        install to ~/.config/opencode/skill
+  --opencode        install to ~/.config/opencode/skills
   --claude          install to ~/.claude/skills
   --dir PATH        install to PATH/ffcs-planner
   --help            show this message
@@ -37,7 +37,7 @@ TEXT
 TARGET=""
 while [ $# -gt 0 ]; do
   case "$1" in
-    --opencode) TARGET="$HOME/.config/opencode/skill"; shift ;;
+    --opencode) TARGET="$HOME/.config/opencode/skills"; shift ;;
     --claude) TARGET="$HOME/.claude/skills"; shift ;;
     --dir) TARGET="${2:-}"; shift 2 ;;
     --help|-h) usage; exit 0 ;;
@@ -47,11 +47,11 @@ done
 
 if [ -z "$TARGET" ]; then
   if [ -d "$HOME/.config/opencode" ]; then
-    TARGET="$HOME/.config/opencode/skill"
+    TARGET="$HOME/.config/opencode/skills"
   elif [ -d "$HOME/.claude" ]; then
     TARGET="$HOME/.claude/skills"
   else
-    TARGET="$HOME/.config/opencode/skill"
+    TARGET="$HOME/.config/opencode/skills"
   fi
 fi
 

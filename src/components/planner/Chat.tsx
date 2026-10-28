@@ -147,7 +147,7 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
   async function send(text: string) {
     const trimmed = text.trim();
     const images = pending;
-    if ((trimmed.length === 0 && images.length === 0) || busy || status === 'offline') return;
+    if ((trimmed.length === 0 && images.length === 0) || busy || status !== 'ready') return;
 
     setInput('');
     setPending([]);
@@ -337,7 +337,7 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
             <button
               type="button"
               onClick={() => fileRef.current?.click()}
-              disabled={busy || status === 'offline' || pending.length >= 2}
+              disabled={busy || status !== 'ready' || pending.length >= 2}
               className="flex shrink-0 items-center gap-1 rounded-full border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted hover:border-purple hover:text-ink disabled:opacity-40"
             >
               <svg
@@ -377,7 +377,7 @@ export default function Chat({ state, onAgentState, onClose, schools, hasCourses
           <button
             type="submit"
             disabled={
-              busy || status === 'offline' || (input.trim().length === 0 && pending.length === 0)
+              busy || status !== 'ready' || (input.trim().length === 0 && pending.length === 0)
             }
             className="shrink-0 rounded-full bg-lime px-4 py-1.5 font-display text-xs font-bold text-on-bright transition-transform hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-line disabled:text-muted disabled:hover:scale-100"
           >
