@@ -7,13 +7,19 @@ import {
   fetchCategoryCourses,
   fetchOfferings,
 } from '@/lib/client/api';
+import { isKnownSlot } from '@/lib/ffcs/grid';
 import type { CourseSummary, OfferingDetail } from '@/lib/ffcs/search';
 
 import Select, { type SelectOption } from '../ui/Select';
 
 type Props = {
   schools: string[];
-  onAdd: (code: string, offeringId?: string, slots?: string[]) => void;
+  onAdd: (
+    code: string,
+    offeringId?: string,
+    slots?: string[],
+    custom?: { title: string; faculty: string; slots: string[] },
+  ) => void;
 };
 
 export default function CourseBuilder({ schools, onAdd }: Props) {
@@ -27,6 +33,12 @@ export default function CourseBuilder({ schools, onAdd }: Props) {
   const [offeringId, setOfferingId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [manualOpen, setManualOpen] = useState(false);
+  const [manualCode, setManualCode] = useState('');
+  const [manualTitle, setManualTitle] = useState('');
+  const [manualFaculty, setManualFaculty] = useState('');
+  const [manualSlots, setManualSlots] = useState('');
+  const [manualError, setManualError] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -145,6 +157,45 @@ export default function CourseBuilder({ schools, onAdd }: Props) {
     setOfferingId(null);
   }
 
+  function toggleManual() {
+    if (!manualOpen) {
+      // Prefill from the current selection so "same subject, different teacher"
+      // only needs the faculty field.
+      setManualCode(code ?? '');
+      setManualTitle(courses.find((course) => course.code === code)?.title ?? '');
+      setManualSlots(slot ?? '');
+      setManualError(null);
+    }
+    setManualOpen((open) => !open);
+  }
+
+  function addManual() {
+    const cleanCode = manualCode.trim().toUpperCase();
+    const slots = manualSlots
+      .split('+')
+      .map((slot) => slot.trim().toUpperCase())
+      .filter(Boolean);
+    const faculty = manualFaculty.trim();
+    const title = manualTitle.trim();
+
+    if (cleanCode.length === 0) return setManualError('A course code is required.');
+    if (slots.length === 0) return setManualError('At least one slot is required, e.g. A1+TA1.');
+
+    const unknown = slots.filter((slot) => !isKnownSlot(slot));
+    if (unknown.length > 0) {
+      return setManualError(`Unknown slot ${unknown.join(', ')}. Try A1, TA1, L3…`);
+    }
+
+    onAdd(cleanCode, undefined, undefined, {
+      title: title || cleanCode,
+      faculty: faculty || 'MANUAL',
+      slots,
+    });
+
+    setManualFaculty('');
+    setManualError(null);
+  }
+
   return (
     <div className="space-y-3">
       <div className="-mx-1 flex flex-wrap gap-1.5 px-1">
@@ -256,6 +307,62 @@ export default function CourseBuilder({ schools, onAdd }: Props) {
               ? `Slot ${slot} reserved; the solver picks the teacher.`
               : 'The solver picks both slot and teacher.'}
         </p>
+      </div>
+
+      <div className="border-t border-line pt-3">
+        <button
+          type="button"
+          onClick={toggleManual}
+          aria-expanded={manualOpen}
+          className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted underline decoration-line underline-offset-4 hover:text-lime hover:decoration-lime"
+        >
+          {manualOpen ? '− hide manual entry' : '+ subject or teacher missing?'}
+        </button>
+
+        {manualOpen && (
+          <div className="mt-2 space-y-2">
+            <div className="grid gap-2 sm:grid-cols-2">
+              <input
+                value={manualCode}
+                onChange={(event) => setManualCode(event.target.value)}
+                placeholder="Code, e.g. BCSE202L"
+                aria-label="Manual course code"
+                className="rounded-lg border border-line bg-panel-2 px-2 py-1.5 font-mono text-[11px] placeholder:text-muted/70 focus:border-purple focus:outline-none"
+              />
+              <input
+                value={manualTitle}
+                onChange={(event) => setManualTitle(event.target.value)}
+                placeholder="Course title"
+                aria-label="Manual course title"
+                className="rounded-lg border border-line bg-panel-2 px-2 py-1.5 text-[11px] placeholder:text-muted/70 focus:border-purple focus:outline-none"
+              />
+              <input
+                value={manualFaculty}
+                onChange={(event) => setManualFaculty(event.target.value)}
+                placeholder="Teacher, e.g. IYAPPAN P"
+                aria-label="Manual faculty"
+                className="rounded-lg border border-line bg-panel-2 px-2 py-1.5 text-[11px] placeholder:text-muted/70 focus:border-purple focus:outline-none"
+              />
+              <input
+                value={manualSlots}
+                onChange={(event) => setManualSlots(event.target.value)}
+                placeholder="Slots, e.g. A1+TA1"
+                aria-label="Manual slots"
+                className="rounded-lg border border-line bg-panel-2 px-2 py-1.5 font-mono text-[11px] placeholder:text-muted/70 focus:border-purple focus:outline-none"
+              />
+            </div>
+
+            {manualError && <p className="font-mono text-[10px] text-red">{manualError}</p>}
+
+            <button
+              type="button"
+              onClick={addManual}
+              className="w-full rounded-lg border border-purple px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-purple hover:bg-purple hover:text-on-bright"
+            >
+              add manual course
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

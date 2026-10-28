@@ -11,12 +11,21 @@ export type TimetableConstraints = {
   maxCredits?: number;
 };
 
+/** A course the user typed in because the catalog does not have it. */
+export type CustomCourse = {
+  title: string;
+  faculty: string;
+  slots: string[];
+};
+
 export type Requirement = {
   courseCode: string;
   /** Pin one offering; omit to let the solver choose. */
   offeringId?: string;
   /** Require this slot pattern, e.g. ['A1','TA1']; the solver still picks the teacher. */
   slots?: string[];
+  /** Manual entry, bypassing the catalog lookup. */
+  custom?: CustomCourse;
 };
 
 export type TimetableState = {

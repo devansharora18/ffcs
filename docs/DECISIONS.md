@@ -7,9 +7,9 @@ Assumptions made while building, with the reason. Change one and the diff is vis
    during the one traffic spike that matters.
 2. **No share links.** Product decision: share is a rendered PNG. That removed the only remaining
    server-side state.
-3. **One campus, one semester.** Vellore only. The vendored data is CodeChefVIT `prod` plus open
-   PRs 293/296/297/298 (the current fresher allotments). `term` stays `null` because the source
-   does not state it — it is never guessed.
+3. **One campus, union of sources.** Vellore only. The data is the union of CodeChefVIT `prod` and
+   PRs 293/296/297/298: every course from every tree is kept, so nothing a PR deletes disappears.
+   `term` stays `null` because the source does not state it — it is never guessed.
 4. **Course kind comes from slot codes, not the code suffix.** MTech codes (`CSI1007`) have no
    suffix and embedded courses publish theory and lab as separate offerings under one code.
 5. **Credits stay `null`.** The source has no credit values. A wrong credit count is worse than a

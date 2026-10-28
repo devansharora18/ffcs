@@ -1,7 +1,7 @@
-import type { TimetableConstraints, TimetableState } from './types';
+import type { CustomCourse, TimetableConstraints, TimetableState } from './types';
 
 export type StateOp =
-  | { op: 'add'; courseCode: string; offeringId?: string; slots?: string[] }
+  | { op: 'add'; courseCode: string; offeringId?: string; slots?: string[]; custom?: CustomCourse }
   | { op: 'remove'; courseCode: string }
   | { op: 'constraints'; constraints: Partial<TimetableConstraints> };
 
@@ -32,7 +32,12 @@ export function applyOps(state: TimetableState, ops: StateOp[]): TimetableState 
           ...next,
           requirements: [
             ...next.requirements,
-            { courseCode: op.courseCode, offeringId: op.offeringId, slots: op.slots },
+            {
+              courseCode: op.courseCode,
+              offeringId: op.offeringId,
+              slots: op.slots,
+              custom: op.custom,
+            },
           ],
         };
         break;

@@ -31,9 +31,9 @@ export default function SkillPanel() {
             Take the skill with you
           </h2>
           <p className="mt-1 max-w-md text-[11px] leading-relaxed text-muted">
-            Installs SKILL.md, 450 courses, 902 teachers and the Python solver into your agent&apos;s
-            skills folder. OpenCode by default, <code className="font-mono">--claude</code> for
-            Claude Code. On Claude web or desktop, upload the zip instead.
+            Installs SKILL.md, the full course catalog, every teacher and the Python solver into your
+            agent&apos;s skills folder. OpenCode by default, <code className="font-mono">--claude</code>{' '}
+            for Claude Code. On Claude web or desktop, upload the zip instead.
           </p>
         </div>
 

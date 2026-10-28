@@ -50,7 +50,7 @@ enough): `src/app/api/chat/route.ts` keeps the bucket in process memory.
 
 ## Data
 
-- **Credits are unknown for all 151 courses.** Import VIT's official credit list before enabling a
+- **Credits are unknown for all 520 courses.** Import VIT's official credit list before enabling a
   credit total or `maxCredits`.
 - **The catalog is vendored, not scraped.** Replace `vendor/ffcs-data` with an importer from VIT's
   published FFCS Excel/PDF when available, then re-run `npm run catalog:import`.

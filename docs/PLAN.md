@@ -6,7 +6,7 @@ Built in 13 steps. Each one is a commit.
 |---|---|---|
 | 1 | Recon of FFCS on the Go and FFCS-inator, plan, unit economics | done |
 | 2 | Scaffold + slot grid as time intervals, no database | done |
-| 3 | Catalog importer: 151 courses, 1,755 offerings, 600 faculty | done |
+| 3 | Catalog importer: 520 courses, 4,815 offerings, 1,108 faculty (union) | done |
 | 4 | Conflict engine over minute intervals + tests | done |
 | 5 | Solver: search over slot patterns, ranked by soft constraints | done |
 | 6 | Agent tool layer with replayable state ops | done |

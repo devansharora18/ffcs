@@ -6,6 +6,7 @@ import { solveState } from '@/lib/client/api';
 import { applyOps } from '@/lib/ffcs/ops';
 import {
   emptyState,
+  type CustomCourse,
   type SolveResult,
   type TimetableConstraints,
   type TimetableState,
@@ -150,8 +151,10 @@ export function usePlanner() {
   );
 
   const add = useCallback(
-    (code: string, offeringId?: string, slots?: string[]) => {
-      commit(applyOps(stateRef.current, [{ op: 'add', courseCode: code, offeringId, slots }]));
+    (code: string, offeringId?: string, slots?: string[], custom?: CustomCourse) => {
+      commit(
+        applyOps(stateRef.current, [{ op: 'add', courseCode: code, offeringId, slots, custom }]),
+      );
     },
     [commit],
   );

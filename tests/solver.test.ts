@@ -265,6 +265,35 @@ test('a week stays on one exam side instead of mixing A1 with B2', () => {
   assert.equal(result.solutions[0].parts.examSide, 0);
 });
 
+test('a manual course is placed from the slots the user typed', () => {
+  const result = solveTimetable(catalogOf(), {
+    requirements: [
+      {
+        courseCode: 'NEW101',
+        custom: { title: 'Invented Course', faculty: 'MISSING PROF', slots: ['A1'] },
+      },
+    ],
+    constraints: emptyConstraints(),
+  });
+
+  assert.equal(result.solutions.length, 1);
+  assert.equal(result.solutions[0].entries[0].title, 'Invented Course');
+  assert.equal(result.solutions[0].entries[0].faculty, 'MISSING PROF');
+  assert.deepEqual(result.solutions[0].entries[0].slots, ['A1']);
+});
+
+test('a manual course with an unknown slot is reported, not placed', () => {
+  const result = solveTimetable(catalogOf(), {
+    requirements: [
+      { courseCode: 'NEW102', custom: { title: 'Bad slot', faculty: 'X', slots: ['ZZ9'] } },
+    ],
+    constraints: emptyConstraints(),
+  });
+
+  assert.deepEqual(result.unsolved, ['NEW102']);
+  assert.equal(result.solutions.length, 0);
+});
+
 test('the search stays bounded on a wide problem', () => {
   const slots = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'];
   const catalog = catalogOf(

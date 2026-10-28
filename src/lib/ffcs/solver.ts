@@ -94,6 +94,36 @@ export function buildGroups(
     if (seen.has(requirement.courseCode)) continue;
     seen.add(requirement.courseCode);
 
+    // Manual entry: no catalog lookup, the user supplied the slots.
+    if (requirement.custom) {
+      const custom = requirement.custom;
+      const slots = custom.slots.map((slot) => slot.trim().toUpperCase()).filter(Boolean);
+      const cells = slots.flatMap(slotCells);
+
+      if (slots.length === 0 || cells.length === 0) {
+        unsolved.push(requirement.courseCode);
+        continue;
+      }
+
+      const entry: PlacedOffering = {
+        id: `custom~${requirement.courseCode}~${slots.join('+')}~${custom.faculty}`,
+        code: requirement.courseCode,
+        title: custom.title || requirement.courseCode,
+        kind: slots.every((slot) => /^L\d+$/.test(slot)) ? 'lab' : 'theory',
+        faculty: custom.faculty || 'MANUAL',
+        venue: null,
+        slots,
+        cells,
+      };
+
+      if (!isAllowed(entry, constraints)) {
+        unsolved.push(requirement.courseCode);
+      } else {
+        groups.push({ courseCode: requirement.courseCode, candidates: [entry] });
+      }
+      continue;
+    }
+
     const course = byCode.get(requirement.courseCode);
     if (!course) {
       unsolved.push(requirement.courseCode);

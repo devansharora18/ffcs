@@ -18,6 +18,7 @@ that compares real clock intervals:
   reserves both blocks.
 - Courses with no scheduled hours (projects, Indian Constitution) never clash.
 - Several timetables live in tabs. Duplicate a plan, swap one teacher, and compare both side by side.
+- A subject or teacher missing from the data can be typed in by hand under "subject or teacher missing?".
 
 You can also **paste a screenshot** of the FFCS portal into the chat. The agent reads the course
 codes and slots, verifies every code against the catalog, and adds only what actually exists.
@@ -80,7 +81,7 @@ verbatim, so a manual edit and an agent edit are the same mutation.
 ## The skill
 
 `skill/ffcs-planner/` is a standalone agent skill: a **Python** solver, the full catalog, and a
-greppable list of all 600 teachers. No Node, no server, no API key.
+greppable list of all 1108 teachers. No Node, no server, no API key.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/devansharora18/ffcs/main/install.sh | bash
@@ -104,8 +105,8 @@ python3 scripts/solve.py timetable.example.json
 
 | File | Contents |
 |---|---|
-| `data/teachers.txt` | 1755 lines: `FACULTY \| CODE \| Title \| slots \| venue` |
-| `data/catalog.json` | 151 courses with every offering |
+| `data/teachers.txt` | 4815 lines: `FACULTY \| CODE \| Title \| slots \| venue` |
+| `data/catalog.json` | 520 courses with every offering |
 | `data/slots.json` | slot → day/start/end |
 | `scripts/solve.py` | deterministic solver, prints the grid and writes `*.solved.json` |
 | `scripts/find.py` | course, teacher and slot queries |
@@ -121,9 +122,9 @@ plus open PRs 293/296/297/298 (MIT, see `vendor/ffcs-data/NOTICE`) and normalise
 
 | | |
 |---|---|
-| Courses | 151 |
-| Faculty offerings | 1,755 |
-| Faculty | 600 |
+| Courses | 520 |
+| Faculty offerings | 4,815 |
+| Faculty | 1,108 |
 | Unknown slot codes | 0 |
 | Courses with no scheduled hours | 11 |
 | Credits | `null` — the source has none |
