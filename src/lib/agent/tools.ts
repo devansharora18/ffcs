@@ -281,7 +281,7 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
           return {
             text: `${course.code} has no offering by "${facultyQuery}". Faculty: ${[
               ...new Set(course.offerings.map((offering) => offering.faculty)),
-            ].slice(0, 10).join(', ')}.`,
+            ].slice(0, 10).join(', ')}. If the user wants that teacher anyway, confirm once and use add_custom_course.`,
             ops: [],
             state,
           };
@@ -337,12 +337,24 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
         };
       }
 
-      if (findCourse(catalog, code)) {
-        return {
-          text: `${code} is in the catalog. Use add_course instead, so the real teachers are offered.`,
-          ops: [],
-          state,
-        };
+      const known = findCourse(catalog, code);
+      if (known) {
+        // Defer to add_course only when both the slot and the teacher are real.
+        // A real slot with a new teacher is a valid manual override.
+        const sameSlot = known.offerings.filter(
+          (offering) => offering.slots.join('+').toUpperCase() === slots.join('+'),
+        );
+        const teacherOffered =
+          faculty.length > 0 &&
+          sameSlot.some((offering) => offering.faculty.toLowerCase() === faculty.toLowerCase());
+
+        if (sameSlot.length > 0 && teacherOffered) {
+          return {
+            text: `${code} already runs ${slotText} with ${faculty}. Use add_course instead.`,
+            ops: [],
+            state,
+          };
+        }
       }
 
       if (state.requirements.some((requirement) => requirement.courseCode === code)) {
@@ -357,9 +369,17 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
       const ops: StateOp[] = [{ op: 'add', courseCode: code, custom }];
       const next = applyOps(state, ops);
 
+      const slotIsReal = known?.offerings.some(
+        (offering) => offering.slots.join('+').toUpperCase() === slots.join('+'),
+      );
+      const note = !known
+        ? 'Not verified against the catalog.'
+        : slotIsReal
+          ? `The catalog runs ${slotText} with other teachers; this uses ${custom.faculty}.`
+          : `The catalog lists ${code} with other slots, so this uses your slot.`;
+
       return {
-        text: `Added ${code} ${custom.title} as a manual entry (${custom.faculty}, ${slotText}) — not verified against the catalog.
-${solveAndDescribe(catalog, next)}`,
+        text: `Added ${code} ${custom.title} as a manual entry (${custom.faculty}, ${slotText}). ${note}\n${solveAndDescribe(catalog, next)}`,
         ops,
         state: next,
       };

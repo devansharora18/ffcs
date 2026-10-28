@@ -148,16 +148,42 @@ test('add_custom_course refuses an unknown slot', () => {
   assert.match(result.text, /Unknown slot/);
 });
 
-test('add_custom_course defers to add_course for a real code', () => {
+test('add_custom_course defers when both the slot and the teacher are real', () => {
   const result = run(
     'add_custom_course',
-    { code: 'BCSE202L', title: 'x', faculty: 'y', slots: 'B1+TB1' },
+    { code: 'BCSE202L', title: 'x', faculty: 'IYAPPAN P', slots: 'B1+TB1' },
     emptyState(),
     catalog,
   );
 
   assert.equal(result.ops.length, 0);
-  assert.match(result.text, /is in the catalog/);
+  assert.match(result.text, /Use add_course instead/);
+});
+
+test('add_custom_course allows a real slot with a teacher the catalog does not list', () => {
+  const result = run(
+    'add_custom_course',
+    { code: 'BCSE202L', title: 'Data Structures', faculty: 'PROF X', slots: 'B1+TB1' },
+    emptyState(),
+    catalog,
+  );
+
+  assert.equal(result.state.requirements.length, 1);
+  assert.equal(result.state.requirements[0].custom?.faculty, 'PROF X');
+  assert.deepEqual(result.state.requirements[0].custom?.slots, ['B1', 'TB1']);
+});
+
+test('add_custom_course allows a real code with a slot only the user wants', () => {
+  const result = run(
+    'add_custom_course',
+    { code: 'BITE311L', title: 'Software Engineering', faculty: 'PROF X', slots: 'E1+TE1' },
+    emptyState(),
+    catalog,
+  );
+
+  assert.equal(result.state.requirements.length, 1);
+  assert.deepEqual(result.state.requirements[0].custom?.slots, ['E1', 'TE1']);
+  assert.match(result.text, /catalog lists BITE311L with other slots/);
 });
 
 test('domain facets and the subject list agree', () => {
