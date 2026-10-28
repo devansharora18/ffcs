@@ -42,6 +42,8 @@ export type PlacedOffering = {
   venue: string | null;
   slots: string[];
   cells: SlotCell[];
+  /** Null when the catalog has no credit value for the course. */
+  credits: number | null;
 };
 
 export type Conflict = {

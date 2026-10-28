@@ -123,7 +123,7 @@ The catalog is compiled from VIT's published FFCS allotment listings and normali
 | Faculty | 1,464 |
 | Unknown slot codes | 0 |
 | Courses with no scheduled hours | 11 |
-| Credits | `null` — the source has none |
+| Credits | known for 75 of 728 (from a curriculum sheet), `null` otherwise |
 
 Vellore only, one semester. The source does not state the term, so the UI never guesses one.
 

@@ -52,6 +52,9 @@ type Acc = {
 
 const data = JSON.parse(readFileSync('vendor/catalog-source.json', 'utf8')) as RawCatalog;
 
+/** Course code -> credits, extracted from a curriculum sheet. */
+const credits = JSON.parse(readFileSync('vendor/credits.json', 'utf8')) as Record<string, number>;
+
 const courses = new Map<string, Acc>();
 const unknownSlots = new Map<string, { count: number; samples: Set<string> }>();
 const titleConflicts = new Map<string, Set<string>>();
@@ -136,7 +139,7 @@ const output: CatalogCourse[] = [...courses.entries()]
       code,
       title: primaryTitle(acc.titles),
       kind: courseKind(acc.kinds),
-      credits: null,
+      credits: credits[code] ?? null,
       schools: [...acc.schools].sort(),
       categories: [...acc.categories].sort(),
       offerings: [...acc.offerings.values()].sort(

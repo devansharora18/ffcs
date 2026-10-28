@@ -22,6 +22,12 @@ export default function SelectedCourses({ state, result, onRemove }: Props) {
     0,
   );
 
+  const placed = result?.solutions[0]?.entries ?? [];
+  const credits = placed.reduce((total, entry) => total + (entry.credits ?? 0), 0);
+  const creditsComplete = placed.length > 0 && placed.every((entry) => entry.credits !== null);
+  const creditsLabel =
+    placed.length === 0 ? '' : ` · ${credits}${creditsComplete ? '' : '+'} credits`;
+
   return (
     <Panel
       title="Selected courses"
@@ -29,6 +35,7 @@ export default function SelectedCourses({ state, result, onRemove }: Props) {
       action={
         <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
           {state.requirements.length} courses · {Math.round(contactHours * 10) / 10} h/week
+          {creditsLabel}
         </span>
       }
     >
@@ -46,6 +53,7 @@ export default function SelectedCourses({ state, result, onRemove }: Props) {
                 <th className="px-1 pb-2 font-normal">Title</th>
                 <th className="hidden px-1 pb-2 font-normal sm:table-cell">Faculty</th>
                 <th className="hidden px-1 pb-2 font-normal md:table-cell">Venue</th>
+                <th className="hidden px-1 pb-2 text-right font-normal sm:table-cell">Cr</th>
                 <th className="px-1 pb-2" />
               </tr>
             </thead>
@@ -75,6 +83,9 @@ export default function SelectedCourses({ state, result, onRemove }: Props) {
                     </td>
                     <td className="hidden px-1 py-2 font-mono text-[10px] text-muted md:table-cell">
                       {entry?.venue ?? '—'}
+                    </td>
+                    <td className="hidden px-1 py-2 text-right font-mono text-[10px] text-muted sm:table-cell">
+                      {entry?.credits ?? '—'}
                     </td>
                     <td className="px-1 py-2 text-right">
                       <button

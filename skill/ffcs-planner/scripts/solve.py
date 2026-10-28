@@ -247,6 +247,7 @@ def build_groups(
                 "venue": None,
                 "slots": slots,
                 "cells": cells,
+                "credits": None,
             }
 
             if is_allowed(entry, constraints):
@@ -279,6 +280,7 @@ def build_groups(
                 "venue": offering["venue"],
                 "slots": offering["slots"],
                 "cells": offering_cells(offering, slot_cells),
+                "credits": course.get("credits"),
             }
             if is_allowed(entry, constraints):
                 candidates.append(entry)

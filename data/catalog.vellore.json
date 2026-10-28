@@ -35172,7 +35172,7 @@
       "code": "BCHY101L",
       "title": "Engineering Chemistry",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -35231,7 +35231,7 @@
       "code": "BCHY101P",
       "title": "Engineering Chemistry Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SBST",
         "SCE",
@@ -36344,7 +36344,7 @@
       "code": "BCSE101E",
       "title": "Computer Programming: Python",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCOPE"
       ],
@@ -36396,7 +36396,7 @@
       "code": "BCSE102L",
       "title": "Structured and Object-Oriented Programming",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
       "schools": [
         "SCOPE"
       ],
@@ -36474,7 +36474,7 @@
       "code": "BCSE102P",
       "title": "Structured and Object-Oriented Programming Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 2,
       "schools": [
         "SCOPE"
       ],
@@ -36576,7 +36576,7 @@
       "code": "BCSE103E",
       "title": "Computer Programming: Java",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCOPE",
         "SCORE",
@@ -52273,7 +52273,7 @@
       "code": "BCSE355L",
       "title": "Cloud Architecture Design",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCOPE",
         "SCORE"
@@ -56516,7 +56516,7 @@
       "code": "BECE302L",
       "title": "Control Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SENSE"
       ],
@@ -60125,7 +60125,7 @@
       "code": "BEEE102L",
       "title": "Basic Electrical and Electronics Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -60229,7 +60229,7 @@
       "code": "BEEE102P",
       "title": "Basic Electrical and Electronics Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SBST",
         "SCE",
@@ -62227,7 +62227,7 @@
       "code": "BENG101L",
       "title": "Technical English Communication",
       "kind": "theory",
-      "credits": null,
+      "credits": 2,
       "schools": [
         "SCOPE"
       ],
@@ -62249,7 +62249,7 @@
       "code": "BENG101P",
       "title": "Technical English Communication Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCOPE"
       ],
@@ -62272,7 +62272,7 @@
       "code": "BENG102P",
       "title": "Technical Report Writing",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SBST",
         "SCHEME",
@@ -64149,7 +64149,7 @@
       "code": "BHUM111L",
       "title": "Happiness and Well-being",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCHEME",
@@ -64243,7 +64243,7 @@
       "code": "BHUM201L",
       "title": "Mass Communication",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64292,7 +64292,7 @@
       "code": "BHUM202L",
       "title": "Rural Development",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64377,7 +64377,7 @@
       "code": "BHUM203L",
       "title": "Introduction to Psychology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64453,7 +64453,7 @@
       "code": "BHUM204L",
       "title": "Industrial Psychology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64493,7 +64493,7 @@
       "code": "BHUM205L",
       "title": "Development Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64542,7 +64542,7 @@
       "code": "BHUM206L",
       "title": "International Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64600,7 +64600,7 @@
       "code": "BHUM208L",
       "title": "Economics of Strategy",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64631,7 +64631,7 @@
       "code": "BHUM209L",
       "title": "Game Theory",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64662,7 +64662,7 @@
       "code": "BHUM211L",
       "title": "Behavioral Economics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64720,7 +64720,7 @@
       "code": "BHUM212L",
       "title": "Mathematics for Economic Analysis",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64760,7 +64760,7 @@
       "code": "BHUM214L",
       "title": "Political Science",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64800,7 +64800,7 @@
       "code": "BHUM215L",
       "title": "International Relations",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64840,7 +64840,7 @@
       "code": "BHUM216L",
       "title": "Indian Culture and Heritage",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64898,7 +64898,7 @@
       "code": "BHUM217L",
       "title": "Contemporary India",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64929,7 +64929,7 @@
       "code": "BHUM218L",
       "title": "Financial Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -64960,7 +64960,7 @@
       "code": "BHUM221L",
       "title": "Economics of Money, Banking and Financial Markets",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -65009,7 +65009,7 @@
       "code": "BITE202L",
       "title": "Digital Logic and Microprocessors",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -65032,7 +65032,7 @@
       "code": "BITE202P",
       "title": "Digital Logic and Microprocessors Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCORE"
       ],
@@ -65055,7 +65055,7 @@
       "code": "BITE301L",
       "title": "Computer Architecture and Organization",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -65141,7 +65141,7 @@
       "code": "BITE302L",
       "title": "Database Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -65227,7 +65227,7 @@
       "code": "BITE302P",
       "title": "Database Systems Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCORE"
       ],
@@ -65313,7 +65313,7 @@
       "code": "BITE303L",
       "title": "Operating Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -65399,7 +65399,7 @@
       "code": "BITE303P",
       "title": "Operating Systems Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCORE"
       ],
@@ -65485,7 +65485,7 @@
       "code": "BITE304L",
       "title": "Web Technologies",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -65571,7 +65571,7 @@
       "code": "BITE304P",
       "title": "Web Technologies Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCORE"
       ],
@@ -65657,7 +65657,7 @@
       "code": "BITE305L",
       "title": "Computer Networks",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -65743,7 +65743,7 @@
       "code": "BITE305P",
       "title": "Computer Networks Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCORE"
       ],
@@ -65829,7 +65829,7 @@
       "code": "BITE306L",
       "title": "Theory of Computation",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
       "schools": [
         "SCORE"
       ],
@@ -65933,7 +65933,7 @@
       "code": "BITE307L",
       "title": "Software Engineering",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66019,7 +66019,7 @@
       "code": "BITE307P",
       "title": "Software Engineering Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCORE"
       ],
@@ -66105,7 +66105,7 @@
       "code": "BITE308L",
       "title": "Artificial Intelligence",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66191,7 +66191,7 @@
       "code": "BITE308P",
       "title": "Artificial Intelligence Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCORE"
       ],
@@ -66277,7 +66277,7 @@
       "code": "BITE311L",
       "title": "Human Computer Interaction",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66300,7 +66300,7 @@
       "code": "BITE312E",
       "title": "Data Mining",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66365,7 +66365,7 @@
       "code": "BITE314L",
       "title": "Multimedia Systems",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66388,7 +66388,7 @@
       "code": "BITE401L",
       "title": "Network and Information Security",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66456,7 +66456,7 @@
       "code": "BITE402L",
       "title": "Distributed Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66524,7 +66524,7 @@
       "code": "BITE403L",
       "title": "Embedded Systems and IoT",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66655,7 +66655,7 @@
       "code": "BITE403P",
       "title": "Embedded Systems and IoT Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCORE"
       ],
@@ -66777,7 +66777,7 @@
       "code": "BITE404E",
       "title": "Object Oriented Analysis and Design",
       "kind": "embedded",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66825,7 +66825,7 @@
       "code": "BITE405L",
       "title": "Soft Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66866,7 +66866,7 @@
       "code": "BITE407L",
       "title": "Quantum Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66907,7 +66907,7 @@
       "code": "BITE408L",
       "title": "Network Management",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66930,7 +66930,7 @@
       "code": "BITE409L",
       "title": "Mobile Application Development",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -66962,7 +66962,7 @@
       "code": "BITE411L",
       "title": "Big Data Analytics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -67021,7 +67021,7 @@
       "code": "BITE412L",
       "title": "Cloud Computing",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -67062,7 +67062,7 @@
       "code": "BITE413L",
       "title": "Cyber Security",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -67085,7 +67085,7 @@
       "code": "BITE414L",
       "title": "Blockchain Technology",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCORE"
       ],
@@ -67275,7 +67275,7 @@
       "code": "BMAT101L",
       "title": "Calculus",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SCOPE"
       ],
@@ -67298,7 +67298,7 @@
       "code": "BMAT101P",
       "title": "Calculus Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SCOPE"
       ],
@@ -67321,7 +67321,7 @@
       "code": "BMAT102L",
       "title": "Differential Equations and Transforms",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
       "schools": [
         "SBST",
         "SCE",
@@ -67445,7 +67445,7 @@
       "code": "BMAT201L",
       "title": "Complex Variables and Linear Algebra",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
       "schools": [
         "SCE",
         "SCHEME",
@@ -67547,7 +67547,7 @@
       "code": "BMAT202L",
       "title": "Probability and Statistics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -68506,7 +68506,7 @@
       "code": "BMAT202P",
       "title": "Probability and Statistics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SBST",
         "SCE",
@@ -69456,7 +69456,7 @@
       "code": "BMAT205L",
       "title": "Discrete Mathematics and Graph Theory",
       "kind": "theory",
-      "credits": null,
+      "credits": 4,
       "schools": [
         "SBST",
         "SCOPE",
@@ -75085,7 +75085,7 @@
       "code": "BPHY101L",
       "title": "Engineering Physics",
       "kind": "theory",
-      "credits": null,
+      "credits": 3,
       "schools": [
         "SBST",
         "SCE",
@@ -75153,7 +75153,7 @@
       "code": "BPHY101P",
       "title": "Engineering Physics Lab",
       "kind": "lab",
-      "credits": null,
+      "credits": 1,
       "schools": [
         "SBST",
         "SCHEME",
@@ -75244,7 +75244,7 @@
       "code": "BSSC102N",
       "title": "Indian Constitution",
       "kind": "unscheduled",
-      "credits": null,
+      "credits": 2,
       "schools": [
         "SHINE"
       ],
@@ -75257,7 +75257,7 @@
       "code": "BSTS102P",
       "title": "Quantitative Skills Practice II",
       "kind": "theory",
-      "credits": null,
+      "credits": 1.5,
       "schools": [
         "SBST",
         "SCE",
@@ -76171,7 +76171,7 @@
       "code": "BSTS301P",
       "title": "Advanced Competitive Coding - I",
       "kind": "theory",
-      "credits": null,
+      "credits": 1.5,
       "schools": [
         "SBST",
         "SCHEME",
@@ -77121,7 +77121,7 @@
       "code": "BSTS302P",
       "title": "Advanced Competitive Coding - II",
       "kind": "theory",
-      "credits": null,
+      "credits": 1.5,
       "schools": [
         "SBST",
         "SCE",

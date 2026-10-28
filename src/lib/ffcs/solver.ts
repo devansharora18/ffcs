@@ -62,6 +62,7 @@ export function toPlaced(course: CatalogCourse, offeringId: string): PlacedOffer
     venue: offering.venue,
     slots: offering.slots,
     cells: offering.slots.flatMap(slotCells),
+    credits: course.credits,
   };
 }
 
@@ -114,6 +115,7 @@ export function buildGroups(
         venue: null,
         slots,
         cells,
+        credits: null,
       };
 
       if (!isAllowed(entry, constraints)) {

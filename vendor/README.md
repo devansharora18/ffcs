@@ -4,6 +4,7 @@
 |---|---|
 | `site-snapshot.json` | The public catalogue snapshot used as the base: school → category → course → offerings. |
 | `catalog-source.json` | The merged source: the snapshot plus the newer allotment data, de-duplicated by faculty + venue + slot. |
+| `credits.json` | Course code → credits, extracted from a VIT curriculum sheet (184 codes). |
 
 Both files hold VIT course allotment data (codes, titles, slots, faculty, venues).
 They contain no application code.
