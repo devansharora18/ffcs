@@ -12,7 +12,7 @@ courses. Never build a timetable by hand — the solver catches clashes you will
 
 | Path | What it is |
 |---|---|
-| `data/catalog.json` | 701 courses, 6996 offerings, 1425 faculty |
+| `data/catalog.json` | 728 courses, 8342 offerings, 1464 faculty |
 | `data/teachers.txt` | every offering, one line: `FACULTY \| CODE \| Title \| slots \| venue` |
 | `data/slots.json` | slot code → day/start/end cells |
 | `scripts/solve.py` | the solver — reads a request, prints the timetable |

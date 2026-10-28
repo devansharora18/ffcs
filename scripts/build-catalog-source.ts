@@ -35,6 +35,10 @@ async function main() {
       : ((await import(pathToFileURL(resolve(root, 'faculty.ts')).href)) as { data: RawData }).data;
 
     for (const [school, categories] of Object.entries(source)) {
+      if (!categories) {
+        console.warn(`skipping empty school ${school}`);
+        continue;
+      }
       for (const [category, subjects] of Object.entries(categories)) {
         if (!subjects) {
           console.warn(`skipping empty category ${school} / ${category}`);
