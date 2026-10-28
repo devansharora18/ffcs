@@ -3,7 +3,11 @@ import type { ChatCompletionMessageParam } from 'openai/resources/chat/completio
 
 import { agentConfig, type AgentConfig } from '@/lib/agent/config';
 import { SYSTEM_PROMPT } from '@/lib/agent/prompt';
-import { chatRequestSchema, type ChatRequest } from '@/lib/agent/schema';
+import {
+  MAX_HISTORY_CHARS,
+  chatRequestSchema,
+  type ChatRequest,
+} from '@/lib/agent/schema';
 import { executeTool } from '@/lib/agent/tools';
 import { toolDefinitions } from '@/lib/agent/tools-schema';
 import { catalog } from '@/lib/ffcs/catalog-data';
@@ -15,6 +19,7 @@ export const runtime = 'nodejs';
 
 const MAX_ROUNDS = 6;
 const MAX_TOOL_CHARS = 4000;
+const MAX_OUTPUT_TOKENS = 2048;
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS = 30;
 
@@ -73,7 +78,16 @@ async function runAgent(
     timeout: 60_000,
     defaultHeaders: { 'x-opencode-session': config.sessionId },
   });
-  const history = body.messages.slice(-12);
+  // Keep the newest turns within a character budget; the last message always
+  // survives so a large pasted table is never cut in half.
+  const history: typeof body.messages = [];
+  let budget = MAX_HISTORY_CHARS;
+  for (let index = body.messages.length - 1; index >= 0; index -= 1) {
+    const message = body.messages[index];
+    if (history.length > 0 && message.content.length > budget) break;
+    history.unshift(message);
+    budget -= message.content.length;
+  }
   const lastUserIndex = history.map((message) => message.role).lastIndexOf('user');
 
   let state: TimetableState = body.state;
@@ -105,6 +119,7 @@ async function runAgent(
       messages,
       tools: toolDefinitions,
       temperature: 0.2,
+      max_tokens: MAX_OUTPUT_TOKENS,
       stream: true,
     });
 

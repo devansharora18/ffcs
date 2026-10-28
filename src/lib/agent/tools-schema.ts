@@ -85,6 +85,36 @@ export const toolDefinitions: ChatCompletionTool[] = [
   {
     type: 'function',
     function: {
+      name: 'add_courses',
+      description:
+        'Add several courses in one call, for example after reading a pasted allocation table. Unknown codes and slots the course does not run are reported, never added silently. Maximum 40.',
+      parameters: {
+        type: 'object',
+        properties: {
+          courses: {
+            type: 'array',
+            maxItems: 40,
+            items: {
+              type: 'object',
+              properties: {
+                code: { type: 'string', description: 'Course code.' },
+                slot: {
+                  type: 'string',
+                  description:
+                    'Optional slot pattern, e.g. "A1+TA1". Must be one the course actually runs. Omit to let the solver choose.',
+                },
+              },
+              required: ['code'],
+            },
+          },
+        },
+        required: ['courses'],
+      },
+    },
+  },
+  {
+    type: 'function',
+    function: {
       name: 'add_custom_course',
       description:
         'Add a course or teacher that is genuinely missing from the catalog. Only call this AFTER the user has explicitly confirmed, and only when add_course reported the code as unknown. Slots are required.',

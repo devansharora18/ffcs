@@ -1,9 +1,16 @@
 import { z } from 'zod';
 
+/**
+ * A pasted VTOP allocation table is ~10 KB. Keep the ceiling far above that so
+ * a whole semester can be pasted, while still bounding a single request.
+ */
+export const MAX_MESSAGE_CHARS = 120_000;
+export const MAX_HISTORY_CHARS = 80_000;
+
 export const messageSchema = z
   .object({
     role: z.enum(['user', 'assistant']),
-    content: z.string().max(4000),
+    content: z.string().max(MAX_MESSAGE_CHARS),
     images: z
       .array(z.string().max(3_000_000).startsWith('data:image/'))
       .max(2)
@@ -42,7 +49,7 @@ export const stateSchema = z.object({
 });
 
 export const chatRequestSchema = z.object({
-  messages: z.array(messageSchema).min(1).max(30),
+  messages: z.array(messageSchema).min(1).max(20),
   state: stateSchema,
 });
 

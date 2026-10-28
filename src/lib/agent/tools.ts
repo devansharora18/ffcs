@@ -316,6 +316,68 @@ export function executeTool(name: string, rawArgs: unknown, context: AgentContex
       };
     }
 
+    case 'add_courses': {
+      const list = Array.isArray(args.courses) ? (args.courses as unknown[]).slice(0, 40) : [];
+      if (list.length === 0) return { text: 'Pass a non-empty courses array.', ops: [], state };
+
+      const ops: StateOp[] = [];
+      const added: string[] = [];
+      const unknown: string[] = [];
+      const badSlot: string[] = [];
+      const alreadyThere: string[] = [];
+
+      for (const item of list) {
+        const entry = asRecord(item);
+        const code = asString(entry.code).toUpperCase();
+        if (code.length === 0) continue;
+
+        const course = findCourse(catalog, code);
+        if (!course) {
+          unknown.push(code);
+          continue;
+        }
+
+        if (
+          state.requirements.some((requirement) => requirement.courseCode === code) ||
+          ops.some((op) => op.op === 'add' && op.courseCode === code)
+        ) {
+          alreadyThere.push(code);
+          continue;
+        }
+
+        const slotText = asString(entry.slot).toUpperCase().replace(/\s+/g, '');
+        let slots: string[] | undefined;
+
+        if (slotText.length > 0) {
+          slots = slotText.split('+').filter(Boolean);
+          const offered = course.offerings.some(
+            (offering) => offering.slots.join('+').toUpperCase() === (slots ?? []).join('+'),
+          );
+          if (!offered) {
+            badSlot.push(`${code} ${slotText}`);
+            continue;
+          }
+        }
+
+        ops.push({ op: 'add', courseCode: code, slots });
+        added.push(code);
+      }
+
+      const next = applyOps(state, ops);
+      const parts = [
+        `Added ${added.length}${added.length ? `: ${added.join(', ')}` : ''}.`,
+        unknown.length ? `Unknown codes: ${unknown.join(', ')}.` : '',
+        badSlot.length ? `Slot not offered: ${badSlot.join('; ')} — use add_custom_course if the student insists.` : '',
+        alreadyThere.length ? `Already present: ${alreadyThere.join(', ')}.` : '',
+      ].filter(Boolean);
+
+      return {
+        text: `${parts.join(' ')}\n${solveAndDescribe(catalog, next)}`,
+        ops,
+        state: next,
+      };
+    }
+
     case 'add_custom_course': {
       const code = asString(args.code).trim().toUpperCase();
       const title = asString(args.title);

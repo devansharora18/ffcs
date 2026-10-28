@@ -119,6 +119,29 @@ test('add_course rejects a slot the course does not run', () => {
   assert.match(result.text, /no Z9\+Z10 offering/);
 });
 
+test('add_courses adds many at once and reports what it skipped', () => {
+  const result = run(
+    'add_courses',
+    {
+      courses: [
+        { code: 'BCSE202L', slot: 'B1+TB1' },
+        { code: 'NOPE999' },
+        { code: 'BITE303L', slot: 'ZZ9' },
+        { code: 'BITE305L' },
+      ],
+    },
+    emptyState(),
+    catalog,
+  );
+
+  assert.deepEqual(
+    result.state.requirements.map((requirement) => requirement.courseCode).sort(),
+    ['BCSE202L', 'BITE305L'],
+  );
+  assert.match(result.text, /Unknown codes: NOPE999/);
+  assert.match(result.text, /Slot not offered: BITE303L ZZ9/);
+});
+
 test('add_custom_course stores a manual entry for a code the catalog lacks', () => {
   const result = run(
     'add_custom_course',
