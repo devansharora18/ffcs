@@ -210,6 +210,11 @@ test('add_custom_course allows a real code with a slot only the user wants', () 
   assert.match(result.text, /catalog lists BITE311L with other slots/);
 });
 
+test('the solve summary reports credits against the 27.5 cap', () => {
+  const result = run('add_course', { code: 'BCSE202L' }, emptyState(), catalog);
+  assert.match(result.text, /Credits [\d.]+\+?\/27\.5/);
+});
+
 test('set_credits overrides an estimated value', () => {
   const added = run('add_course', { code: 'BCSE202L' }, emptyState(), catalog);
   const result = run('set_credits', { code: 'BCSE202L', credits: 4.5 }, added.state, catalog);

@@ -129,7 +129,8 @@ Vellore only, one semester. The source does not state the term, so the UI never 
 
 ## Limits
 
-- Credits are unknown, so no credit total and no `maxCredits` yet.
+- The semester cap is **27.5 credits**: the selected-courses total turns red and the agent warns when
+  a change goes over it. Credits are exact for 75 courses and estimated from slot hours for 642.
 - Anonymous only: the timetable lives in `localStorage`, share is a PNG.
 - The chat endpoint requires a signed session cookie plus a same-origin request, and the body is
   read with a hard 3 MB cap. Rate limiting is still per isolate — move it to a shared store before

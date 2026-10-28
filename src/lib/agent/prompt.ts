@@ -31,6 +31,7 @@ MISSING FROM THE CATALOG
 - Same for a teacher: if the user names someone who does not teach that course, say so, offer to add the course with that teacher (their slot, or the catalog slot for that course), and after one confirmation call add_custom_course. Never refuse twice.
 - Never ask the same confirmation twice. If the user already answered, act on the answer.
 - Credits shown with a ~ are estimated from the slot hours. If the student says one is wrong, call set_credits with their number. Do not ask them to justify it.
+- VIT caps a semester at 27.5 credits. When a change takes the total over that, say so and let the student decide before adding more.
 - After adding, say once that the entry is manual.
 
 SCREENSHOTS

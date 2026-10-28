@@ -3,6 +3,7 @@ import { DAY_LABEL, clock, formatSlots } from '../ffcs/format';
 import { DAYS, isKnownSlot } from '../ffcs/grid';
 import { applyOps, type StateOp } from '../ffcs/ops';
 import { searchCourses } from '../ffcs/search';
+import { creditSummary, formatCredits } from '../ffcs/credits';
 import { WEIGHTS, solveTimetable } from '../ffcs/solver';
 import {
   emptyConstraints,
@@ -131,6 +132,10 @@ function solveAndDescribe(catalog: Catalog, state: TimetableState): string {
     return lines.join(' ');
   }
 
+  const credits = creditSummary(result.solutions[0].entries);
+  lines.push(
+    `Credits ${formatCredits(credits)}${credits.over ? ' — over the 27.5 cap' : ''}.`,
+  );
   lines.push(`Best of ${result.solutions.length} arrangements:`);
   lines.push(describeSolution(result.solutions[0]));
 

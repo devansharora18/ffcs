@@ -1,5 +1,6 @@
 'use client';
 
+import { creditSummary, formatCredits } from '@/lib/ffcs/credits';
 import type { SolveResult, TimetableState } from '@/lib/ffcs/types';
 
 import { Panel } from '../ui/Panel';
@@ -23,19 +24,22 @@ export default function SelectedCourses({ state, result, onRemove }: Props) {
   );
 
   const placed = result?.solutions[0]?.entries ?? [];
-  const credits = placed.reduce((total, entry) => total + (entry.credits ?? 0), 0);
-  const creditsComplete = placed.length > 0 && placed.every((entry) => entry.credits !== null);
-  const creditsLabel =
-    placed.length === 0 ? '' : ` · ${credits}${creditsComplete ? '' : '+'} credits`;
+  const credits = creditSummary(placed);
+  const creditsLabel = placed.length === 0 ? '' : ` · ${formatCredits(credits)} credits`;
 
   return (
     <Panel
       title="Selected courses"
       mark="sparkle"
       action={
-        <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+        <span
+          className={`font-mono text-[10px] uppercase tracking-[0.12em] ${
+            credits.over ? 'text-red' : 'text-muted'
+          }`}
+        >
           {state.requirements.length} courses · {Math.round(contactHours * 10) / 10} h/week
           {creditsLabel}
+          {credits.over ? ' over the cap' : ''}
         </span>
       }
     >
